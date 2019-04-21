@@ -1,0 +1,9 @@
+package java0418_basic;
+
+public class Java004_casting {
+	public static void main(String[] argws) {
+		int x = 3;
+		double y = 4.5;
+		
+	}
+}

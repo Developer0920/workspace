@@ -1,0 +1,17 @@
+package java0419_statement;
+/*
+ * [출력결과]
+ * station = "KBS", channel = 7 => 닥터포스터
+ * station = "KBS", channel = 9 => 국수의 신
+ * station = "MBC" => 몬스터
+ * station = "EBS" => 한국기행
+ */
+
+public class Java024_if {
+
+	public static void main(String[] args) {
+		
+		
+	} //end main()
+
+} //end class

@@ -1,0 +1,8 @@
+package java0418_basic;
+
+public class java002_value {
+	public static void main(String[] args) {
+		System.out.println(3);
+		
+	}
+}//end class 크.. 쌌다..

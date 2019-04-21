@@ -1,0 +1,30 @@
+package java0419_statement;
+
+/*
+ * 다중 if~else
+ * if(조건식1){
+ * 	수행할 문장1;
+ * }else if(조건식2){
+ * 	수행할 문장2;
+ * }else if(조건식3){
+ * 	수행할 문장3;
+ * }else{
+ * 	수행할 문장;
+ * }
+ */
+public class Java020_if {
+
+	public static void main(String[] args) {
+		char code = 'B';
+		
+		if(code=='A') {
+			System.out.println("식품류");
+		} else if(code=='B') {
+			System.out.println("야채류");			
+		} else if(code=='C') {
+			System.out.println("고기류");			
+		}
+		System.out.println("많이 먹어~~");
+	}
+
+}

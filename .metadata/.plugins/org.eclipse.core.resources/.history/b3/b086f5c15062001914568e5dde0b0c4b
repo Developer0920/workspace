@@ -1,0 +1,22 @@
+package java0419_statement;
+
+/*
+ * 다중 if~else
+ * if(조건식1){
+ * 	수행할 문장1;
+ * }else if(조건식2){
+ * 	수행할 문장2;
+ * }else if(조건식3){
+ * 	수행할 문장3;
+ * }else{
+ * 	수행할 문장;
+ * }
+ */
+public class Java020_if {
+
+	public static void main(String[] args) {
+	
+
+	}
+
+}
