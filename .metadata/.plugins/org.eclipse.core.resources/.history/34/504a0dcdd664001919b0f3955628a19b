@@ -1,0 +1,20 @@
+package java0423_array;
+ //변수 : 하나의 값을 저장하기 위한 메모리 공간
+public class Java041_array {
+
+	public static void main(String[] args) {
+		/*int ko=90;
+		int en=80;
+		int jp=40;*/
+		
+		//배열선언
+		int[] jumsu; //int jumsu[]; <- JAVA는 이것도 가능
+		//배열생성 = 메모리 생성(확보)
+		jumsu = new int[3]; //int이므로 4byte 3개, 그리고 자동적으로 인덱스가 주어짐, 기본값(default)으로 0이 저장됨.
+		
+		System.out.printf("jumsu[0]=%d",  jumsu[0]);
+			
+		
+	}
+
+}
