@@ -1,0 +1,14 @@
+package java0423_array;
+//데이터 타입에 따라 기본값이 바뀜
+public class Java045_array {
+
+	public static void main(String[] args) {
+		int[] data1=new int[3]; //기본값 0
+		
+		for(int i=0; i<data1.length; i++) {
+			System.out.printf("data[%d]=%d\n",  i, data1[i]);
+		}
+
+	} // end main()
+
+}// end class

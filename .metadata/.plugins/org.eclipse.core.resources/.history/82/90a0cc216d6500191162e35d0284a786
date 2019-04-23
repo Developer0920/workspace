@@ -1,0 +1,17 @@
+package java0423_array;
+//대괄호 개수에 따라 1차원, 2차원이 됨. 3차원은 게임 쪽
+public class Java047_array {
+
+	public static void main(String[] args) {
+		//3행 2열의 2차원배열
+		int[][] num=new int[3][2]; //항상 행, 열 순
+		
+		System.out.printf("%4d", num[0][0]);
+		System.out.printf("%4d\n", num[0][1]);
+		System.out.printf("%4d", num[1][0]);
+		System.out.printf("%4d\n", num[1][1]);
+		System.out.printf("%4d", num[2][0]);
+		System.out.printf("%4d\n", num[2][1]);
+	}//end main()
+
+}//end class

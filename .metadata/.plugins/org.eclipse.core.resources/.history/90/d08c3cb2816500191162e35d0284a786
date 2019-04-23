@@ -1,0 +1,10 @@
+package private_exercise;
+
+public class MethodDef {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

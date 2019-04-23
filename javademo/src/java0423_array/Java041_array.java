@@ -15,6 +15,8 @@ public class Java041_array {
 		// 각 요소마다 인덱스가 0부터 생성된다.
 		
 		jumsu = new int[3]; //int이므로 4byte 3개, 그리고 자동적으로 인덱스가 주어짐, 기본값(default)으로 0이 저장됨.
+		//int[] jumsu = new int[3]; -- 선언과 생성을 한 번에
+		
 		
 		System.out.printf("jumsu[0]=%d\n",  jumsu[0]);
 		System.out.printf("jumsu[1]=%d\n",  jumsu[1]);
@@ -22,7 +24,7 @@ public class Java041_array {
 		System.out.println("========================");
 		
 		jumsu[0]=90; //90을 jumsu배열 0 인덱스(index)에 저장
-		jumsu[1]=80; //90을 jumsu배열 1 인덱스(index)에 저장
+		jumsu[1]=80; //80을 jumsu배열 1 인덱스(index)에 저장
 		jumsu[2]=40; //40을 jumsu배열 2 인덱스(index)에 저장
 		
 		/*System.out.printf("jumsu[0]=%d\n",  jumsu[0]);
@@ -30,8 +32,10 @@ public class Java041_array {
 		System.out.printf("jumsu[2]=%d\n",  jumsu[2]);	
 		System.out.println("========================");
 		*/		
-				
-		for(int index=0; index<3; index++) {
+		
+		
+		//length : 배열의 크기 => 배열명.length (이거 키워드다. 배열의 크기를 리턴해주는 키워드)
+		for(int index=0; index<jumsu.length; index++) { //여기서 length는 3이므로 < 로 바꿔줘야 한다.
 			System.out.printf("jumsu[%d]=%d\n", index, jumsu[index]);
 		}
 		
