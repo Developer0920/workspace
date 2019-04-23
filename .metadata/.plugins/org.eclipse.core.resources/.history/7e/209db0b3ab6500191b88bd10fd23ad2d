@@ -13,6 +13,5 @@ public class MethodDef {
 		System.out.println("좋은 아침입니다.");
 		System.out.println("제 나이는 "+age+ "세 입니다.");
 	}	
-
 	
 }
