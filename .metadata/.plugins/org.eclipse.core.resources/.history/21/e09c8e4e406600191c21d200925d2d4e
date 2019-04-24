@@ -1,0 +1,20 @@
+package java0424_method;
+
+public class Java058_method {
+
+	public static void main(String[] args) {
+		// 조건 : data변수에는 소문자만 입력
+		char data = 'e';
+		char code = process(data);
+		System.out.printf("%c의 대문자는 %c입니다.\n", data, code);
+
+	}//end main()
+	
+	//data매개변수의 값을 대문자로 변경해서 리턴
+	public static char process(char data) {
+		
+		char upper = Character.toUpperCase(data);		
+		return upper;
+	}
+
+}//end class

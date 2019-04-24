@@ -1,0 +1,31 @@
+package java0424_method;
+
+/*
+ * 자바에서 제공하는 데이터 타입
+ * 1 기본 데이터 타입 : byte, short, int, long
+ * 				float, double, char, boolean
+ *  
+ * 2 참조 데이터 타입 : 배열, 클래스, 인터페이스
+ * 
+ * [인자(매개변수) 전달방식]
+ * 1 call by value : 값복사
+ *  인자값을 전달할 때 기본 데이터 타입을 넘겨주는 형식이다.
+ * 2 call by reference : 주소복사
+ *  인자값을 전달할 때 참조 데이터 타입을 넘겨주는 형식이다.
+ *  
+ */
+public class Java057_method {
+
+	public static void main(String[] args) {
+		int a=10, b=20;
+		callByValue(a,b);
+		System.out.printf("a=%d,  b=%d\n", a, b);	
+	}//end main()
+	
+	public static void callByValue (int c, int d) {
+		int temp=c;
+		c=d;
+		d=temp;
+		System.out.printf("c=%d,  d=%d\n", c, d);		
+	}//end callByValue()
+}//end class
