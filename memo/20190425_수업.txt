@@ -2,3 +2,7 @@
 
 코딩 방법론 알아보기
 
+한 번에 import Ctrl + Shift + o
+
+UML
+
