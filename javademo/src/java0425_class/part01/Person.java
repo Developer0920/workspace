@@ -15,4 +15,4 @@ public class Person{
 	}
 }// end class
 
-//같은 패키지 내에서는 impor필요없음. public도 필요 없다?
+//같은 패키지 내에서는 import 필요없음. public도 필요 없다?

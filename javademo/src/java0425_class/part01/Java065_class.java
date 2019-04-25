@@ -2,9 +2,7 @@ package java0425_class.part01;
 
 //import java0425_class.part01.Person; //Person 뒤에 커서를 두고  Ctrl + Space
 
-public class Java065_class {
-	
-	
+public class Java065_class {	
 	
 	public static void main(String[] args) {
 		Person ps; //객체선언 - 메모리 생성이 안됨(stack 영영게 4byte는 잡힘)
