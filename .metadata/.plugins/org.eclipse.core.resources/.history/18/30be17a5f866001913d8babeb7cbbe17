@@ -1,0 +1,30 @@
+package java0425_class;
+//사용자가 정의한 데이터 타입 - 사람 객체
+
+class Person{
+	String name; //멤버변수
+	int age;
+	char gen;
+	
+	public void eat() {// 메소드
+		System.out.println("먹는다");		
+	}
+	
+	public void run() {
+		System.out.println("달린다");
+	}
+}// end class
+
+public class Java065_class {
+
+	public static void main(String[] args) {
+		Person ps; //stack 영영게 4byte는 잡힘
+		ps = new Person();
+		System.out.println(ps); //
+		System.out.println(ps.name);
+		System.out.println(ps.age);
+		
+	}
+
+}
+//클래스의 메소드는 heap영역에 생성이 안 되고, method영역에 생성이 됨.
