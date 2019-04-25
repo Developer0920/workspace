@@ -1,9 +1,0 @@
-package java0418_basic;
-
-public class Java006_operator {
-	public static void main(String[] args) {
-		int a = 10;
-		int b = 3;
-		System.out.println(a/b); 
-	}// end main()
-}// end class

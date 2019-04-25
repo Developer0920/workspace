@@ -1,8 +1,0 @@
-package java0418_basic;
-
-public class Java001_main {
-	public static void main(String[] agrs) {
-		System.out.println(5);
-		System.out.println('a');
-	}
-}

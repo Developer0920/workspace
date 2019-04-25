@@ -1,0 +1,10 @@
+package java0425_class.part07;
+
+public class Java071_this {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
