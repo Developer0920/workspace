@@ -1,0 +1,15 @@
+package java0426_class.part08;
+
+
+//a와 b처럼 개수만이 차이가 날 때... 이걸 하나로 정의해서 사용할 수 있다. variable arrguement?
+
+public class CountVarg {
+
+	void addValue(int...arr) {
+		int sum = 0;
+		for(int i=0; i<arr.length; i++) {
+			sum+=arr[i];
+		}
+		System.out.println(sum);
+	}
+} //end class

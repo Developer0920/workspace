@@ -1,0 +1,4 @@
+(2019.04.26.Fri)
+
+
+Source > Generate Constructor Using Feilds..

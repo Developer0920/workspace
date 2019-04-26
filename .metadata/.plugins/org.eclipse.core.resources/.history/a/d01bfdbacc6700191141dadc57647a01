@@ -1,0 +1,15 @@
+package java0426_class.part04;
+
+public class Calc {
+	int first;
+	int second;
+	char ope;
+	
+	public Calc() {
+		
+	}
+	
+	
+}
+
+
