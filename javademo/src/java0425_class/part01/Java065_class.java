@@ -1,4 +1,4 @@
-package java0425_class.part01;
+ package java0425_class.part01;
 
 //import java0425_class.part01.Person; //Person 뒤에 커서를 두고  Ctrl + Space
 
@@ -15,11 +15,7 @@ public class Java065_class {
 		
 		//객체참조변수.멤버변수
 		ps.name = "홍길동";
-		ps.age = 30;
-		ps.gen = 'M';
-		System.out.printf("%s %d %c\n", ps.name, ps.age, ps.gen);
-		//객체참조변수.메소드
-		ps.eat();
+		ps.age = 30; 
 		ps.run();
 		
 		
