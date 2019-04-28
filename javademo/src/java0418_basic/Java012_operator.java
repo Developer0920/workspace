@@ -26,16 +26,12 @@ public class Java012_operator {
 		 * ++x => 5
 		 * x==y => false
 		 * || => false
-		 */
-		
-		//res = x>y && ++y>z || ++x==y;
-		//res  =  x > y || ++y < z && ++x == y;
-		
+		 */ 
 		res = ++y < z || ++y == z && ++y == z; // [++y < z] || [++y == z && ++y == z] --- 이렇게 쪼개야 함
 		
-		System.out.println("x=" + x);
-		System.out.println("y=" + y);
-		System.out.println("res=" + res);
+		System.out.println("x=" + x); //x=4
+		System.out.println("y=" + y); //y=9 
+		System.out.println("res=" + res); //true
 		
 		//&&, || 가 함께 있으면 ||를 기준으로 좌변 우변을 나눈다.
 		

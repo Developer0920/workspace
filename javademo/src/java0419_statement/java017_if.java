@@ -17,7 +17,7 @@ package java0419_statement;
  * 조건식은 결과값이 논리값이어야
  */
  
-public class Java017_if {
+public class java017_if {
 		
 	public static void main(String[] args) { //1
 		int num=3; //2
