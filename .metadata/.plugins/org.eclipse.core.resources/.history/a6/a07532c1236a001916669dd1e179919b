@@ -1,0 +1,15 @@
+package java0429_static_access.part05;
+
+public class Java088_access {
+
+	public static void main(String[] args) {
+		Java087_access p = new Java087_access();
+		System.out.printf("var_private=%d\n",p.var_private);
+		System.out.printf("var_default=%d\n",p.var_default);
+		System.out.printf("var_protected=%d\n",p.var_protected);
+		System.out.printf("var_pblic=%d\n",p.var_public);
+		
+
+	} //end main()
+
+} //end class

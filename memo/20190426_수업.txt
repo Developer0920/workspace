@@ -1,4 +1,7 @@
 (2019.04.26.Fri)
 
-
 Source > Generate Constructor Using Feilds..
+
+3항 연산자 복습
+
+Alt + Shift + r : 변수 한 번에 바꾸기

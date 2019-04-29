@@ -1,0 +1,13 @@
+package java0430_inheritance.part01;
+
+public class Father {
+	int a = 3;
+	void prn() {
+		System.out.println("a=" + a);
+	}
+} //end class
+
+class Child extends Father{
+	int b=5;
+	
+}

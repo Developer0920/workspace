@@ -1,0 +1,9 @@
+package java0429_static_access.part04;
+//args에 대하여..
+public class Java086_main {
+
+	public static void main(String[] args) {
+		System.out.println(args[0]);
+	} //end main()
+
+} //end class

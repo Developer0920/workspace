@@ -1,0 +1,10 @@
+package java0429_static_access.part04;
+//args에 대하여..
+//java Java086_main hong --- 이런 식으로 인자 전달
+public class Java086_main {
+
+	public static void main(String[] args) {
+		System.out.println(args[0]); //컴파일 단계가 아닌, 실행단계에서 오류 발생.
+	} //end main()
+
+} //end class

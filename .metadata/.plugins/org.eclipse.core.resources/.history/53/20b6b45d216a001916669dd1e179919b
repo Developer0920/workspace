@@ -1,0 +1,10 @@
+package java0429_static_access.part05;
+
+public class Java088_access {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
