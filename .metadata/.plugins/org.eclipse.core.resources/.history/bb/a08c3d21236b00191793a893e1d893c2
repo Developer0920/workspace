@@ -1,0 +1,9 @@
+package java0501_abstract_interface;
+
+public class TruckAbs extends CarAbs{ //추상메소드롤 오버라이드 안 하면 이것도 그냥 추상클래스가 된다. 따라서 앞에 abstract를 명시해야 함.
+	@Override
+	public void work() {
+		
+		
+	}
+}
