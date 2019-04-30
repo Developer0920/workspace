@@ -3,7 +3,7 @@ package java0429_static_access.part07;
 public class MemberDAO {
 	
 	private static/*추가*/ MemberDAO dao = new MemberDAO(); // 2. 따라서 내부에서 생성
-	//이것도 heap영역에 만들어지나? 응. 왜 private으로 놔야 하는가? public으로 놓으면 계속 생성한다?
+	//이것도 heap영역에 만들어지나? 응. 왜 private으로 놔야 하는가? public으로 놓으면 계속 생성한다?  아니다. public으로 놔도 무관
 	//그냥 싱글톤은 이게 일반적!	
 	
 	//생성자//
