@@ -1,0 +1,13 @@
+package java0430_inheritance.part06;
+
+public class Java097_inheritance {
+
+	public static void main(String[] args) {
+		DogOver dog = new DogOver();
+		BirdOver bird = new BirdOver();
+		dog.move();
+		bird.move();
+
+	} //end main()
+
+} //end class

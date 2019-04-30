@@ -24,3 +24,5 @@ class SubConst extends SuperConst{
 	} //9
 } //end class
 
+//super()는 다른 문장보다 먼저 와야
+

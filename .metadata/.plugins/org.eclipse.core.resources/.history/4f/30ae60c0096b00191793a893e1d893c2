@@ -1,0 +1,11 @@
+package java0430_inheritance.prob.part02;
+
+public class StudentExam extends Human{
+	int number;
+	
+	public StudentExam(String name, int age, int height, int weight, int number) {
+		super();
+		this.number = number;
+		
+	}
+}
