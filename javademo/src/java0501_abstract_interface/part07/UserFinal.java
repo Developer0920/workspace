@@ -1,4 +1,4 @@
-package java0501_abstract_interface.part07;
+	package java0501_abstract_interface.part07;
 
 public class UserFinal extends FinalTest{
 	public UserFinal() {
