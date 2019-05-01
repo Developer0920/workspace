@@ -1,0 +1,15 @@
+package java0501_binding.part04;
+
+public class Java112_binding {
+	public static void process(HomeTv tv) {
+		tv.turnOn();
+	}
+	
+	public static void main(String[] args) {				
+			LgTv lg=new LgTv("LG");
+			process(lg);		    
+		    SamsungTv ss=new SamsungTv("SAMSUNG");
+		    process(ss);
+	}
+
+}

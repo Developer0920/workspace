@@ -1,0 +1,23 @@
+package java0501_binding.part03;
+
+public class Java111_binding {
+
+	public static void display(double x, double y) {
+		System.out.println(x + y);
+		
+	} //end display()	
+	
+	public static void processLg(LgTv lg) {
+		lg.turnOn();
+	} //end processLg()
+	
+	public static void main (String[] arge) {
+		display(4.5, 6.3);
+		display(10, 20);
+		
+		LgTv lg = new LgTv("LG");
+		processLg(lg);
+		
+	}// end main()
+
+} //end class

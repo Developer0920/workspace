@@ -1,0 +1,9 @@
+package java0501_abstract_interface.part02;
+
+public class Java103_abstract {
+
+	public static void main() {
+		
+	} //end main()
+	
+} //end class

@@ -1,0 +1,29 @@
+package java0501_abstract_interface.part02;
+
+abstract public class Shape {
+	//멤버변수
+	private int width;
+	private int height;
+	
+	//생성자1
+	public Shape() {
+		
+	}
+	
+	//생성자2
+	public Shape(int width, int height) {
+		this.width = width;
+		this.height = height;
+	}
+	
+	//게터
+	public int getWidth() {
+		return width;
+	}
+	public int getHeight() {
+		return height;
+	}
+	
+	//추상메소드
+	abstract double getArea();
+} //end class

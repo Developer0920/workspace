@@ -1,0 +1,25 @@
+package java0501_abstract_interface.part06;
+
+public class UserTest extends User implements Score, Print{
+	//생성자1
+	public UserTest() {
+		// TODO Auto-generated constructor stub
+	}
+	//생성자2
+	public UserTest(String name, int count) {
+		super(name);
+		
+	}
+	@Override
+	public String toPaint() {
+		
+		return null;
+	}
+
+	@Override
+	public int getScore() {
+		
+		return 0;
+	}
+
+}

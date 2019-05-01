@@ -1,0 +1,6 @@
+package java0501_abstract_interface.part03;
+
+abstract public class Instrument {
+	
+
+} //end class

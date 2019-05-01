@@ -1,0 +1,9 @@
+package java0501_binding.part03;
+
+public class Java111_binding {
+
+	public static void main(String[] args) {
+		
+	}//end main()
+
+}//end class

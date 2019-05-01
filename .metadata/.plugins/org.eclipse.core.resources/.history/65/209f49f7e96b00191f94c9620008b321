@@ -1,0 +1,13 @@
+package java0501_binding.part01;
+
+public class Child extends Parent {
+	void call() {
+		System.out.println("Child call");
+		
+	}
+	@Override
+	void process() {
+		System.out.println("Child process");
+	}
+	
+}

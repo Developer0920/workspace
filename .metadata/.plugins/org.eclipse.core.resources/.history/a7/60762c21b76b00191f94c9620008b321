@@ -1,0 +1,12 @@
+package java0501_abstract_interface.part05;
+//클래스를 먼저 상속하고, 인터페이스를 상속해야
+//extends ~~~ implements
+public class Life extends Animal implements SampleA, SampleB{
+	public Life() {
+		
+	}
+
+	
+	
+} //end class
+
