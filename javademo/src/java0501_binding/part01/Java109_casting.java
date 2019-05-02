@@ -43,17 +43,17 @@ public class Java109_casting {
 		//t=p;
 		
 		Child c = new Child();
-		p=c;
-		p.process(); //Child process
+		p=c; //(Parent)c ?? //이건 형변환
+		p.process(); //Child process //다형성
 		//p.call(); //왜 오류가 뜨는가?
 		
 		//위 두 가지를 하나의 문장으로 끝냄
-		Parent pt = new Child(); //pt가 업캐스팅 된 것
+		Parent pt = new Child(); //pt가 업캐스팅 된 것?? 부참 -> 자참?
 		pt.process();
 		//pt.call(); 오류 발생. 해당 영역에 process 메소드가 없기 때문?
 		
 		//원상복귀(다운캐스팅)
-		Child cn = (Child)pt;
+		Child cn = (Child)pt; // 부참..
 		cn.process();
 		cn.call();
 		

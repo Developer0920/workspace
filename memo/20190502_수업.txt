@@ -1,0 +1,9 @@
+(2019.05.02.목)
+
+//여기를 구현하세요.
+		String pattern = "\\d{6} (-) 4]\\d{6}";
+		String input = sn;
+		
+		boolean yn = Pattern.matches(pattern, input);
+		
+		return yn;

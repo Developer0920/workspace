@@ -1,0 +1,17 @@
+package java0502_api;
+
+public class Java113_String {
+
+	public static void main(String[] args) {
+		String str = new String("KoREa, jsp, java");
+		System.out.println("문자열 길이:" + str.length());
+		System.out.println("대문자:" + str.toUpperCase());
+		System.out.println("소문자:" + str.toLowerCase());
+		System.out.println("문자:" + str.charAt(1));
+		System.out.println("인덱스:" + str.indexOf('a'));
+		System.out.println("인덱스:" + str.indexOf(97));
+		System.out.println("범위:" + str.substring(5)); //String은 내부에서 char 배열로 처리됨
+
+	} //end main()
+
+} //end class

@@ -1,0 +1,15 @@
+package java0502_api;
+
+public class Java121_RegEx {
+
+	public static void main(String[] args) {
+		String sn = "12345";
+		String sb = "bsba5e";
+		String st = "aetwefgcc";
+		
+		//a-zA-Z_*$가 sn변수에 포홤돼 있으면 true, 아니면 false을 리턴한다.
+		System.out.println(sn.matches(".*[a-zA-Z]_*$].*")); // '-' 은 범위 안의 모든 문자.
+
+	} //end main()
+
+} //end class

@@ -1,0 +1,16 @@
+package java0502_api;
+
+public class Java112_String {
+
+	public static void main(String[] args) {
+		String sn = "java";
+		String sg = "java";
+		String st = new String("java");
+		String ss = new String("java");
+		
+		System.out.printf("sn==sg:%b\n", sn==sg);
+		System.out.printf("st==ss:%b\n", st==ss);
+		
+	}
+
+}

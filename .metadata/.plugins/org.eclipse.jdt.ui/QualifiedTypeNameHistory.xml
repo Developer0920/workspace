@@ -4,7 +4,8 @@
 <fullyQualifiedTypeName name="java0425_class.part02.Book"/>
 <fullyQualifiedTypeName name="java0425_class.prob.Circle"/>
 <fullyQualifiedTypeName name="java0426_class.part04.Calc"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java0501_abstract_interface.part02.Shape"/>
 <fullyQualifiedTypeName name="java0501_abstract_interface.part02.Tri"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.regex.Pattern"/>
 </qualifiedTypeNameHistroy>

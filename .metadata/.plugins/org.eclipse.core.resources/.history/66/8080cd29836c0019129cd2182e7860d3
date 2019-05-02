@@ -1,0 +1,41 @@
+package java0502_api;
+
+public class Java113_String {
+
+	public static void main(String[] args) {
+		String str = new String("KoREa, jsp, java");
+		System.out.println("문자열 길이:" + str.length());
+		System.out.println("대문자:" + str.toUpperCase());
+		System.out.println("소문자:" + str.toLowerCase());
+		System.out.println("문자:" + str.charAt(1));
+		System.out.println("인덱스:" + str.indexOf('a'));
+		System.out.println("인덱스:" + str.indexOf(97));
+		//5인덱스부터 마지막까지 문자열 리턴
+		System.out.println("범위:" + str.substring(5)); //String은 내부에서 char 배열로 처리됨
+		//2인덱스부터 8미만까지의 문자열 리턴
+		System.out.println("범위:" + str.substring(2, 8)); //2인덱스~8인텍스 미만, 즉 2~7 인덱스. 다른 언어에서는 다를 수 있음.
+		
+		//특정 구분자를 이용해서..
+		//메모리에 저장된 문자열을 ","로 구분해서 문자열 배열로 리턴
+		String[] arr = str.split(",");
+		for(int i = 0; i<arr.length; i++) {
+			System.out.printf("arr[%d]=%s\n" , i, arr[i]);
+		}
+		int x = 10;
+		int y = 20;
+		System.out.printf("%d + %d = %d\n", x, y, x+y);
+		
+		//int -> String
+		String s1 = String.valueOf(x); //static이므로 클래스에서 바로 부를수 있는 것
+		String s2 = String.valueOf(x); //
+		System.out.printf("%s+%s=%s\n",  s1,s2,s1+s2);
+		
+		char[] data = {'1', '2', '3'};
+		String s3 = String.copyValueOf(data);
+		System.out.println(s3);
+		
+		
+
+	} //end main()
+
+} //end class
