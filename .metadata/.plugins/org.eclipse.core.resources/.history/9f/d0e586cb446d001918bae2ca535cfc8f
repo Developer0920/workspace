@@ -1,0 +1,11 @@
+package java0503_api;
+
+public class Java130_Math {
+
+	public static void main(String[] args) {
+		//수학관련 클래스 java.lang.Math
+		System.out.println(Math.PI);
+
+	} //end main()
+
+} //end class

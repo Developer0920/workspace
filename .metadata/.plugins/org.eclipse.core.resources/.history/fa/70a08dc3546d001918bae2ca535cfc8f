@@ -1,0 +1,18 @@
+package java0503_api;
+
+import java.util.Scanner;
+
+//이제 드디어 값을 받아보자.
+public class Java016_Scanner {
+
+	public static void main(String[] args) {
+		//콘솔창으로 데이터를 읽어보기 위해서 콘솔창과 연결
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("이름:");
+		String name = sc.nextLine();
+
+		System.out.println(name);
+	} //end main()
+
+} //end class

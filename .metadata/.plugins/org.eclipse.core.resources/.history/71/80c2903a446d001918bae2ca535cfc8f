@@ -1,0 +1,25 @@
+package java0503_api;
+
+import java.util.StringTokenizer;
+
+public class Java129_StringTokenizer {
+
+	public static void main(String[] args) {
+		//구분자가 연속적으로 입력되어 있으면 두 번째 구분자부터는 무시한다.
+		StringTokenizer st = new StringTokenizer("java,,jsp/spring", ",/"); //두 번째 쉼표를 무시함.
+		
+		System.out.println(st.countTokens());
+		while(st.hasMoreElements())
+			System.out.println(st.nextToken());
+		
+		System.out.println("////////////////////////////////");
+		
+		String[] data = "java,,jsp/spring".split("[,/]"); //또는 을 표현하려면 [ ]를 써야
+		System.out.println(data.length);
+		for(String ss : data)
+			System.out.println(ss);
+		
+		
+	} //end main()
+
+} //end class

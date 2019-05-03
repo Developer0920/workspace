@@ -1,0 +1,26 @@
+package java0503_api;
+/*
+ * 난수를 이용해서 소수점 첫째자리까지 반올림해서 구하시오.
+ * ex) 0.5689... => 5.7
+ * 
+ */
+
+import static java.lang.Math.*;
+
+public class Java132_Math {
+
+	public static void main(String[] args) {
+		//소수점 이동
+		double ran = random();
+		ran = ran * 100;
+		System.out.println(ran);
+		
+		double ran2 = round(ran);
+		double ran3 = ran2/10;
+		
+		System.out.println(ran3);
+		
+		
+	} //end main()
+
+} //end class

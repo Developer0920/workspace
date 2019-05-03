@@ -1,0 +1,24 @@
+package java0503_api;
+
+public class Java126_StringBuffer {
+
+	public static void main(String[] args) {
+		StringBuffer sb = new StringBuffer("java test"); //StringBuffer라는 클래스를 이용
+		// 4인덱스에 ",jsp" 문자열을 삽입한다.
+		sb.insert(4,  ",jsp"); //java,jsp test
+
+		
+		// 4인덱스부터 8인덱스 미만 사이의 문자열을 삭제한다.
+		sb.delete(4,  8); //java test
+		
+		// 특정문자 삭제. 0인텍스의 문자를 삭제한다.
+		sb.deleteCharAt(0); //ava test
+		
+		//진짜 편한 거. 문자열을 반대로 변경해서 리턴한다.
+		sb.reverse(); //
+		
+		System.out.println(sb); //문자열을 리턴하도록 오버라이딩 된 것
+
+	}
+
+}

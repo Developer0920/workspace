@@ -21,6 +21,7 @@ public class Java122_RegEx {
 	
 	//주희님 코드
 	public static boolean process(String sn){
+		
 		if(sn.matches(".{14}")) {
 			return true;
 		}return false;		
