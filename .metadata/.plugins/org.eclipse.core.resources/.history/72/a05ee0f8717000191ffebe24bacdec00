@@ -1,0 +1,12 @@
+package java0507_exeption;
+//개발자를 위해서 나온 것
+public class Java149_exception {
+
+	public static void main(String[] args) {
+		int[] num = new int[3];
+		num[7] = 10;
+		System.out.println(num[7]);
+
+	} //end main(0
+
+} //end class

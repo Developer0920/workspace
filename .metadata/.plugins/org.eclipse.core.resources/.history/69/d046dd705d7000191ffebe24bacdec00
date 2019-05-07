@@ -1,0 +1,16 @@
+package java0504_api;
+
+public class Java144_System {
+
+	public static void main(String[] args) {
+		//currentTimeMillis() : 1970.1.1부터 초단위로
+		//누적한 값을 밀리세컨드로 리턴
+		//하루는 86400초이다. 1초는 1000밀리세컨드이다.
+		
+		long curr = System.currentTimeMillis();
+		System.out.println(curr);
+		
+
+	} //end main()
+
+}// end class

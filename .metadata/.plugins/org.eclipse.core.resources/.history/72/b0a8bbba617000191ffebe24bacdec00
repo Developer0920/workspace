@@ -1,0 +1,48 @@
+package java0504_api;
+
+import java.util.Calendar;
+
+abstract class Test{
+	
+	public static Test getInstance() {
+		return new TestExam();
+	}
+	
+	abstract public void prn();
+} //end test
+
+class TestExam extends Test{
+	/* 
+	public static Test getInstance() {
+		 return new TestExam();
+	
+	 }
+	 */
+	
+	public void prn() {
+		System.out.println("prn");
+	}
+} //end TestExam
+
+
+public class Java145_Calendar {
+
+	public static void main(String[] args) {
+		//Test tt = new TestExam(); //upcasting 발생
+		//Test tt = Test.getInstance();
+		//System.out.println(tt);
+		//tt.prn();
+		
+		Calendar cal1 = Calendar.getInstance();
+		Calendar cal2 = Calendar.getInstance();
+		System.out.println(cal2==cal2);
+		
+		
+		
+	}//end main()
+
+} //end class
+
+//calendar라는 클래스가 이딴 식으로 구현돼 있음.
+//추상메소드를 오버라이딩하면 그걸 부모형 참조변수가 접근할 수 있다?
+

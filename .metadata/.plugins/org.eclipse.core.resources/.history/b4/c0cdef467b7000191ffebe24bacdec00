@@ -1,0 +1,9 @@
+package java0507_exception;
+
+public class Java152_exception {
+
+	public static void main(String[] args) {
+		
+	} //end main()
+
+} //end class

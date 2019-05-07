@@ -1,0 +1,33 @@
+package java0504_api;
+
+abstract class Test{
+	
+	public static Test getInstance() {
+		return new TestExam;
+	}
+} //end test
+
+class TestExam extends Test{
+	/* 
+	public static Test getInstance() {
+		 return new TestExam();
+	
+	 }
+	 */
+	
+	public void prn() {
+		System.out.println("prn");
+	}
+} //end TestExam
+
+
+public class Java145_Calendar {
+
+	public static void main(String[] args) {
+		//Test tt = new TestExam(); //upcasting 발생
+		Test tt = Test.getInstance();
+		System.out.println(tt);
+		
+	}//end main()
+
+} //end class

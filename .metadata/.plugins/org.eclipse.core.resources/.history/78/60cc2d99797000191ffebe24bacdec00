@@ -1,0 +1,33 @@
+package java0507_exeption;
+
+import java.util.Scanner;
+
+//다중 catch 사용법
+public class Java151_exeption {
+
+	public static void main(String[] args) {
+		//String data1 = "ab"; // ..
+		//String data2 = "0"; //분모는 0이 될수 없다. 
+		
+		Scanner sc = new Scanner(System.in);
+		
+		
+		
+		try {
+		//int x = Integer.parseInt(data1);
+		//int y = Integer.parseInt(data2);
+			int x = sc.nextInt();
+			int y = sc.nextInt();
+			int res = x/y;
+		System.out.println(res);
+		} catch (ArithmeticException ex) { //상속관계가 아니므로 순서 상관 X
+			System.out.println("분모는 0이 될 수 없다.");
+		} catch (NumberFormatException ex) {
+			System.out.println("숫자를 입력하라."); 
+		} catch (RuntimeException ex) {
+			System.out.println(ex.getMessage()); //할배는 밑에 있어야 한다.
+		}
+
+	} //end main()
+
+} //end class

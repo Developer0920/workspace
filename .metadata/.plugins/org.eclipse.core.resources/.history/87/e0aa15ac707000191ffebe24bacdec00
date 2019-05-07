@@ -1,0 +1,12 @@
+package java0507_exeption;
+
+public class Java149_exception {
+
+	public static void main(String[] args) {
+		int[] num = new int[3];
+		num[7] = 10;
+		
+
+	} //end main(0
+
+} //end class
