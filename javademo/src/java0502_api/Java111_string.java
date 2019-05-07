@@ -2,22 +2,23 @@ package java0502_api;
 
 class StringTest extends Object{
 	private char[] arr;
-	
+	//생성자1
 	public StringTest() {
 		
 	}
-	
+	//생성자2
 	public StringTest(char[] arr) {
 		this.arr = arr;
 	}
+	//메소드
 	public int length() {
 		return arr.length;
 	}
-	
+	//메소드
 	public char charAt(int index) {
 		return arr[index];		
 	}
-	
+	//메소드
 	public boolean isUpperCase(int index) {
 		if(arr[index] >= 'A' && arr[index] <= 'Z')
 			return true;

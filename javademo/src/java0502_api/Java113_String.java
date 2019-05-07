@@ -17,6 +17,10 @@ public class Java113_String {
 		
 		//특정 구분자를 이용해서..
 		//메모리에 저장된 문자열을 ","로 구분해서 문자열 배열로 리턴
+		
+		
+		////////여기서 다시 시작!
+		
 		String[] arr = str.split(",");
 		for(int i = 0; i<arr.length; i++) {
 			System.out.printf("arr[%d]=%s\n" , i, arr[i]);

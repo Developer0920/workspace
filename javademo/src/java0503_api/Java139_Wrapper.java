@@ -39,6 +39,8 @@ public class Java139_Wrapper {
 		long ro = it.longValue();
 		System.out.println("ro=" +ro);		
 		
+		
+		
 		// String -> Float
 		Float ft = new Float(data); //바로 가져올 수 있도록 제공되는 메소드
 		
@@ -49,6 +51,8 @@ public class Java139_Wrapper {
 		// Float -> double
 		double de = ft.doubleValue();
 		System.out.println("de=" + de);
+		
+		
 		
 		//String -> int
 		int num1 = Integer.parseInt(data);
@@ -70,7 +74,7 @@ public class Java139_Wrapper {
 		char c = data.charAt(0); //파싱하지 못하고 문자1개만 분리해냄
 		System.out.println("c=" +c);
 		
-		///////////////////////////////////////////////////////
+		/////////////////////////////////////////////////////// 여기서 부터!!
 		int x=10; //stack
 		//Integer ig = new Integer(x);
 		Integer ie = x; // new 할 필요 없다. //auto boxing (stack -> heap)

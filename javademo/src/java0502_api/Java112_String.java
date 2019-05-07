@@ -19,7 +19,7 @@ public class Java112_String {
 		
 		//toString() : 메모리에 저장된 문자열 리턴
 		System.out.println(sn.toString()); //메모리에 저장된 문자열을 리턴하도록 오버로딩된 것(원래는 객체의 해쉬코드를 리턴했음)
-		System.out.println(sn);
+		System.out.println(sn); //이건 뭐지?
 		
 		System.out.println(sn.getClass());
 	} //end main()
