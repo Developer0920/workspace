@@ -2,6 +2,7 @@ package java0507_api;
 
 import java.text.SimpleDateFormat;
 
+//오늘 한 거는 시험에 나오진 않음
 public class Java144_System {
 
 	public static void main(String[] args) {

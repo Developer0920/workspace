@@ -1,7 +1,0 @@
-package java0501_binding.part01;
-
-public class parent {
-	void process() {
-		System.out.println("Parent");
-	}
-}

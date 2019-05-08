@@ -31,7 +31,7 @@ public class Java113_String {
 		
 		//int -> String
 		String s1 = String.valueOf(x); //static이므로 클래스에서 바로 부를수 있는 것
-		String s2 = String.valueOf(y); //
+		String s2 = String.valueOf(x); //
 		System.out.printf("%s+%s=%s\n",  s1,s2,s1+s2);
 		
 		//char[] -> String

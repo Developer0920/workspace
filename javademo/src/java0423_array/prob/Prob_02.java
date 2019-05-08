@@ -43,10 +43,11 @@ public class Prob_02 {
 		
 		//data[i][j] {
 			
-		}
+		
 		for (int i=0; i< 4; i++) {
 			cTotal = 0;
-			for (int j= 0; j<3; j++) {
+			int j;
+			for (j= 0; j<3; j++) {
 				cTotal = cTotal + data[j][i];				
 			}
 			data[j][i] = cTotal;

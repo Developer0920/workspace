@@ -22,7 +22,7 @@ public class Java123_RegEx {
 	public static boolean process(String sn) {
 		// 여기를 구현하세요.
 		if(sn.matches("\\w{5,10}") //이상, 이하
-		&& Pattern.compile("[a-zA-Z].*").matcher(sn).find() //여기가 존나 어려움
+		&& Pattern.compile("[a-zA-Z].*").matcher(sn).find()
 		&& Pattern.compile("\\d").matcher(sn).find()) {
 			return true;
 		}
