@@ -21,7 +21,7 @@ join은 oracle제품에서 사용되는 oracle용 join이 있고
     SELECT e.department_id, e.first_name, e.job_id, j.job_title
     FROM employees e cross join jobs j;
     
-2 equal join (ansi : inner join)
+2 equi join (ansi : inner join)
     가장 많이 사용되는 조인방법으로 조인 대상이 되는 두 테이블에서
     공통적으로 존재하는 컬럼의 값이 일치되는 행을 연결하여 결과를 생성(추출)하는 방법이다.
     
@@ -303,6 +303,8 @@ AND salary >
     WHERE first_name = 'Bruce') --일반적으로 이게 하나가 아니다. 또 다른 Bruce가 입사할 수 있다. 따라서 primary key가 설정된 컬럼을 쓰는 게 좋다.
 ORDER BY salary;
 -----------------------------------------
+
+--in
 --Steven과 같은 부서에서 근무하는 사원의 이름, 급여, 입사일을 출력
 SELECT first_name, salary, hire_date
 FROM employees
@@ -334,7 +336,8 @@ WHERE salary > all( -- 이 조건을 모두 만족하는
                     FROM employees
                     WHERE department_id = 30);
                     -- 서브쿼리의 결과행이 여러 개일 때 이걸 모두 만족하는 결과값을 출력하라. 이놈아.
-                    
+
+--any                    
 --부서번호가 30번인 사원들이 받는 최저급여보다 높은 급여를 받는 사원의 이름,
 --급여, 입사일을 출력하시오. (min()함수를 사용하지 않는다.) (any)
 SELECT first_name, salary, hire_date
