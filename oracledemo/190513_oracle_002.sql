@@ -359,9 +359,163 @@ WHERE exists (SELECT department_id -- 있니 없니? --대량의 데이터에서 셀렉트해서 
 --상사가 있는 경우 또는 없는 경우. 이런 식으로 사용.
 
 
-            
-            
 
 
+
+(2019_05_15)
+---------------------------------------------------------------
+Top-N 서브쿼리
+    상위의 값을 추출할 때 사용한다.
+    <, <=연산자를 사용할 수 있다. 단 비교되는 값이 1일 때는 =도 가능하다.
+    order by절을 사용할 수 있다.
+    FROM 절에 사용함.
+---------------------------------------------------------------
+-- 급여가 가장 높은 상위 3명을 검색하시오.
+SELECT emp.*
+FROM   (SELECT first_name, salary --이 서브쿼리가 메인 쿼리의 테이블로 사용된다 --인라인 뷰 -- 메인 쿼리는 first_name과 salary만 사용할 수 있음
+        FROM employees
+        ORDER BY salary desc) emp
+WHERE rownum/*오라클용*/ <=3;
+
+-------------
+SELECT emp.*
+FROM   (SELECT first_name, salary 
+        FROM employees
+        ORDER BY salary desc) emp
+WHERE rownum<=8
+MINUS
+SELECT emp.*
+FROM   (SELECT first_name, salary 
+        FROM employees
+        ORDER BY salary desc) emp
+WHERE rownum<=3;
+
+--선생님 방법
+SELECT e.*
+FROM ((SELECT emp.*, rownum as rm
+        FROM   (SELECT first_name, salary 
+                FROM employees
+                ORDER BY salary desc) emp)
+    ) e
+WHERE rm >=4 AND rm<=8 --오라클에서 특정 범위를 사용하려면 top-n 서브쿼리를 써야.
+--세부를 먼저 만들고 확장시켜야 할 듯
+
+
+---------------------------------------------------------------------------------------
+--월 별 입사자 수를 조회하되 입사자 수가 가장 많은 상위 3개의 달만 출력되도록 하시오.
+-- <출력: 월       입사자수 >
+
+SELECT e.*
+FROM 
+    (SELECT to_char(hire_date, 'mm') as "월", count(*) as "입사자수"
+    FROM employees
+    GROUP BY to_char(hire_date, 'mm')
+    ORDER BY "입사자수" desc) e
+WHERE rownum <=3
+ORDER BY "월"
+
+
+
+--상관과 비상관
+--메인의 컬럼을 서브쿼리의 WHERE절에서 사용하느냐 여부
+-- 상관관계 서브쿼리
+: 서브쿼리에서 메인쿼리의 컬럼을 참조한다.(메인쿼리를 먼저 수행한다.)
+  서브쿼리는 메인쿼리 각각의 행에 대해서 순서적으로 한 번씩 실행한다.
+  <아래 쿼리 처리순서>
+  1st : 바깥쪽 쿼리의 첫째 row에 대하여
+  2nd : 안쪽 쿼리에서 자신의 속해있는 부서의 MAX salary과 비교하여 true이면 바깥의 컬럼값을 반환하고, false이면 값을 버린다.
+  3rd : 바깥쪽 쿼리의 두 번째 row에 대하여 마찬가지로 실행하여, 이렇게 바깥쪽 쿼리의 마지막 row까지 실행한다.
+  
+  ---부서별 최고 급여를 받는 사원을 출력하시오.
+  /*6*/ SELECT first_name, salary, department_id
+  /*1*/ FROM employees e --서브쿼리에서 사용할 수 있도록 특정지어 주는 것
+  /*5*/ WHERE salary = (
+  /*4*/         SELECT max(salary)
+  /*2*/         FROM employees
+  /*3*/         WHERE department_id = e.department_id) -- employees테이블이 두 개인 거로 볼 것 --self join 하고 비슷한 듯
+  /*7*/ ORDER BY department_id;
+  
+  SELECT employee_id, first_name, salary, department_id
+  FROM employees
+  
+SELECT employee_id, first_name, manager_id
+  FROM employees e
+  WHERE exists (SELECT 'x'
+                FROM employees
+                WHERE e.employee_id = manager_id); -- 이걸 충족시킨다는 건 부하가 있다는 것
+  -- 관리자가 있는 사원의 정보 출력
+  SELECT employee_id, first_name, manager_id
+  FROM employees e
+  WHERE exists (SELECT 'x'
+                FROM employees
+                WHERE e.manager_id = employee_id); --테이블을 두 개를 띄워서 구체적으로 사고할 것! --이걸 충족한다는 건..  누군가의 상사라는 것
+
+
+--부서명에 IT가 포함이 된 사람이 속한 사원면(first_name),
+--부서번호(department_id),
+--부서명(department_name)을 출력하시오(in)
+
+SELECT e.first_name, e.department_id, d.department_name
+FROM employees e, departments d
+WHERE E.Department_Id = D.Department_Id -- 일단 equal인 데이터를 가져와서, 표를 가상으로 만듦
+    AND e.department_id in (SELECT department_id
+                            FROM departments
+                            WHERE department_name like '%IT%')
+    
+    
+--Toronto 도시에 근무하는 사원들이 받는 최소급여보다 많이 받는 사원의
+--first_name, city, salary을 출력하시오(any)
+--Totonto는 제외
+
+SELECT first_name, city, salary
+FROM employees e, departments d, locations l
+WHERE e.department_id = d.department_id
+    AND d.location_id = l.location_id
+    AND e.salary > any     
+                    (SELECT e.salary
+                    FROM employees e, locations l, departments d --이렇게 복잡하게 써야 하나...
+                    WHERE e.department_id = d.department_id
+                        AND d.location_id = l.location_id
+                        AND l.city = 'Toronto')
+    AND l.city <> 'Toronto'
+    
+--급여가 상위 5~10사이의 사원명, 입사일, 급여를 출력하시오.(Top-N)
+
+SELECT b.*
+FROM (SELECT sdesc.*, rownum as rn
+        FROM
+            (SELECT first_name, hire_date, salary      --1. 내림차순 만들기 > 2. rownum 세팅하기 > 3. FROM에 설정하기
+            FROM employees
+            ORDER BY salary desc) sdesc) b
+WHERE  b.rn >= 5 AND b.rn <=10
+
+
+(SELECT sdesc.*, rownum as rm
+FROM
+        (SELECT first_name, salary      --1. 내림차순 만들기 > 2. rownum 세팅하기 > 3. FROM에 설정하기
+        FROM employees
+        ORDER BY salary desc) sdesc) rn
+
+
+
+SELECT e.*
+FROM ((SELECT emp.*, rownum as rm
+        FROM   (SELECT first_name, salary 
+                FROM employees
+                ORDER BY salary desc) emp)
+    ) e
+WHERE rm >=4 AND rm<=8
+
+
+
+-----------------------
+테스트
+-----------------------
+CREATE TABLE emp01(
+    empno NUMBER PRIMARY KEY,
+    ename VARCHAR2(20) NOT NULL,
+    job VARCHAR2(9) UNIQUE,
+    deptno NUMBER(2) REFERENCES dept(depto)
+    );
         
         
