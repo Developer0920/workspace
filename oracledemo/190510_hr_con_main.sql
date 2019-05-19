@@ -9,7 +9,7 @@ FROM jobs;
 SELECT * FROM jobs;
 
 /*
-컬러명, 테이블에 별칭을 지정할 수 있다.
+컬럼명, 테이블에 별칭을 지정할 수 있다.
 별칭(alias)으로 한글이나 영문공백을 사용할 때는  " "(따옴표)를 지정한다.
 */
 
@@ -128,7 +128,7 @@ WHERE절에서 사용된 연산자 3가지 종류
 4. AND
 5. OR
 */
-
+===========================================================================
 --employees 테이블에서 job_id을 오른차순을
 --first_name, email, job_id을 출력
 
@@ -150,5 +150,5 @@ FROM employees
 WHERE job_id = 'FI_ACCOUNT'
 ORDER BY salary DESC;
 
-
+SELECT * FROM TAB;
 

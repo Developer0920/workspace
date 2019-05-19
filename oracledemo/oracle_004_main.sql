@@ -254,7 +254,7 @@ SELECT * FROM emp_view400;
 DROP VIEW emp_view400
 
 ----------------------------------------------
-WITH READ ONLY
+    WITH READ ONLY
  : 뷰에 DML을 적용하여 기본 테이블을 변경할 수 없는 기능
  
 DROP TABLE emp_copy600;

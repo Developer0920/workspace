@@ -102,7 +102,7 @@ SELECT length('한국')
 FROM dual;
 
 --문자의 길이를 바이트로 구해서 리턴해주는 함수
-SELECT legnthb('korea')
+SELECT lengthb('korea')
 FROM dual;
 
 SELECT lengthb('한국')
@@ -306,7 +306,7 @@ SELECT first_name || '님은 '
         || to_char(hire_date, 'yyyy') || '년 '        
         || ltrim(to_char(hire_date, 'mm'), '0') || '월 ' 
         || ltrim(to_char(hire_date, 'dd'), '0') || '일에 입사했습니다.'  
-        AS "입사일" --컬럼명 설정
+        AS 입사일 --컬럼명 설정
 FROM employees;
 
 --alias 에서 ""를 씀.
@@ -438,7 +438,7 @@ FROM employees;
 SELECT first_name, count(*)
 FROM employees;
 
-
+==============================================================================================
 --그룹함수와 단순컬럼을 사용하기 위해서는, 단순컬럼을 그룹화해야 한다.(Group by)
 --각 부서별 사원의 수를 구해야 하는 경우
 SELECT department_id, count(*)
