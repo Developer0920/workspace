@@ -234,7 +234,7 @@ SELECT first_name, last_name
 FROM employees
 WHERE first_name = 
     (SELECT first_name --결과는 하나여야 한다. 반드시 괄호를 써줘야 한다.
-    FROM employee)
+    FROM employees)
 
 ----------------------------------------------
 --Lex 근무하는 부서명을 출력하시오.
@@ -294,7 +294,7 @@ WHERE department_id =
         WHERE department_name = 'IT'); --이게 좀 더 직관적인 듯
 
 --'Bruce'보다 급여를 많이 받는 사원이름, 부서명, 급여를 출력하시오.
-SELECT first_name, department_name, salary
+SELECT e.first_name, d.department_name, e.salary
 FROM employees e, departments d
 WHERE e.department_id = d.department_id
 AND salary >
