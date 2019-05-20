@@ -1,0 +1,29 @@
+package java0520_stream;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+//입출력 대상 : 파일
+public class Java162_stream {
+
+	public static void main(String[] args) {
+		File file = new File("sample.txt"); //안에 있는 내용을 읽어보는 게 아니라 기본적인 파일의 정보를 가져온다. //파일 찾는 위치는 어디일까?
+		System.out.println(file.exists());
+		System.out.println(file.isFile());
+		System.out.println(file.length()); //파일의 길이
+		
+		//내용을 읽어오거나 쓰고 싶을 때
+		FileWriter fw = null;
+		
+		try {
+			fw = new FileWriter("sample.txt"); //파일과 스트림 연결함
+			fw.write("java");
+			
+		} catch (IOException e) {			
+			e.printStackTrace();
+		}
+		
+	}
+
+}

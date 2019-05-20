@@ -1,0 +1,20 @@
+데이터베이스 롤 권한제어
+  롤 : 사용자에게 보다 효율적으로 권한을 부여할 수 있도록 여러
+      개의 권한을 묶어 놓은 것
+  롤의 종류 : 데이터베이스를 설치하면 기본적으로 제공되는 사전
+        정의된 롤과 사용자가 정의한 롤로 구분
+
+  사전 정의된 롤의 종류(db설치시 제공)
+   1) CONNECT 롤 : 사용자가 데이터베이스에 접속 가능하도록
+         하기 위해서 가장 기본적인 시스템권한 8가지를 정의
+      -ALTER SESSION, CREATE CLUSTER, CREATE DATABASE LINK,
+       CREATE SEQUENCE, CREATE SESSION, CREATE SYNONYM,
+       CREATE TABLE, CREATE VIEW
+
+   2)RESOURCE 롤 : 사용자가 객체(테이블, 뷰, 인덱스)를 생성할
+      수 있도록 하기 위해서 시스템 권한을 묶어 정의
+      - CREATE CLUSTER, CREATE PROCEDURE, CREATE SEQUENCE,
+        CREATE TABLE, CREATE TRIGER
+   3)DBA 롤 : 사용자들이 소유한 데이터베이스 객체를 관리하고
+       사용자들을 작성하고 변경하고 제거할 수 있도록하는
+        모든 권한

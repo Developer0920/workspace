@@ -1,0 +1,26 @@
+package java0520_stream;
+import java.io.IOException;
+import java.io.InputStream;
+
+
+
+
+public class Java157_stream {
+
+	public static void main(String[] args) {
+		System.out.println("데이터입력:");
+		InputStream is = System.in; 
+		int date; //다 읽어오려면.. 반복문을 이용해야?
+		
+		try {
+			while(is.read()!=13) { //개행문자는 13
+				System.out.println((char)is.read());
+			}
+		} catch (IOException e) {
+		
+			e.printStackTrace();
+		}
+		
+	}//end main()
+
+}// end class
