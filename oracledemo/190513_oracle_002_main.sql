@@ -435,12 +435,7 @@ ORDER BY "월"
   /*3*/         WHERE department_id = e.department_id) -- employees테이블이 두 개인 거로 볼 것 --self join 하고 비슷한 듯
   /*7*/ ORDER BY department_id;
   
-  SELECT employee_id, first_name, salary, department_id
-  FROM employees
-  
-SELECT employee_id, first_name, manager_id
-  FROM employees e
-  WHERE exists (SELECT 'x'
+  SELECT employee_id, first_name, salary, department_id 
                 FROM employees
                 WHERE e.employee_id = manager_id); -- 이걸 충족시킨다는 건 부하가 있다는 것
   -- 관리자가 있는 사원의 정보 출력
