@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;javademo/src/java0521_collection/UnderList.java&apos; to &apos;UserList.java&apos;" description="Rename resource &apos;UnderList.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/java0521_collection/UnderList.java" name="UserList.java" stamp="1558404832844" updateReferences="true"/>
+</session>
