@@ -1,0 +1,15 @@
+package java0522_collection;
+
+class Average<T extends Number> {
+	
+	
+	
+} //end class
+
+public class Java190_User {
+
+	public static void main(String[] args) {
+	
+	} //end main()
+
+} //end class

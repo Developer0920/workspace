@@ -1,0 +1,14 @@
+package java0522_collection;
+
+/*
+ * TreeMap
+ * 1 Map 
+ */
+public class Java189_TreeMap {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

@@ -1,0 +1,17 @@
+package java0522_collection;
+//자료구조... 큐라는 게 제공됨
+
+/*
+ * Queue
+ * 1 FIFO(first in fitst out) : 제일 먼저 저장한 요소를 제일 먼저 꺼내온다.
+ * 2 최근사용문서, 인쇄작업대기목록, 버퍼
+ * 
+ */
+public class Java183_LinkedList {
+
+	public static void main(String[] args) {
+		
+
+	} //end main()
+
+} //end class

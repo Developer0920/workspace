@@ -1,0 +1,30 @@
+package java0522_collection;
+
+class Average<T extends Number> {
+	private T[] list;
+	
+	public Average() {
+		
+	}
+	
+	public Average(T[] list) {
+		this.list = list;
+	}
+	
+	public double findAverage() {
+		double sum = 0.0;
+		for (T data : list) {
+			sum += data.doubleValue();			
+		}
+		return sum / list.length;
+	}
+	
+} //end class
+
+public class Java190_User {
+
+	public static void main(String[] args) {
+	
+	} //end main()
+
+} //end class

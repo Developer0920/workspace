@@ -1,0 +1,32 @@
+package java0522_collection;
+//앞의 예제와의 차이는.. 제너릭을 명시하는 부분이 제한이 따름.
+class Average<T extends Number> { //Number나 Number를 상속받은 것만 가능
+	private T[] list;
+	
+	public Average() {
+		
+	}
+	
+	public Average(T[] list) {
+		this.list = list;
+	}
+	
+	public double findAverage() {
+		double sum = 0.0;
+		for (T data : list) {
+			sum += data.doubleValue();			
+		}
+		return sum / list.length;
+	}
+	
+} //end class
+
+public class Java190_User {
+
+	public static void main(String[] args) {
+		Integer it[] = new Integer[] {1, 5, 3, 2};
+		Average<Integer> av = new Average<Integer>(it); //Integer는 Number의 자식이므로 생성이 됨.
+		System.out.println(av.findAverage());
+	} //end main()
+
+} //end class

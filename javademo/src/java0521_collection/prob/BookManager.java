@@ -5,9 +5,13 @@ import java.util.ArrayList;
 
 public class BookManager {
 	public static int getRentalPrice(ArrayList<BookDTO> bookList, String kind) {
-		if(kind)
-		
-		return 0;
+		int sum= 0;
+		for(BookDTO bd:bookList) {
+			if(bd.getKind().equals(kind)) {
+				sum +=bd.getRentalPrice();
+			}
+		}
+		return sum;
 	}//end getRentalPrice()
 }//end class
 

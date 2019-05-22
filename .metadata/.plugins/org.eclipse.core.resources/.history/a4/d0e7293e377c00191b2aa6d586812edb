@@ -1,0 +1,22 @@
+package java0522_collection;
+
+import java.util.LinkedList;
+import java.util.ListIterator;
+
+public class Java181_LinkedList {
+
+	public static void main(String[] args) {
+		LinkedList<String> aNode = new LinkedList<String>();
+		//추가
+		aNode.add(new String("java"));
+		aNode.add(new String("jsp"));
+		aNode.add(new String("spring"));
+		
+		ListIterator<String> ite=aNode.listIterator(); //Iterator는 앞에 있는 요소를 가져오는 건 안됨. 다음 다음 .. 만 가져올 수 있음. previous는 안 된다.
+		System.out.println("앞->뒤");
+		while(ite.hasNext())
+				System.out.println(ite.next());
+		
+	}
+
+}
