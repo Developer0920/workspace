@@ -1,0 +1,24 @@
+package java0523_inner;
+
+class OuterLocal {
+	private int x;
+	static int y;
+	final private int z=10;
+	
+	public void call(int a) {
+		final int b=20;
+		int c=30;
+		
+	} // end call()
+} //end OuterLocal
+
+
+public class Java197_inner {
+
+	public static void main(String[] args) {
+		OuterLocal outer = new OuterLocal();
+		outer.call(100);
+
+	} //end main()
+
+} //end class

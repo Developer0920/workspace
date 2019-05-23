@@ -1,0 +1,56 @@
+package java0522_collection;
+
+import java.util.Comparator;
+
+public class Person implements Comparator<Person> {
+	//멤버변수
+	private String name;
+	private int age;
+	
+	//생성자1
+	public Person() {
+		
+	}
+	
+	//생성자2
+	public Person(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+	
+	//메소드 구현
+	//이름 오름차순, 나이 내림차순
+	@Override
+	public int compare(Person o1, Person o2) { //인터페이스에서는...
+		// 이름 오름차순 o1.name.compareTo(o2.name)
+		// 이름 내림차순 o2.name.compareTo(o1.name)
+		// 나이 오른차순 > 1, < -1 == 0
+		// 나이 내림차순 > -1, < 1 == 0
+		if(o1.getName().contentEquals(o2.getName())) {
+			return new Integer(o2.getAge()).compareTo(new Integer(o1.getAge()));
+			
+			/*int에는 compareTo 메소드가 없다. 하지만 다행히...Integer 클래스에서 보면 comparable이라는 인터페이스를 상속받고 있음.
+			 * 따라서 Integer로 바꾸면 된다.			 */
+			
+		} else {
+			return o1.getName().compareTo(o2.getName());	
+			
+		}
+		
+		//근데 이런 방식보단, DB에서 정렬을 해서 받아오는 게 더 낫다.
+		//하지만 DB에서 받아온 걸 사용자가 원하는 대로 보여줄 때는 이걸 쓸 수 있다. 또 다시 DB를 접속할 필요X
+		
+		
+	}
+	
+	//getter
+	public int getAge() {
+		return age;
+	}
+	public String getName() {
+		return name;
+	}
+	
+	
+}

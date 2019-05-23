@@ -1,0 +1,72 @@
+package java0523_jdbc;
+//알 수 없는 에러는 무시해라. 내가 쓴 것만 확인해서 봐야 한다.
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+
+class JdbcTest{
+	Connection conn;
+	Statement stmt;
+	ResultSet rs;	
+	
+	public JdbcTest() {
+			
+	}
+	
+	//드라이버를 먼저 로딩해줘야 한다.
+		void process() {
+		try {
+			//1. 드라이버 로딩
+			Class.forName("oracle.jdbc.OracleDriver"); //오라클은 이렇게 하면 되는 거다.
+			
+			//2. 서버연결
+			String url="jdbc:oracle:thin://@127.0.0.1:1521:xe"; //IP주소(로컬의 기본 주소) //xe는 DB이름(교육용), enterprize는 orcl이다.
+			String username = "hr";
+			String password = "a1234";			
+			conn=DriverManager.getConnection(url, username, password);
+			
+			//3. 쿼리문을 실행하기 위한 Statement타입의 객체를 리턴			
+			stmt = conn.createStatement(); //쿼리문을 실행하기 위해서.
+			
+			//select를 사용하려면..
+			String sql = "SELECT * FROM departments ORDER BY department_id";
+			
+			//4.쿼리문을 실행한다.
+			rs = stmt.executeQuery(sql); //리턴타입이 resultSet임		
+			
+			//화면에 뿌리기
+			//최초에 커서가 테이블의 좌상 모서리에 위치함.
+			while(rs.next()) {
+				int departmentId=rs.getInt("department_id"); //컬럼 인덱스를 이용한 방법은 가독성이 떨어져서 안 쓴다.
+				String dName = rs.getString("department_name");
+				int mantId=rs.getInt("manager_id");
+				int locId=rs.getInt("location_id");
+				System.out.printf("%d %s %d %d\n", departmentId, dName, mantId, locId );
+			}
+			
+		} catch (ClassNotFoundException e) {			
+			e.printStackTrace();
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		} finally {
+			
+		}
+	} //end process()
+	
+} //end JdbcTest
+
+public class Java200_jdbc {
+
+	public static void main(String[] args) {
+		JdbcTest jt = new JdbcTest();
+		jt.process();
+		
+		
+
+	}
+
+}

@@ -1,0 +1,20 @@
+package java0523_inner;
+
+import java.awt.Frame;
+
+class Win extends Frame {
+	public Win() {
+		setSize(500,500);
+		setVisible(true);
+	}
+}
+
+public class Java199_inner_win {
+
+	public static void main(String[] args) {
+		new Win();
+		
+		
+	} //end main()
+
+} //end class

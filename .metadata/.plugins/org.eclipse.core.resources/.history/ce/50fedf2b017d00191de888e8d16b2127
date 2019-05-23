@@ -1,0 +1,44 @@
+package java0522_collection;
+
+import java.util.Comparator;
+
+public class Person implements Comparator<Person> {
+	//멤버변수
+	private String name;
+	private int age;
+	
+	//생성자1
+	public Person() {
+		
+	}
+	
+	//생성자2
+	public Person(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+	
+	//메소드 구현
+	//이름 오름차순, 나이 내림차순
+	@Override
+	public int compare(Person o1, Person o2) { //인터페이스에서는...
+		// 이름 오름차순 o1.name.compareTo(o2.name)
+		// 이름 내림차순 o2.name.compareTo(o1.name)
+		// 나이 오른차순 > 1, < -1 == 0
+		// 나이 내림차순 > -1, < 1 == 0
+		
+		return o1.getName().compareTo(o2.getName());		
+		
+	}
+	
+	//getter
+	public int getAge() {
+		return age;
+	}
+	public String getName() {
+		return name;
+	}
+	
+	
+}

@@ -1,0 +1,6 @@
+package java0522_collection;
+
+public class Desceding implements Comparator<Integer>{
+
+}
+ 

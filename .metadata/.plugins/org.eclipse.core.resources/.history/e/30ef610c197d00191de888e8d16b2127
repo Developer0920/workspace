@@ -1,0 +1,31 @@
+package java0523_inner;
+//익명클래스
+//딱 한 번 사용코자 하는 경우 익명클래스를 정의해서 사용할 수 있다.
+
+abstract class InnerAnonymous {
+	abstract void prn();
+} //end InnerAnonymous
+
+//위 추상클래스의 자원을 사용하기 위해...
+class Test extends InnerAnonymous {
+	@Override
+	void prn() {
+		System.out.println(10);
+	}
+} //end Test
+
+class OuterAnonymous {
+	private int x;
+	public void call() {
+		
+	} //end call() /////////////////
+} //end OuterAnonymous //////////////////
+
+public class Java198_inner {
+
+	public static void main(String[] args) {
+	
+
+	} //end main()
+
+} //end class

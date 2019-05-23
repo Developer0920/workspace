@@ -1,76 +1,76 @@
-<ÁýÇÕ¿¬»êÀÚ>
-- µÑ ÀÌ»óÀÇ query°á°ú¸¦ ÇÏ³ªÀÇ °á°ú·Î Á¶ÇÕÇÑ´Ù. --Äõ¸®¸¦ Á¶ÇÕÇØ¼­ ¿øÇÏ´Â °á°ú¸¦ °¡Á®¿È
-- selectÀÇ ÀÎÀÚ °¹¼ö°¡ °°¾Æ¾ß ÇÑ´Ù.
- Ã¹¹øÂ° select°¡ 2°³ÀÌ¸é µÎ¹øÂ° selectµµ 2°³¿©¾ß ÇÑ´Ù.
- - Å¸ÀÔÀÌ ÀÏÄ¡ÇØ¾ß ÇÑ´Ù.
-  ¿¹¸¦ µé¾î characterÀÌ¸é characterÀÌ¾î¾ß ÇÑ´Ù.
+ï»¿<ì§‘í•©ì—°ì‚°ìž>
+- ë‘˜ ì´ìƒì˜ queryê²°ê³¼ë¥¼ í•˜ë‚˜ì˜ ê²°ê³¼ë¡œ ì¡°í•©í•œë‹¤. --ì¿¼ë¦¬ë¥¼ ì¡°í•©í•´ì„œ ì›í•˜ëŠ” ê²°ê³¼ë¥¼ ê°€ì ¸ì˜´
+- selectì˜ ì¸ìž ê°¯ìˆ˜ê°€ ê°™ì•„ì•¼ í•œë‹¤.
+ ì²«ë²ˆì§¸ selectê°€ 2ê°œì´ë©´ ë‘ë²ˆì§¸ selectë„ 2ê°œì—¬ì•¼ í•œë‹¤.
+ - íƒ€ìž…ì´ ì¼ì¹˜í•´ì•¼ í•œë‹¤.
+  ì˜ˆë¥¼ ë“¤ì–´ characterì´ë©´ characterì´ì–´ì•¼ í•œë‹¤.
 
-<ÁýÇÕ¿¬»êÀÚ Á¾·ù>
-union(ÇÕÁýÇÕ) - Áßº¹ÇàÀÌ Á¦°ÅµÈ µÎ query
-union all(ÇÕÁýÇÕ) - Áßº¹ÇàÀÌ Æ÷ÇÔµÈ µÎ queryÇà
-intersect(±³ÁýÇÕ) - µÎ query¿¡ °øÅëÀûÀÎ Çà
-minus(Â÷ÁýÇÕ) - Ã¹ ¹øÂ° query¿¡ ÀÖ´Â Çà Áß µÎ ¹øÂ° query¿¡ ¾ø´Â Çà Ç¥½Ã
+<ì§‘í•©ì—°ì‚°ìž ì¢…ë¥˜>
+union(í•©ì§‘í•©) - ì¤‘ë³µí–‰ì´ ì œê±°ëœ ë‘ query
+union all(í•©ì§‘í•©) - ì¤‘ë³µí–‰ì´ í¬í•¨ëœ ë‘ queryí–‰
+intersect(êµì§‘í•©) - ë‘ queryì— ê³µí†µì ì¸ í–‰
+minus(ì°¨ì§‘í•©) - ì²« ë²ˆì§¸ queryì— ìžˆëŠ” í–‰ ì¤‘ ë‘ ë²ˆì§¸ queryì— ì—†ëŠ” í–‰ í‘œì‹œ
 
-<ÁýÇÕ¿¬»êÀÚ »ç¿ëÀÌÀ¯>
-- ¼­·Î ´Ù¸¥ Å×ÀÌºí¿¡¼­ À¯»çÇÑ ÇüÅÂÀÇ °á°ú¸¦ ¹ÝÈ¯ÇÏ±â À§ÇØ¼­ -- column¸íÀº ´Þ¶óµµ »ó°ü¾øÁö¸¸ µ¥ÀÌÅÍ ÇüÅÂ´Â °°¾Æ¾ß ÇÑ´Ù.
-- ¼­·Î °°Àº Å×ÀÌºí¿¡¼­ ¼­·Î ´Ù¸¥ ÁúÀÇ¸¦ ¼öÇàÇÏ¿© °á°ú¸¦ ÇÕÄ¡±â À§ÇØ¼­
+<ì§‘í•©ì—°ì‚°ìž ì‚¬ìš©ì´ìœ >
+- ì„œë¡œ ë‹¤ë¥¸ í…Œì´ë¸”ì—ì„œ ìœ ì‚¬í•œ í˜•íƒœì˜ ê²°ê³¼ë¥¼ ë°˜í™˜í•˜ê¸° ìœ„í•´ì„œ -- columnëª…ì€ ë‹¬ë¼ë„ ìƒê´€ì—†ì§€ë§Œ ë°ì´í„° í˜•íƒœëŠ” ê°™ì•„ì•¼ í•œë‹¤.
+- ì„œë¡œ ê°™ì€ í…Œì´ë¸”ì—ì„œ ì„œë¡œ ë‹¤ë¥¸ ì§ˆì˜ë¥¼ ìˆ˜í–‰í•˜ì—¬ ê²°ê³¼ë¥¼ í•©ì¹˜ê¸° ìœ„í•´ì„œ
 
 
 --=====================
---union (ÇÕÁýÇÕ) : ÀÌ°Ô ÁøÂ¥ ÇÕÁýÇÕ
+--union (í•©ì§‘í•©) : ì´ê²Œ ì§„ì§œ í•©ì§‘í•©
 SELECT department_id, first_name, last_name
 FROM employees
 WHERE department_id=20 or department_id=40
 UNION
-SELECT department_id, first_name, last_name --°¡Á®¿À´Â columnÀÇ µ¥ÀÌÅÍ°¡ °°¾Æ¾ß ÇÑ´Ù.(ÄÃ·³¸íÀº ´Þ¶óµµ µÊ)
+SELECT department_id, first_name, last_name --ê°€ì ¸ì˜¤ëŠ” columnì˜ ë°ì´í„°ê°€ ê°™ì•„ì•¼ í•œë‹¤.(ì»¬ëŸ¼ëª…ì€ ë‹¬ë¼ë„ ë¨)
 FROM employees
 WHERE department_id=20 or department_id=60;
 
---union all(ÇÕÁýÇÕ) : °ãÄ¡´Â °É ÇÑ ¹ø ´õ °¡Á®¿È
+--union all(í•©ì§‘í•©) : ê²¹ì¹˜ëŠ” ê±¸ í•œ ë²ˆ ë” ê°€ì ¸ì˜´
 SELECT department_id, first_name, last_name
 FROM employees
 WHERE department_id=20 or department_id=40
 UNION ALL
-SELECT department_id, first_name, last_name --°¡Á®¿À´Â columnÀÇ µ¥ÀÌÅÍ°¡ °°¾Æ¾ß ÇÑ´Ù.
+SELECT department_id, first_name, last_name --ê°€ì ¸ì˜¤ëŠ” columnì˜ ë°ì´í„°ê°€ ê°™ì•„ì•¼ í•œë‹¤.
 FROM employees
 WHERE department_id=20 or department_id=60;
 
---intersect(±³ÁýÇÕ)
+--intersect(êµì§‘í•©)
 SELECT department_id, first_name, last_name
 FROM employees
 WHERE department_id=20 or department_id=40
 INTERSECT
-SELECT department_id, first_name, last_name --°¡Á®¿À´Â columnÀÇ µ¥ÀÌÅÍ°¡ °°¾Æ¾ß ÇÑ´Ù.
+SELECT department_id, first_name, last_name --ê°€ì ¸ì˜¤ëŠ” columnì˜ ë°ì´í„°ê°€ ê°™ì•„ì•¼ í•œë‹¤.
 FROM employees
 WHERE department_id=20 or department_id=60;
 
---minus(Â÷ÁýÇÕ)
+--minus(ì°¨ì§‘í•©)
 SELECT department_id, first_name, last_name
 FROM employees
 WHERE department_id=20 or department_id=40
 MINUS
-SELECT department_id, first_name, last_name --°¡Á®¿À´Â columnÀÇ µ¥ÀÌÅÍ°¡ °°¾Æ¾ß ÇÑ´Ù.
+SELECT department_id, first_name, last_name --ê°€ì ¸ì˜¤ëŠ” columnì˜ ë°ì´í„°ê°€ ê°™ì•„ì•¼ í•œë‹¤.
 FROM employees
 WHERE department_id=20 or department_id=60;
 
 --=================================================
-SQL(structured query language)ÇÕ¼ö
-1.´ÜÀÏÇàÇÔ¼ö : Çà ÇÏ³ª´ç ÇÏ³ªÀÇ °á°ú¸¦ Ãâ·Â(¹®ÀÚÇÔ¼ö, ¼ýÀÚÇÔ¼ö, ³¯Â¥ÇÔ¼ö, º¯È¯ÇÔ¼ö, ÀÏ¹ÝÇÔ¼ö)
-2.º¹¼öÇàÇÔ¼ö : Çà ¿©·¯ °³´ç ÇÏ³ªÀÇ °á°ú¸¦ Ãâ·ÂÇÑ´Ù.(ÇÕ°è, Æò±Õ, ÃÖ´ë, ÃÖ¼Ò, °¹¼ö) --¿©·¯ ÇàÀ» ´ë»óÀ¸·Î ÇØ¼­ °á°ú°¡ ³ª¿È
+SQL(structured query language)í•©ìˆ˜
+1.ë‹¨ì¼í–‰í•¨ìˆ˜ : í–‰ í•˜ë‚˜ë‹¹ í•˜ë‚˜ì˜ ê²°ê³¼ë¥¼ ì¶œë ¥(ë¬¸ìží•¨ìˆ˜, ìˆ«ìží•¨ìˆ˜, ë‚ ì§œí•¨ìˆ˜, ë³€í™˜í•¨ìˆ˜, ì¼ë°˜í•¨ìˆ˜)
+2.ë³µìˆ˜í–‰í•¨ìˆ˜ : í–‰ ì—¬ëŸ¬ ê°œë‹¹ í•˜ë‚˜ì˜ ê²°ê³¼ë¥¼ ì¶œë ¥í•œë‹¤.(í•©ê³„, í‰ê· , ìµœëŒ€, ìµœì†Œ, ê°¯ìˆ˜) --ì—¬ëŸ¬ í–‰ì„ ëŒ€ìƒìœ¼ë¡œ í•´ì„œ ê²°ê³¼ê°€ ë‚˜ì˜´
 --=================================================
---SELECT¹®¿¡¼­´Â ¹Ýµå½Ã Å×ÀÌºí¸íÀ» ¸í½ÃÇØ¾ß ÇÑ´Ù.
---±×·¡¼­ SELECTÀý¿¡ ½ÄÀÌ³ª Æ¯Á¤ÇÔ¼ö¸¦ ÀÌ¿ëÇØ¼­ °á°ú°ªÀ» °¡Á®¿Ã ¶§
---»ç¿ëÇÒ ¼ö ÀÖ´Â DUALÀÌ¶ó´Â Å×ÀÌºíÀ» Á¦°øÇÏ°í ÀÖ´Ù. (»ó±â Ã¹¹øÂ° ÁÙÀÇ Á¶°ÇÀ» ¸¸Á·½ÃÄÑ¾ß ÇÏ±â ¶§¹®ÀÌ´Ù)
+--SELECTë¬¸ì—ì„œëŠ” ë°˜ë“œì‹œ í…Œì´ë¸”ëª…ì„ ëª…ì‹œí•´ì•¼ í•œë‹¤.
+--ê·¸ëž˜ì„œ SELECTì ˆì— ì‹ì´ë‚˜ íŠ¹ì •í•¨ìˆ˜ë¥¼ ì´ìš©í•´ì„œ ê²°ê³¼ê°’ì„ ê°€ì ¸ì˜¬ ë•Œ
+--ì‚¬ìš©í•  ìˆ˜ ìžˆëŠ” DUALì´ë¼ëŠ” í…Œì´ë¸”ì„ ì œê³µí•˜ê³  ìžˆë‹¤. (ìƒê¸° ì²«ë²ˆì§¸ ì¤„ì˜ ì¡°ê±´ì„ ë§Œì¡±ì‹œì¼œì•¼ í•˜ê¸° ë•Œë¬¸ì´ë‹¤)
 SELECT 3+1
-FROM dual; --°¡»óÀÇ Å×ÀÌºí °°Àº °³³äÀÎ µí
+FROM dual; --ê°€ìƒì˜ í…Œì´ë¸” ê°™ì€ ê°œë…ì¸ ë“¯
 
 SELECT sysdate
 FROM dual;
 
 =====================================
---´ÜÀÏÇà
---¹®ÀÚÇÔ¼ö
---´Ü¾îÀÇ Ã¹±ÛÀÚ¸¸ ´ë¹®ÀÚ·Î º¯°æÇØ ÁÖ´Â ÇÔ¼öÀÌ´Ù.
+--ë‹¨ì¼í–‰
+--ë¬¸ìží•¨ìˆ˜
+--ë‹¨ì–´ì˜ ì²«ê¸€ìžë§Œ ëŒ€ë¬¸ìžë¡œ ë³€ê²½í•´ ì£¼ëŠ” í•¨ìˆ˜ì´ë‹¤.
 
 SELECT initcap('korea hello')
 FROM dual;
@@ -82,7 +82,7 @@ SELECT first_name, upper(first_name),
         last_name, upper(last_name)
 FROM employees;
 
---¸ðµç ¹®ÀÚ¸¦ ¼Ò¹®ÀÚ·Î º¯°æÇØÁÖ´Â ÇÔ¼öÀÌ´Ù.
+--ëª¨ë“  ë¬¸ìžë¥¼ ì†Œë¬¸ìžë¡œ ë³€ê²½í•´ì£¼ëŠ” í•¨ìˆ˜ì´ë‹¤.
 SELECT lower('KOREA')
 FROM dual;
 
@@ -92,20 +92,20 @@ FROM employees;
 ========================================
 SELECT first_name, salary
 FROM employees
-WHERE upper(first_name) like upper('%Ja%') -- Å©... Áö·È´Ù..
+WHERE upper(first_name) like upper('%Ja%') -- í¬... ì§€ë ¸ë‹¤..
 
---¹®ÀÚÀÇ ±æÀÌ¸¦ ¸®ÅÏÇØÁÖ´Â ÇÔ¼ö
+--ë¬¸ìžì˜ ê¸¸ì´ë¥¼ ë¦¬í„´í•´ì£¼ëŠ” í•¨ìˆ˜
 SELECT length('korea')
 FROM dual;
 
-SELECT length('ÇÑ±¹')
+SELECT length('í•œêµ­')
 FROM dual;
 
---¹®ÀÚÀÇ ±æÀÌ¸¦ ¹ÙÀÌÆ®·Î ±¸ÇØ¼­ ¸®ÅÏÇØÁÖ´Â ÇÔ¼ö
+--ë¬¸ìžì˜ ê¸¸ì´ë¥¼ ë°”ì´íŠ¸ë¡œ êµ¬í•´ì„œ ë¦¬í„´í•´ì£¼ëŠ” í•¨ìˆ˜
 SELECT lengthb('korea')
 FROM dual;
 
-SELECT lengthb('ÇÑ±¹')
+SELECT lengthb('í•œêµ­')
 FROM dual;
 -------------------------------[
 CREATE TABLE user1(
@@ -116,81 +116,81 @@ INSERT INTO user1(data)
 VALUES('korea');
 
 INSERT INTO user1(data)
-VALUES('ÇÑ±¹'); -- 6byte°¡ ÇÊ¿äÇÏ¹Ç·Î ¿À·ù ¹ß»ý
+VALUES('í•œêµ­'); -- 6byteê°€ í•„ìš”í•˜ë¯€ë¡œ ì˜¤ë¥˜ ë°œìƒ
 
---Æ¯Á¤¹üÀ§ÀÇ ¹®ÀÚ¸¦ ÃßÃâÇØÁÖ´Â ÇÔ¼öÀÌ´Ù.
---substr('¹®ÀÚ', ½ÃÀÛÀ§Ä¡, °¹¼ö)
-SELECT substr('oracle test', 1, 4) --¿©±â¼­ ¸¶Áö¸· 4´Â °¹¼ö¸¦ ÀÇ¹Ì. java´Â ¹Ì¸¸ÀÌ¾ú´Ù.
+--íŠ¹ì •ë²”ìœ„ì˜ ë¬¸ìžë¥¼ ì¶”ì¶œí•´ì£¼ëŠ” í•¨ìˆ˜ì´ë‹¤.
+--substr('ë¬¸ìž', ì‹œìž‘ìœ„ì¹˜, ê°¯ìˆ˜)
+SELECT substr('oracle test', 1, 4) --ì—¬ê¸°ì„œ ë§ˆì§€ë§‰ 4ëŠ” ê°¯ìˆ˜ë¥¼ ì˜ë¯¸. javaëŠ” ë¯¸ë§Œì´ì—ˆë‹¤.
 FROM dual;
 
-SELECT substr('oracle test', -3, 4) --µÚ¿¡¼­ ¼¼¹øÂ°ºÎÅÍ 4°³
+SELECT substr('oracle test', -3, 4) --ë’¤ì—ì„œ ì„¸ë²ˆì§¸ë¶€í„° 4ê°œ
 FROM dual;
 
-SELECT substr('¿À¶óÅ¬ Å×½ºÆ®', 3, 4) --°ø¹éµµ ¹®ÀÚ1°³·Î ÀÎ½ÄÇÔ
+SELECT substr('ì˜¤ë¼í´ í…ŒìŠ¤íŠ¸', 3, 4) --ê³µë°±ë„ ë¬¸ìž1ê°œë¡œ ì¸ì‹í•¨
 FROM dual;
 
-SELECT substrb('oracle test', 2, 4) --¿µ¾î´Â ¾îÂ÷ÇÇ 1¹ÙÀÌÆ®¾¿ ¸ÔÀ½
+SELECT substrb('oracle test', 2, 4) --ì˜ì–´ëŠ” ì–´ì°¨í”¼ 1ë°”ì´íŠ¸ì”© ë¨¹ìŒ
 FROM dual;
 
-SELECT substrb('¿À¶óÅ¬ Å×½ºÆ®', 4, 4)
+SELECT substrb('ì˜¤ë¼í´ í…ŒìŠ¤íŠ¸', 4, 4)
 FROM dual;
 
---Æ¯Á¤¹®ÀÚÀÇ ÀÎÅØ½º¸¦ ÃßÃâÇØÁÖ´Â ÇÔ¼ö
+--íŠ¹ì •ë¬¸ìžì˜ ì¸í…ìŠ¤ë¥¼ ì¶”ì¶œí•´ì£¼ëŠ” í•¨ìˆ˜
 SELECT instr('korea', 'or')
 FROM dual;
 
-SELECT instr('ÇÑ±¹ÀÚ¹Ù', 'ÀÚ')
+SELECT instr('í•œêµ­ìžë°”', 'ìž')
 FROM dual;
 
---Æ¯Á¤¹®ÀÚÀÇ ¹ÙÀÌÆ® ÀÎÅØ½º¸¦ ÃßÃâÇØÁÖ´Â ÇÔ¼ö
+--íŠ¹ì •ë¬¸ìžì˜ ë°”ì´íŠ¸ ì¸í…ìŠ¤ë¥¼ ì¶”ì¶œí•´ì£¼ëŠ” í•¨ìˆ˜
 SELECT instrb('korea', 'or')
 FROM dual;
 
-SELECT instrb('ÇÑ±¹ÀÚ¹Ù', 'ÀÚ')
+SELECT instrb('í•œêµ­ìžë°”', 'ìž')
 FROM dual;
 
---ÁÖ¾îÁø ¹®ÀÚ¿­¿¡¼­ ¿ÞÂÊÀ¸·Î Æ¯Á¤¹®ÀÚ¸¦ Ã¤¿ì´Â ÇÔ¼ö
+--ì£¼ì–´ì§„ ë¬¸ìžì—´ì—ì„œ ì™¼ìª½ìœ¼ë¡œ íŠ¹ì •ë¬¸ìžë¥¼ ì±„ìš°ëŠ” í•¨ìˆ˜
 SELECT lpad('korea', 8, '*')
 FROM dual;
 
---ÁÖ¾îÁø ¹®ÀÚ¿­¿¡¼­ ¿À¸¥ÂÊÀ¸·Î Æ¯Á¤¹®ÀÚ¸¦ Ã¤¿ì´Â ÇÔ¼ö
+--ì£¼ì–´ì§„ ë¬¸ìžì—´ì—ì„œ ì˜¤ë¥¸ìª½ìœ¼ë¡œ íŠ¹ì •ë¬¸ìžë¥¼ ì±„ìš°ëŠ” í•¨ìˆ˜
 SELECT rpad('korea', 8, '*')
 FROM dual;
 
---ÁÖ¾îÁø ¹®ÀÚ¿­¿¡¼­ ¿ÞÂÊÀÇ Æ¯Á¤¹®ÀÚ¸¦ »èÁ¦ÇÏ´Â ÇÔ¼ö
+--ì£¼ì–´ì§„ ë¬¸ìžì—´ì—ì„œ ì™¼ìª½ì˜ íŠ¹ì •ë¬¸ìžë¥¼ ì‚­ì œí•˜ëŠ” í•¨ìˆ˜
 SELECT ltrim('***korea', '*')
 FROM dual;
 
---ÁÖ¾îÁø ¹®ÀÚ¿­¿¡¼­ ¿À¸¥ÂÊÀÇ Æ¯Á¤¹®ÀÚ¸¦ »èÁ¦ÇÏ´Â ÇÔ¼ö
+--ì£¼ì–´ì§„ ë¬¸ìžì—´ì—ì„œ ì˜¤ë¥¸ìª½ì˜ íŠ¹ì •ë¬¸ìžë¥¼ ì‚­ì œí•˜ëŠ” í•¨ìˆ˜
 SELECT rtrim('korea***', '*')
 FROM dual;
 
---ÁÖ¾îÁø ¹®ÀÚ¿­¿¡¼­ ¾çÂÊ Æ¯Á¤¹®ÀÚ¸¦ »èÁ¦ÇÏ´Â ÇÔ¼ö
+--ì£¼ì–´ì§„ ë¬¸ìžì—´ì—ì„œ ì–‘ìª½ íŠ¹ì •ë¬¸ìžë¥¼ ì‚­ì œí•˜ëŠ” í•¨ìˆ˜
 SELECT trim('*' from '**korea***')
 FROM dual;
 
---ÁÖ¾îÁø ¹®ÀÚ¿­¿¡¼­ ¿À¸¥ÂÊÀÇ °ø¹éÁ¦°Å
-SELECT length(rtrim('korea   ')) -- °ø¹éÁ¦°Å ¿©ºÎ¸¦ lengthÇÔ¼ö·Î È®ÀÎ
+--ì£¼ì–´ì§„ ë¬¸ìžì—´ì—ì„œ ì˜¤ë¥¸ìª½ì˜ ê³µë°±ì œê±°
+SELECT length(rtrim('korea   ')) -- ê³µë°±ì œê±° ì—¬ë¶€ë¥¼ lengthí•¨ìˆ˜ë¡œ í™•ì¸
 FROM dual;
 
---ÁÖ¾îÁø ¹®ÀÚ¿­¿¡¼­ ¾çÂÊÀÇ °ø¹éÁ¦°Å
+--ì£¼ì–´ì§„ ë¬¸ìžì—´ì—ì„œ ì–‘ìª½ì˜ ê³µë°±ì œê±°
 SELECT length(trim(' ' from '   korea   '))
 FROM dual;
 
---¶Ç´Â
+--ë˜ëŠ”
 SELECT length(trim('   korea   '))
-FROM dual; --ÀÌ°Ô ´õ È¿À²Àû!
+FROM dual; --ì´ê²Œ ë” íš¨ìœ¨ì !
 
---ÁÖ¾îÁø ¹®ÀÚÀÇ ¾Æ½ºÅ° ÄÚµå°ªÀ» ±¸ÇÏ´Â ÇÔ¼ö
+--ì£¼ì–´ì§„ ë¬¸ìžì˜ ì•„ìŠ¤í‚¤ ì½”ë“œê°’ì„ êµ¬í•˜ëŠ” í•¨ìˆ˜
 
 SELECT ascii('A')
 FROM dual;
 
---ÁÖ¾îÁø ¾Æ½ºÅ° ÄÚµå°ªÀÇ ¹®ÀÚ¸¦ ±¸ÇÏ´Â ÇÔ¼ö
+--ì£¼ì–´ì§„ ì•„ìŠ¤í‚¤ ì½”ë“œê°’ì˜ ë¬¸ìžë¥¼ êµ¬í•˜ëŠ” í•¨ìˆ˜
 SELECT chr(65)
 FROM dual;
 
---ÁÖ¾îÁø ¹®ÀÚ¸¦ ¿¬°áÇÏ´Â ÇÔ¼ö
+--ì£¼ì–´ì§„ ë¬¸ìžë¥¼ ì—°ê²°í•˜ëŠ” í•¨ìˆ˜
 SELECT concat('java', 'jsp')
 FROM dual;
 
@@ -198,9 +198,9 @@ SELECT 'java' || 'jsp'
 FROM dual;
 
 ---------------
-¼ýÀÚÇÔ¼ö
+ìˆ«ìží•¨ìˆ˜
 ---------------
---3.55À» ¼Ò¼öÁ¡ 1ÀÇ ÀÚ¸®±îÁö ±¸ÇÏ½Ã¿À(¹Ý¿Ã¸²)
+--3.55ì„ ì†Œìˆ˜ì  1ì˜ ìžë¦¬ê¹Œì§€ êµ¬í•˜ì‹œì˜¤(ë°˜ì˜¬ë¦¼)
 SELECT round(3.55, 1)
 FROM dual;
 
@@ -210,60 +210,60 @@ FROM dual;
 SELECT round(42523.55, 0)
 FROM dual;
 
---256.78 ¹«Á¶°Ç ¿Ã¸²ÇÑ´Ù.(¿Ã¸²)
+--256.78 ë¬´ì¡°ê±´ ì˜¬ë¦¼í•œë‹¤.(ì˜¬ë¦¼)
 SELECT ceil(256.78)
 FROM dual;
 
---289.78¿¡¼­ ¼Ò¼öÀÌÇÏ´Â ¹«Á¶°Ç ¹ö¸°´Ù.(¹ö¸²)
+--289.78ì—ì„œ ì†Œìˆ˜ì´í•˜ëŠ” ë¬´ì¡°ê±´ ë²„ë¦°ë‹¤.(ë²„ë¦¼)
 SELECT floor(289.78)
 FROM dual;
 
---2ÀÇ 3½Â (°ÅµìÁ¦°ö)
+--2ì˜ 3ìŠ¹ (ê±°ë“­ì œê³±)
 SELECT power(2,3)
 FROM dual;
 
 
---25dÀÇ Á¦°ö±Ù
+--25dì˜ ì œê³±ê·¼
 SELECT sqrt(25)
 FROM dual;
 
---³ª¸ÓÁö
+--ë‚˜ë¨¸ì§€
 SELECT mod (10, 3)
 FROM dual;
 
 
 ----------
-³¯Â¥ÇÔ¼ö
+ë‚ ì§œí•¨ìˆ˜
 -----------
---ÇöÀç ½Ã½ºÅÛ¿¡¼­ Á¦°øÇØÁÖ´Â ¿À´ÃÀÇ ³¯Â¥ ±¸ÇÏ´Â ÇÔ¼ö
+--í˜„ìž¬ ì‹œìŠ¤í…œì—ì„œ ì œê³µí•´ì£¼ëŠ” ì˜¤ëŠ˜ì˜ ë‚ ì§œ êµ¬í•˜ëŠ” í•¨ìˆ˜
 SELECT sysdate
 FROM dual;
 
 SELECT sysdate+1
 FROM dual;
 
--Ã¹¹øÂ° ÀÎÀÚÀÇ ´Þ¿¡ µÎ¹øÂ° ÀÎÀÚ°ªÀ» ´õÇÑ ³¯Â¥¸¦ ¹ÝÈ¯
-SELECT add_months(sysdate, 10) --10°³¿ùÀ» ´õÇÔ
+-ì²«ë²ˆì§¸ ì¸ìžì˜ ë‹¬ì— ë‘ë²ˆì§¸ ì¸ìžê°’ì„ ë”í•œ ë‚ ì§œë¥¼ ë°˜í™˜
+SELECT add_months(sysdate, 10) --10ê°œì›”ì„ ë”í•¨
 FROM dual;
 
 ======================================================
-º¯È¯Çü ÇÔ¼ö
-¼ýÀÚ              ¹®ÀÚ          ³¯Â¥
-to_number() <-> to_char() <->   to_date()   --¼ýÀÚ¿Í ³¯Â¥´Â Á÷Á¢ÀûÀ¸·Î ¸ø ¹Ù²Û´Ù. ¹®ÀÚ°¡ Áß°³ÀÚ ¿ªÇÒ
+ë³€í™˜í˜• í•¨ìˆ˜
+ìˆ«ìž              ë¬¸ìž          ë‚ ì§œ
+to_number() <-> to_char() <->   to_date()   --ìˆ«ìžì™€ ë‚ ì§œëŠ” ì§ì ‘ì ìœ¼ë¡œ ëª» ë°”ê¾¼ë‹¤. ë¬¸ìžê°€ ì¤‘ê°œìž ì—­í• 
 =======================================================
--- 1 ¼ýÀÚ -> ¹®ÀÚ
--- Ã¹¹øÂ° ÀÎÀÚ°ªÀ» µÎ¹øÂ° ÀÎÀÚ°ªÀÇ Çü½ÄÀ¸·Î º¯È¯ÇØÁÖ´Â ÇÔ¼ö
-SELECT to_char(2532, '99999,999.9') --¼Ò¼öÁ¡ ÀÚ¸´¼ö´Â 9¸¦ ¾²µç, 0À» ¾²µç µ¥ÀÌÅÍ°¡ ¾øÀ¸¸é 0À¸·Î Ç¥½ÃÇØÁÜ
+-- 1 ìˆ«ìž -> ë¬¸ìž
+-- ì²«ë²ˆì§¸ ì¸ìžê°’ì„ ë‘ë²ˆì§¸ ì¸ìžê°’ì˜ í˜•ì‹ìœ¼ë¡œ ë³€í™˜í•´ì£¼ëŠ” í•¨ìˆ˜
+SELECT to_char(2532, '99999,999.9') --ì†Œìˆ˜ì  ìžë¦¿ìˆ˜ëŠ” 9ë¥¼ ì“°ë“ , 0ì„ ì“°ë“  ë°ì´í„°ê°€ ì—†ìœ¼ë©´ 0ìœ¼ë¡œ í‘œì‹œí•´ì¤Œ
 FROM dual;
 
 SELECT to_char(2532, '009,999.00')
-FROM dual; --9´Â ½ÇÁ¦ µ¥ÀÌÅÍ°¡ ¾øÀ¸¸é ¹«½Ã, 0Àº Âï¾îÁÜ. Ä£ÀýÇÑ ³ð.
+FROM dual; --9ëŠ” ì‹¤ì œ ë°ì´í„°ê°€ ì—†ìœ¼ë©´ ë¬´ì‹œ, 0ì€ ì°ì–´ì¤Œ. ì¹œì ˆí•œ ë†ˆ.
 
---°¢ ³ª¶óÀÇ ÅëÈ­¸¦ Ç¥ÇöÇØ ÁÙ ¶§ L±âÈ£¸¦ »ç¿ë
+--ê° ë‚˜ë¼ì˜ í†µí™”ë¥¼ í‘œí˜„í•´ ì¤„ ë•Œ Lê¸°í˜¸ë¥¼ ì‚¬ìš©
 SELECT to_char(2532, 'L999,999.99')
 FROM dual;
 
---2 ³¯Â¥ -> ¹®ÀÚ
+--2 ë‚ ì§œ -> ë¬¸ìž
 SELECT to_char(sysdate, 'yyyy-mm-dd hh:mi:ss day')
 FROM dual;
 
@@ -275,7 +275,7 @@ FROM dual;
 
 ------------------------------------
 to_number()
-¹®ÀÚ -> ¼ýÀÚ
+ë¬¸ìž -> ìˆ«ìž
 ------------------------------------
 SELECT '253' || '12'
 FROM dual;
@@ -283,7 +283,7 @@ FROM dual;
 SELECT concat('253', '12')
 FROM dual;
 
-SELECT '253'+'12' --ÀÚ¹Ù¶û ´Ù¸£´Ù!
+SELECT '253'+'12' --ìžë°”ëž‘ ë‹¤ë¥´ë‹¤!
 FROM dual;
 
 SELECT to_number('253') + to_number('12')
@@ -291,61 +291,61 @@ FROM dual;
 
 -------------------------
 to_date()
-¹®ÀÚ -> ³¯Â¥
+ë¬¸ìž -> ë‚ ì§œ
 -------------------------
-SELECT to_date('2013-10-14') --ÀÌ°Å´Ù!!
+SELECT to_date('2013-10-14') --ì´ê±°ë‹¤!!
 FROM dual;
 
 SELECT first_name, hire_date
 FROM employees;
 ============================================================================
--- hire_date(ÀÔ»çÀÏ)À» ÀÌ¿ëÇØ¼­
---'È«±æµ¿´ÔÀº 2003³â 1¿ù 3ÀÏ¿¡ ÀÔ»çÇß½À´Ï´Ù'·Î Ãâ·ÂÇÏ´Â query¸¦ ÀÛ¼ºÇÏ½Ã¿À
+-- hire_date(ìž…ì‚¬ì¼)ì„ ì´ìš©í•´ì„œ
+--'í™ê¸¸ë™ë‹˜ì€ 2003ë…„ 1ì›” 3ì¼ì— ìž…ì‚¬í–ˆìŠµë‹ˆë‹¤'ë¡œ ì¶œë ¥í•˜ëŠ” queryë¥¼ ìž‘ì„±í•˜ì‹œì˜¤
 
-SELECT first_name || '´ÔÀº '
-        || to_char(hire_date, 'yyyy') || '³â '        
-        || ltrim(to_char(hire_date, 'mm'), '0') || '¿ù ' 
-        || ltrim(to_char(hire_date, 'dd'), '0') || 'ÀÏ¿¡ ÀÔ»çÇß½À´Ï´Ù.'  
-        AS ÀÔ»çÀÏ --ÄÃ·³¸í ¼³Á¤
+SELECT first_name || 'ë‹˜ì€ '
+        || to_char(hire_date, 'yyyy') || 'ë…„ '        
+        || ltrim(to_char(hire_date, 'mm'), '0') || 'ì›” ' 
+        || ltrim(to_char(hire_date, 'dd'), '0') || 'ì¼ì— ìž…ì‚¬í–ˆìŠµë‹ˆë‹¤.'  
+        AS ìž…ì‚¬ì¼ --ì»¬ëŸ¼ëª… ì„¤ì •
 FROM employees;
 
---alias ¿¡¼­ ""¸¦ ¾¸.
+--alias ì—ì„œ ""ë¥¼ ì”€.
 
 --------------------------------------
-ÀÏ¹ÝÇÔ¼ö
+ì¼ë°˜í•¨ìˆ˜
 nvl()
 --------------------------------------
---nvl(ÄÃ·³, ´ëÃ¼°ª) : Ã¹¹øÂ° ÀÎÀÚ°ªÀÌ nullÀÌ¸é 0À¸·Î ´ëÃ¼ÇØ¼­ Ãâ·ÂÇÑ´Ù.
---´ëÃ¼ÇÒ °ªÀÌ ¼ýÀÚÀÌ¸é µÎ¹øÂ° ÀÎÀÚ°ª¿¡ ¼ýÀÚ¸¦ ÁöÁ¤ÇÑ´Ù.
---´ëÃ¼ÇÒ °ªÀÌ ¹®ÀÚÀÌ¸é µÎ¹øÂ° ÀÎÀÚ°ª¿¡ ¹®ÀÚ¸¦ ÁöÁ¤ÇÑ´Ù.
---´ëÃ¼ÇÒ °ªÀÌ ³¯Â¥ÀÌ¸é µÎ¹øÂ° ÀÎÀÚ°ª¿¡ ³¯Â¥¸¦ ÁöÁ¤ÇÑ´Ù.
+--nvl(ì»¬ëŸ¼, ëŒ€ì²´ê°’) : ì²«ë²ˆì§¸ ì¸ìžê°’ì´ nullì´ë©´ 0ìœ¼ë¡œ ëŒ€ì²´í•´ì„œ ì¶œë ¥í•œë‹¤.
+--ëŒ€ì²´í•  ê°’ì´ ìˆ«ìžì´ë©´ ë‘ë²ˆì§¸ ì¸ìžê°’ì— ìˆ«ìžë¥¼ ì§€ì •í•œë‹¤.
+--ëŒ€ì²´í•  ê°’ì´ ë¬¸ìžì´ë©´ ë‘ë²ˆì§¸ ì¸ìžê°’ì— ë¬¸ìžë¥¼ ì§€ì •í•œë‹¤.
+--ëŒ€ì²´í•  ê°’ì´ ë‚ ì§œì´ë©´ ë‘ë²ˆì§¸ ì¸ìžê°’ì— ë‚ ì§œë¥¼ ì§€ì •í•œë‹¤.
 
---commission_pctÄÃ·³ÀÇ °ªÀÌ nullÀÎ °æ¿ì 0À¸·Î ´ëÃ¼ÇØ¼­ Ãâ·Â
+--commission_pctì»¬ëŸ¼ì˜ ê°’ì´ nullì¸ ê²½ìš° 0ìœ¼ë¡œ ëŒ€ì²´í•´ì„œ ì¶œë ¥
 SELECT commission_pct, nvl(commission_pct, 0)
 FROM employees;
 
-SELECT first_name, manager_id, nvl(to_char(manager_id), 'ceo') --¼ýÀÚ¸¦ ÀÏ´Ü ¹®ÀÚ·Î ¹Ù²ã¾ß
+SELECT first_name, manager_id, nvl(to_char(manager_id), 'ceo') --ìˆ«ìžë¥¼ ì¼ë‹¨ ë¬¸ìžë¡œ ë°”ê¿”ì•¼
 FROM employees;
 
---nvl2(ÄÃ·³, ´ëÃ¼1, ´ëÃ¼2) : ÄÃ·³ÀÇ °ªÀÌ nullÀÌ ¾Æ´Ï¸é, ´ëÃ¼1·Î, nullÀÌ¸é ´ëÃ¼2·Î Ãâ·Â
+--nvl2(ì»¬ëŸ¼, ëŒ€ì²´1, ëŒ€ì²´2) : ì»¬ëŸ¼ì˜ ê°’ì´ nullì´ ì•„ë‹ˆë©´, ëŒ€ì²´1ë¡œ, nullì´ë©´ ëŒ€ì²´2ë¡œ ì¶œë ¥
 SELECT commission_pct, nvl2(commission_pct, 1, 0)
 FROM employees;
 
 -----------------------------------
-ÀÏ¹ÝÇÔ¼ö
+ì¼ë°˜í•¨ìˆ˜
 decode()
 -----------------------------------
---decode(ÄÃ·³ ¶Ç´Â ¿¬»êÀÌ³ª ÇÔ¼öÀÇ °á°ú, Á¶°Ç1, °ª1, Á¶°Ç2, °ª2, Á¶°Ç3, °ª3, ±× ¹ÛÀÇ °ª)
---department_id °ªÀÌ 10ÀÌ¸é 'AA', 20ÀÌ¸é 'BB', 30ÀÌ¸é 'CC', ±× ¹ÛÀÇ °ªÀº 'DD'
---javaÀÇ switch_case¹®°ú ºñ½Á
---ÄÃ·³ÀÇ °ªÀÌ Á¶°ÇÀÇ °ª°ú Á¤È®È÷ ÀÏÄ¡ÇØ¾ß ÇÑ´Ù.
+--decode(ì»¬ëŸ¼ ë˜ëŠ” ì—°ì‚°ì´ë‚˜ í•¨ìˆ˜ì˜ ê²°ê³¼, ì¡°ê±´1, ê°’1, ì¡°ê±´2, ê°’2, ì¡°ê±´3, ê°’3, ê·¸ ë°–ì˜ ê°’)
+--department_id ê°’ì´ 10ì´ë©´ 'AA', 20ì´ë©´ 'BB', 30ì´ë©´ 'CC', ê·¸ ë°–ì˜ ê°’ì€ 'DD'
+--javaì˜ switch_caseë¬¸ê³¼ ë¹„ìŠ·
+--ì»¬ëŸ¼ì˜ ê°’ì´ ì¡°ê±´ì˜ ê°’ê³¼ ì •í™•ížˆ ì¼ì¹˜í•´ì•¼ í•œë‹¤.
 
 SELECT first_name, department_id,
         decode(department_id, 10, 'ACCOUNTING', 20, 'RESEARCH', 30, 'SALES', 40, 'OPERATIONS', 'OTHERS')
-        as CODE -- ÀÌ ºÐÀÌ ¹Ù·Î alias. ¿µ¹®ÀÌ¹Ç·Î "" ÇÊ¿ä¾ø´Ù. ³ªÁß¿¡ ÀÌ°É °¡Áö°í µ¥ÀÌÅÍ¸¦ ºÒ·¯¿À°Ô µÊ. Çù¾÷¿¡¼­ Áß¿äÇÒ µí.        
+        as CODE -- ì´ ë¶„ì´ ë°”ë¡œ alias. ì˜ë¬¸ì´ë¯€ë¡œ "" í•„ìš”ì—†ë‹¤. ë‚˜ì¤‘ì— ì´ê±¸ ê°€ì§€ê³  ë°ì´í„°ë¥¼ ë¶ˆëŸ¬ì˜¤ê²Œ ë¨. í˜‘ì—…ì—ì„œ ì¤‘ìš”í•  ë“¯.        
 FROM employees;
 
---Á÷±ÞÀÌ 'PR_REP' ÀÎ »ç¿øÀº 5%, 'SA_MAN'ÀÎ »ç¿øÀº 10%, 'AC_MGR'ÀÎ »ç¿øÀº 15%, 'PU_CLERK' ÀÎ »ç¿øÀº 20%¸¦ ÀÎ»ó
+--ì§ê¸‰ì´ 'PR_REP' ì¸ ì‚¬ì›ì€ 5%, 'SA_MAN'ì¸ ì‚¬ì›ì€ 10%, 'AC_MGR'ì¸ ì‚¬ì›ì€ 15%, 'PU_CLERK' ì¸ ì‚¬ì›ì€ 20%ë¥¼ ì¸ìƒ
 SELECT job_id, salary,
         decode(job_id,
         'PR_REP', salary*1.05,
@@ -357,17 +357,17 @@ SELECT job_id, salary,
 FROM employees;
 
 -----------------------------
-ÀÏ¹ÝÇÔ¼ö
+ì¼ë°˜í•¨ìˆ˜
 case()
 -----------------------------
-case when Á¶°Ç1 then °á°ú1 -- Á¶°ÇÀº ³í¸®°ªÀÌ ³ª¿À¸é µÈ´Ù.
-    when Á¶°Ç2 then °á°ú2
-    when Á¶°Ç3 then °á°ú3
-    else °á°ún
+case when ì¡°ê±´1 then ê²°ê³¼1 -- ì¡°ê±´ì€ ë…¼ë¦¬ê°’ì´ ë‚˜ì˜¤ë©´ ëœë‹¤.
+    when ì¡°ê±´2 then ê²°ê³¼2
+    when ì¡°ê±´3 then ê²°ê³¼3
+    else ê²°ê³¼n
 end
 
-ÀÚ¹ÙÀÇ ´ÙÁß if~elseÁ¦¾î¹®°ú ºñ½ÁÇÏ´Ù.
---À§ ¿¹Á¦¸¦ case¹®À¸·Î Ã³¸®ÇÏ¸é..
+ìžë°”ì˜ ë‹¤ì¤‘ if~elseì œì–´ë¬¸ê³¼ ë¹„ìŠ·í•˜ë‹¤.
+--ìœ„ ì˜ˆì œë¥¼ caseë¬¸ìœ¼ë¡œ ì²˜ë¦¬í•˜ë©´..
 SELECT first_name, department_id,
     case when department_id=10 then 'ACCOUNTING'
         when department_id=20 then 'RESEARCH'
@@ -377,50 +377,50 @@ SELECT first_name, department_id,
     end as code
 FROM employees;
 
---ÀÔ»çÀÏ¿¡¼­ ¿ùÀÌ 1-3ÀÌ¸é '1»çºÐ±â', 4-6ÀÌ¸é '2»çºÐ±â', 7-9ÀÌ¸é '3»çºÐ±â', 10-12ÀÌ¸é '4»çºÐ±â'·Î Ã³¸®ÇÏ°í
---first_name, hire_date, ºÐ±â·Î Ãâ·ÂÇÏ½Ã¿À
+--ìž…ì‚¬ì¼ì—ì„œ ì›”ì´ 1-3ì´ë©´ '1ì‚¬ë¶„ê¸°', 4-6ì´ë©´ '2ì‚¬ë¶„ê¸°', 7-9ì´ë©´ '3ì‚¬ë¶„ê¸°', 10-12ì´ë©´ '4ì‚¬ë¶„ê¸°'ë¡œ ì²˜ë¦¬í•˜ê³ 
+--first_name, hire_date, ë¶„ê¸°ë¡œ ì¶œë ¥í•˜ì‹œì˜¤
 
 SELECT first_name, hire_date, 
-    case when substr(to_char(hire_date), 4, 2) <=03 then '1»çºÐ±â' --substr('¹®ÀÚ', ½ÃÀÛÀ§Ä¡, °¹¼ö)
-       when substr(to_char(hire_date), 4, 2) <=06 then '2»çºÐ±â'
-       when substr(to_char(hire_date), 4, 2) <=09 then '3»çºÐ±â'
-    else '4»çºÐ±â'
+    case when substr(to_char(hire_date), 4, 2) <=03 then '1ì‚¬ë¶„ê¸°' --substr('ë¬¸ìž', ì‹œìž‘ìœ„ì¹˜, ê°¯ìˆ˜)
+       when substr(to_char(hire_date), 4, 2) <=06 then '2ì‚¬ë¶„ê¸°'
+       when substr(to_char(hire_date), 4, 2) <=09 then '3ì‚¬ë¶„ê¸°'
+    else '4ì‚¬ë¶„ê¸°'
     end as new
 FROM employees;
 
---¼±»ý´Ô
+--ì„ ìƒë‹˜
 SELECT first_name, hire_date, 
-    case when to_char(hire_date, 'mm') <=3 then '1»çºÐ±â' --substr('¹®ÀÚ', ½ÃÀÛÀ§Ä¡, °¹¼ö)
-       when to_char(hire_date, 'mm') <=6 then '2»çºÐ±â'
-       when to_char(hire_date, 'mm') <=9 then '3»çºÐ±â'
-    else '4»çºÐ±â'
-    end as "ºÐ±â" --ÇÑ±ÛÀº ½Öµû¿ÈÇ¥ ÇØ¾ß
+    case when to_char(hire_date, 'mm') <=3 then '1ì‚¬ë¶„ê¸°' --substr('ë¬¸ìž', ì‹œìž‘ìœ„ì¹˜, ê°¯ìˆ˜)
+       when to_char(hire_date, 'mm') <=6 then '2ì‚¬ë¶„ê¸°'
+       when to_char(hire_date, 'mm') <=9 then '3ì‚¬ë¶„ê¸°'
+    else '4ì‚¬ë¶„ê¸°'
+    end as "ë¶„ê¸°" --í•œê¸€ì€ ìŒë”°ì˜´í‘œ í•´ì•¼
 FROM employees;
 
 ----------------------------
-±×·ìÇÔ¼ö(º¹¼öÇÔ¼ö)
+ê·¸ë£¹í•¨ìˆ˜(ë³µìˆ˜í•¨ìˆ˜)
 ----------------------------
---max(ÄÃ·³) : ÃÖ´ë°ª
-SELECT max(salary) --ÀÚ¹Ù¶û ´Þ¸® ÀÎÀÚ°ªÀ» ¿©·¯ °³ ÁöÁ¤ °¡´É(ÀÚ¹Ù´Â µÎ °³)
+--max(ì»¬ëŸ¼) : ìµœëŒ€ê°’
+SELECT max(salary) --ìžë°”ëž‘ ë‹¬ë¦¬ ì¸ìžê°’ì„ ì—¬ëŸ¬ ê°œ ì§€ì • ê°€ëŠ¥(ìžë°”ëŠ” ë‘ ê°œ)
 FROM employees;
 
---min(ÄÃ·³) : ÃÖ¼Ò°ª
+--min(ì»¬ëŸ¼) : ìµœì†Œê°’
 SELECT min(salary)
-FROM employees; --°á°ú ÇàÀÌ ÇÏ³ª¸¸ ³ª¿Â´Ù. ÀÌ°Ô Áß¿äÇÏ´Ù.
+FROM employees; --ê²°ê³¼ í–‰ì´ í•˜ë‚˜ë§Œ ë‚˜ì˜¨ë‹¤. ì´ê²Œ ì¤‘ìš”í•˜ë‹¤.
 
-SELECT count(commission_pct) --ÀÌ ÄÃ·³¿¡¼­ null°ªÀ» Á¦¿ÜÇÑ µ¥ÀÌÅÍ°¡ ÀÖ´Â ÇàÀÇ °¹¼ö¸¦ ¸®ÅÏ
+SELECT count(commission_pct) --ì´ ì»¬ëŸ¼ì—ì„œ nullê°’ì„ ì œì™¸í•œ ë°ì´í„°ê°€ ìžˆëŠ” í–‰ì˜ ê°¯ìˆ˜ë¥¼ ë¦¬í„´
 as count
 FROM employees;
 
-SELECT count(*) --¹«Á¶°Ç Å×ÀÌºí¿¡ ÀúÀåµÅ ÀÖ´Â µ¥ÀÌÅÍ°¡ ÀÖ´Â ÇàÀÇ °¹¼ö¸¦ ¸®ÅÏ
+SELECT count(*) --ë¬´ì¡°ê±´ í…Œì´ë¸”ì— ì €ìž¥ë¼ ìžˆëŠ” ë°ì´í„°ê°€ ìžˆëŠ” í–‰ì˜ ê°¯ìˆ˜ë¥¼ ë¦¬í„´
 as count
 FROM employees;
 
---sum(ÄÃ·³) : ÇÕ°è
+--sum(ì»¬ëŸ¼) : í•©ê³„
 SELECT sum(salary)
 FROM employees;
 
---avg(ÄÃ·³) : Æò±Õ
+--avg(ì»¬ëŸ¼) : í‰ê· 
 SELECT avg(salary)
 FROM employees;
 
@@ -428,40 +428,40 @@ SELECT to_char(avg(salary), '99999,999.9')
 FROM employees;
 
 
-SELECT first_name, count(*) --ÇàÀÌ 107°³, 1°³ -- Ãâ·ÂµÇ´Â ÇàÀÇ °¹¼ö°¡ µ¿ÀÏÇØ¾ß ÇÑ´Ù.
+SELECT first_name, count(*) --í–‰ì´ 107ê°œ, 1ê°œ -- ì¶œë ¥ë˜ëŠ” í–‰ì˜ ê°¯ìˆ˜ê°€ ë™ì¼í•´ì•¼ í•œë‹¤.
 FROM employees;
---´ÜÀÏÇÔ¼ö¿Í º¹ÇÕÇÔ¼ö´Â º´Á¸ÇÒ ¼ö ¾ø´Ù.
+--ë‹¨ì¼í•¨ìˆ˜ì™€ ë³µí•©í•¨ìˆ˜ëŠ” ë³‘ì¡´í•  ìˆ˜ ì—†ë‹¤.
 
---Áý°èÇÔ¼ö¿Í ´Ü¼øÄÃ·³Àº ÇÔ²² »ç¿ëÇÒ ¼ö ¾ø´Ù.(Ãâ·ÂµÇ´Â ·¹ÄÚµå ¼ö°¡ ´Ù¸£±â ¶§¹®)
---ÀÌ·± °æ¿ì groupÀý°ú having ÀýÀ» ¾²¸é µÈ´Ù.
+--ì§‘ê³„í•¨ìˆ˜ì™€ ë‹¨ìˆœì»¬ëŸ¼ì€ í•¨ê»˜ ì‚¬ìš©í•  ìˆ˜ ì—†ë‹¤.(ì¶œë ¥ë˜ëŠ” ë ˆì½”ë“œ ìˆ˜ê°€ ë‹¤ë¥´ê¸° ë•Œë¬¸)
+--ì´ëŸ° ê²½ìš° groupì ˆê³¼ having ì ˆì„ ì“°ë©´ ëœë‹¤.
 
 SELECT first_name, count(*)
 FROM employees;
 
 ==============================================================================================
---±×·ìÇÔ¼ö¿Í ´Ü¼øÄÃ·³À» »ç¿ëÇÏ±â À§ÇØ¼­´Â, ´Ü¼øÄÃ·³À» ±×·ìÈ­ÇØ¾ß ÇÑ´Ù.(Group by)
---°¢ ºÎ¼­º° »ç¿øÀÇ ¼ö¸¦ ±¸ÇØ¾ß ÇÏ´Â °æ¿ì
+--ê·¸ë£¹í•¨ìˆ˜ì™€ ë‹¨ìˆœì»¬ëŸ¼ì„ ì‚¬ìš©í•˜ê¸° ìœ„í•´ì„œëŠ”, ë‹¨ìˆœì»¬ëŸ¼ì„ ê·¸ë£¹í™”í•´ì•¼ í•œë‹¤.(Group by)
+--ê° ë¶€ì„œë³„ ì‚¬ì›ì˜ ìˆ˜ë¥¼ êµ¬í•´ì•¼ í•˜ëŠ” ê²½ìš°
 SELECT department_id, count(*)
 FROM employees
-GROUP BY department_id --´Ü¼øÄÃ·³À» °¡Áö°í ±×·ìÀ» Áö¾îÁØ´Ù.
-ORDER BY department_id; --ÁöÁ¤ ¾ÈÇÏ¸é ¿À¸§Â÷¼ø, ÀÌ¶§ ³Î °ªÀº ¸Ç ¹Ø
+GROUP BY department_id --ë‹¨ìˆœì»¬ëŸ¼ì„ ê°€ì§€ê³  ê·¸ë£¹ì„ ì§€ì–´ì¤€ë‹¤.
+ORDER BY department_id; --ì§€ì • ì•ˆí•˜ë©´ ì˜¤ë¦„ì°¨ìˆœ, ì´ë•Œ ë„ ê°’ì€ ë§¨ ë°‘
 
---50ÀÌÇÏÀÎ ºÎ¼­¿¡ ´ëÇØ¼­ nullÀÌ ¾Æ´Ñ ºÎ¼­º°ÀÇ Á÷¿ø¼ö¸¦ Ãâ·ÂÇÏ½Ã¿À.
+--50ì´í•˜ì¸ ë¶€ì„œì— ëŒ€í•´ì„œ nullì´ ì•„ë‹Œ ë¶€ì„œë³„ì˜ ì§ì›ìˆ˜ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤.
 SELECT department_id, count(*)
 FROM employees
 WHERE department_id is not null
 GROUP BY department_id
-HAVING department_id <=50 --±×·ì¿¡ ´ëÇÑ Á¶°ÇÀº having Àý¿¡¼­ Ã³¸®ÇÑ´Ù.
+HAVING department_id <=50 --ê·¸ë£¹ì— ëŒ€í•œ ì¡°ê±´ì€ having ì ˆì—ì„œ ì²˜ë¦¬í•œë‹¤.
 ORDER BY department_id;
 
---ºÎ¼­º° ÃÖ¼Ò±Þ¿©, ÃÖ´ë±Þ¿©¸¦ Ãâ·ÂÇÏ½Ã¿À. (ºÎ¼­º° ¿À¸§Â÷¼ø)
-SELECT department_id as "ºÎ¼­" , min(salary) as min, max(salary) as max --alias´Â ÀÌ·¸°Ô ½á¾ß.
+--ë¶€ì„œë³„ ìµœì†Œê¸‰ì—¬, ìµœëŒ€ê¸‰ì—¬ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤. (ë¶€ì„œë³„ ì˜¤ë¦„ì°¨ìˆœ)
+SELECT department_id as "ë¶€ì„œ" , min(salary) as min, max(salary) as max --aliasëŠ” ì´ë ‡ê²Œ ì¨ì•¼.
 FROM employees
 GROUP BY department_id
 ORDER BY department_id;
 
---¾÷ºÎ¸ê(job_id) ±Þ¿©ÇÕ°è¸¦ Ãâ·ÂÇÏ½Ã¿À.
-SELECT job_id, sum(salary) as "±Þ¿©ÇÕ°è"
+--ì—…ë¶€ë©¸(job_id) ê¸‰ì—¬í•©ê³„ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤.
+SELECT job_id, sum(salary) as "ê¸‰ì—¬í•©ê³„"
 FROM employees
 GROUP BY job_id
 ORDER BY job_id;

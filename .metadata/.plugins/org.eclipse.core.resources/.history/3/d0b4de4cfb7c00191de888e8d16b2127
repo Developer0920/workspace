@@ -1,0 +1,22 @@
+package java0522_collection;
+
+public class Java193_sort {
+
+	public static void main(String[] args) {
+		String a = "ABCqwer24";
+		String b = "ABC";
+		String d = "ABC";
+		String e = "ab";
+		//String 클래스에 compareTo..
+		/* All Implemented Interfaces:
+			Serializable, CharSequence, Comparable<String>
+
+		 */
+		
+		System.out.println(b.compareTo(d)); //0
+		System.out.println(d.compareTo(e)); //65-97 = -35
+		
+
+	} //end main()
+
+} //end class

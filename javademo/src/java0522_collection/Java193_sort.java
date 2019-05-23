@@ -1,0 +1,29 @@
+package java0522_collection;
+
+public class Java193_sort {
+
+	public static void main(String[] args) {
+		String a = "ABCaswer24";
+		String b = "ABC";
+		String d = "ABC";
+		String e = "ab";
+		//String 클래스에 compareTo..
+		/* All Implemented Interfaces:
+			Serializable, CharSequence, Comparable<String>
+
+		 */
+		
+		System.out.println(b.compareTo(d)); //0
+		System.out.println(d.compareTo(e)); //65-97 = -32
+		System.out.println(e.compareTo(d)); //32
+		//앞에 문자들이 같고 길이가 다르면 길이를 비교한다.
+		System.out.println(a.compareTo(b)); //7 //같은 걸 무시하과 뒤에 있는 다른 개수가 나온다.
+		System.out.println(b.compareTo(a)); //-7 //같은 걸 무시하고 뒤에 있는 다른 개수가 나온다.
+		//문자열 비교는 이런 식으로 값을 반환함
+		
+		
+		
+
+	} //end main()
+
+} //end class

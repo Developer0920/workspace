@@ -1,80 +1,80 @@
+ï»¿=========================================================================
+ì¡°ì¸(join) : ì—¬ëŸ¬ ê°œì˜ í…Œì´ë¸”ì—ì„œ ì›í•˜ëŠ” ë°ì´í„°ë¥¼ ì¶”ì¶œí•´ ì£¼ëŠ” ì¿¼ë¦¬ë¬¸
+
+joinì€ oracleì œí’ˆì—ì„œ ì‚¬ìš©ë˜ëŠ” oracleìš© joinì´ ìžˆê³ 
+ëª¨ë“  ì œí’ˆì—ì„œ ê³µí†µì ìœ¼ë¡œ ì‚¬ìš©ë˜ëŠ” í‘œì¤€(ansi) joinì´ ìžˆë‹¤.
 =========================================================================
-Á¶ÀÎ(join) : ¿©·¯ °³ÀÇ Å×ÀÌºí¿¡¼­ ¿øÇÏ´Â µ¥ÀÌÅÍ¸¦ ÃßÃâÇØ ÁÖ´Â Äõ¸®¹®
+--ì˜¤ë¼í´ê³¼ í‘œì¤€ ë‘ ê°€ì§€ë¥¼ ì•Œì•„ì•¼.
 
-joinÀº oracleÁ¦Ç°¿¡¼­ »ç¿ëµÇ´Â oracle¿ë joinÀÌ ÀÖ°í
-¸ðµç Á¦Ç°¿¡¼­ °øÅëÀûÀ¸·Î »ç¿ëµÇ´Â Ç¥ÁØ(ansi) joinÀÌ ÀÖ´Ù.
-=========================================================================
---¿À¶óÅ¬°ú Ç¥ÁØ µÎ °¡Áö¸¦ ¾Ë¾Æ¾ß.
+1 cartesian product(ì¹´í‹°ì…˜ ê³±) ì¡°ì¸ : í…Œì´ë¸” í–‰ì˜ ê°¯ìˆ˜ë§Œí¼ ì¶œë ¥í•´ ì£¼ëŠ” ì¡°ì¸ì´ë‹¤.
 
-1 cartesian product(Ä«Æ¼¼Ç °ö) Á¶ÀÎ : Å×ÀÌºí ÇàÀÇ °¹¼ö¸¸Å­ Ãâ·ÂÇØ ÁÖ´Â Á¶ÀÎÀÌ´Ù.
-
-(1) oracle¿ë cartesian product
-    SELECT department_id, first_name, employees.job_id, job_title --job_idÀÇ °æ¿ì µÎ Å×ÀÌºí¿¡ ´Ù Á¸Àç. µû¶ó¼­ º°µµ·Î Ç¥±â¸¦ ÇØÁà¾ß ÇÑ´Ù.
+(1) oracleìš© cartesian product
+    SELECT department_id, first_name, employees.job_id, job_title --job_idì˜ ê²½ìš° ë‘ í…Œì´ë¸”ì— ë‹¤ ì¡´ìž¬. ë”°ë¼ì„œ ë³„ë„ë¡œ í‘œê¸°ë¥¼ í•´ì¤˜ì•¼ í•œë‹¤.
     FROM employees, jobs;
     
-    --±Ùµ¥ ±æ´Ù.. µû¶ó¼­.. 
-    --Ä«Æ¼¼Ç °ö Á¶ÀÎ
+    --ê·¼ë° ê¸¸ë‹¤.. ë”°ë¼ì„œ.. 
+    --ì¹´í‹°ì…˜ ê³± ì¡°ì¸
     SELECT department_id, first_name, e.job_id, job_title 
-    FROM employees e, jobs j; --¿©±â¼­ Ãà¾àÇüÀ» Ç¥½ÃÇÏ´Â °Í (107*19 = 2033°³ÀÇ ÇàÀÌ ¸¸µé¾îÁü)
+    FROM employees e, jobs j; --ì—¬ê¸°ì„œ ì¶•ì•½í˜•ì„ í‘œì‹œí•˜ëŠ” ê²ƒ (107*19 = 2033ê°œì˜ í–‰ì´ ë§Œë“¤ì–´ì§)
     
-(2) ansi¿ë cartesian product (cross join)
+(2) ansiìš© cartesian product (cross join)
     SELECT e.department_id, e.first_name, e.job_id, j.job_title
     FROM employees e cross join jobs j;
     
 2 equi join (ansi : inner join)
-    °¡Àå ¸¹ÀÌ »ç¿ëµÇ´Â Á¶ÀÎ¹æ¹ýÀ¸·Î Á¶ÀÎ ´ë»óÀÌ µÇ´Â µÎ Å×ÀÌºí¿¡¼­
-    °øÅëÀûÀ¸·Î Á¸ÀçÇÏ´Â ÄÃ·³ÀÇ °ªÀÌ ÀÏÄ¡µÇ´Â ÇàÀ» ¿¬°áÇÏ¿© °á°ú¸¦ »ý¼º(ÃßÃâ)ÇÏ´Â ¹æ¹ýÀÌ´Ù.
+    ê°€ìž¥ ë§Žì´ ì‚¬ìš©ë˜ëŠ” ì¡°ì¸ë°©ë²•ìœ¼ë¡œ ì¡°ì¸ ëŒ€ìƒì´ ë˜ëŠ” ë‘ í…Œì´ë¸”ì—ì„œ
+    ê³µí†µì ìœ¼ë¡œ ì¡´ìž¬í•˜ëŠ” ì»¬ëŸ¼ì˜ ê°’ì´ ì¼ì¹˜ë˜ëŠ” í–‰ì„ ì—°ê²°í•˜ì—¬ ê²°ê³¼ë¥¼ ìƒì„±(ì¶”ì¶œ)í•˜ëŠ” ë°©ë²•ì´ë‹¤.
     
 (1) oracle equi join
 SELECT  e.department_id, e.first_name, e.job_id,
         j.job_id, j.job_title
 FROM employees e, jobs j
-WHERE e.job_id = j.job_id -- ÀÏ¹ÝÀûÀ¸·Î °ü°è¼³Á¤ÀÌ µÅ ÀÖÀ½.. °¢°¢ foreign key, primary key·Î µÅ ÀÖÀ½. ¾È µÅ ÀÖ¾îµµ µÎ °³ÀÇ ÄÃ·³¿¡ ÀÔ·ÂµÈ µ¥ÀÌÅÍ°¡ °°À¸¸é °¡´ÉÇÏ´Ù.
--- nullÀÌ 0°³ÀÌ¹Ç·Î ÃÑ 107°³ Ãâ·ÂÇØÁÜ
+WHERE e.job_id = j.job_id -- ì¼ë°˜ì ìœ¼ë¡œ ê´€ê³„ì„¤ì •ì´ ë¼ ìžˆìŒ.. ê°ê° foreign key, primary keyë¡œ ë¼ ìžˆìŒ. ì•ˆ ë¼ ìžˆì–´ë„ ë‘ ê°œì˜ ì»¬ëŸ¼ì— ìž…ë ¥ëœ ë°ì´í„°ê°€ ê°™ìœ¼ë©´ ê°€ëŠ¥í•˜ë‹¤.
+-- nullì´ 0ê°œì´ë¯€ë¡œ ì´ 107ê°œ ì¶œë ¥í•´ì¤Œ
 
 SELECT job_id
 FROM employees
-WHERE job_id is null; --0°³
+WHERE job_id is null; --0ê°œ
 
-(2) ansi¿ë equi join(inner join)
+(2) ansiìš© equi join(inner join)
 SELECT  e.department_id, e.first_name, e.job_id,
         j.job_id, j.job_title
 FROM employees e inner join jobs j
-ON e.job_id = j.job_id; --Á¶ÀÎÀ» WHERE¿¡¼­ ÇÏÁö ¾ÊÀ½. ÀÌ·¸°Ô º°µµ·Î ÀÛ¼º
+ON e.job_id = j.job_id; --ì¡°ì¸ì„ WHEREì—ì„œ í•˜ì§€ ì•ŠìŒ. ì´ë ‡ê²Œ ë³„ë„ë¡œ ìž‘ì„±
 
 -------------------------------------------------------------------------------
---employees¿Í departmentsÅ×ÀÌºí¿¡¼­ »ç¿ø¹øÈ£(employee_id), ºÎ¼­¹øÈ£(department_id), ºÎ¼­¸í(department_name)À» °Ë»öÇÏ½Ã¿À.
+--employeesì™€ departmentsí…Œì´ë¸”ì—ì„œ ì‚¬ì›ë²ˆí˜¸(employee_id), ë¶€ì„œë²ˆí˜¸(department_id), ë¶€ì„œëª…(department_name)ì„ ê²€ìƒ‰í•˜ì‹œì˜¤.
 -------------------------------------------------------------------------------
-SELECT e.employee_id, e.department_id, d.department_name --ºÎ¼­¹øÈ£´Â ¾Æ¹«µ¥¼­³ª °¡Á®¿Íµµ µÊ
+SELECT e.employee_id, e.department_id, d.department_name --ë¶€ì„œë²ˆí˜¸ëŠ” ì•„ë¬´ë°ì„œë‚˜ ê°€ì ¸ì™€ë„ ë¨
 FROM employees e, departments d
-WHERE e.department_id = d.department_id; --106°³ ÃßÃâ
+WHERE e.department_id = d.department_id; --106ê°œ ì¶”ì¶œ
 
 SELECT department_id
 FROM employees
-WHERE department_id is null; -- ¿ª½Ã³ª nullÀÌ ÇÏ³ª ÀÖ¾ú´Ù!
+WHERE department_id is null; -- ì—­ì‹œë‚˜ nullì´ í•˜ë‚˜ ìžˆì—ˆë‹¤!
 
 -----------------------------------------------
---employees¿Í jobsÅ×ÀÌºí¿¡¼­ »ç¿ø¹øÈ£(employee_id), ¾÷¹«¹øÈ£(job_id), ¾÷¹«¸í(job_title)À» °Ë»öÇÏ½Ã¿À.
+--employeesì™€ jobsí…Œì´ë¸”ì—ì„œ ì‚¬ì›ë²ˆí˜¸(employee_id), ì—…ë¬´ë²ˆí˜¸(job_id), ì—…ë¬´ëª…(job_title)ì„ ê²€ìƒ‰í•˜ì‹œì˜¤.
 
 SELECT e.employee_id, e.job_id ,j.job_title
 FROM employees e, jobs j
 WHERE e.job_id = j.job_id;
 
---job_id°¡ 'FI_MGR'ÀÎ »ç¿øÀÌ ¼ÓÇÑ ±Þ¿©(salary)ÀÇ ÃÖ¼Ò°ª(min_salary), ÃÖ´ë°ª(max_salary)À» Ãâ·ÂÇÏ½Ã¿À.
+--job_idê°€ 'FI_MGR'ì¸ ì‚¬ì›ì´ ì†í•œ ê¸‰ì—¬(salary)ì˜ ìµœì†Œê°’(min_salary), ìµœëŒ€ê°’(max_salary)ì„ ì¶œë ¥í•˜ì‹œì˜¤.
 SELECT e.first_name, j.job_id, e.salary, j.min_salary, j.max_salary
 FROM employees e, jobs j
 WHERE e.job_id = j.job_id
     AND e.job_id = 'FI_MGR';
     
---ºÎ¼­°¡ 'seattle' ¿¡ ÀÖ´Â ºÎ¼­¿¡¼­ ±Ù¹«ÇÏ´Â Á÷¿øµéÀÇ first_name, hire_date, department_name, city¸¦
---Ãâ·ÂÇÏ´Â SELECT¹®ÀåÀ» ÀÛ¼º
+--ë¶€ì„œê°€ 'seattle' ì— ìžˆëŠ” ë¶€ì„œì—ì„œ ê·¼ë¬´í•˜ëŠ” ì§ì›ë“¤ì˜ first_name, hire_date, department_name, cityë¥¼
+--ì¶œë ¥í•˜ëŠ” SELECTë¬¸ìž¥ì„ ìž‘ì„±
 SELECT e.first_name, e.hire_date, d.department_name, l.city
 FROM locations l, employees e, departments d
 WHERE e.department_id = d.department_id
     AND l.location_id = d.location_id
     AND l.city = 'Seattle';
     
---ansi¹öÀü
+--ansië²„ì „
 SELECT e.first_name, e.hire_date, d.department_name, l.city
 FROM employees e inner join departments d
         on e.department_id = d.department_id
@@ -82,27 +82,27 @@ FROM employees e inner join departments d
         on d.location_id = l.location_id
 WHERE l.city = 'Seattle';
 
---20¹ø ºÎ¼­ÀÇ ÀÌ¸§°ú ±× ºÎ¼­¿¡ ±Ù¹«ÇÏ´Â »ç¿øÀÇ ÀÌ¸§(first_name)À» Ãâ·Â
+--20ë²ˆ ë¶€ì„œì˜ ì´ë¦„ê³¼ ê·¸ ë¶€ì„œì— ê·¼ë¬´í•˜ëŠ” ì‚¬ì›ì˜ ì´ë¦„(first_name)ì„ ì¶œë ¥
 SELECT d.department_name, e.first_name
 FROM departments d, employees e
 WHERE d.department_id = e.department_id
     AND d.department_id = 20;
     
---1400, 1500¹ø À§Ä¡ÀÇ µµ½Ã ÀÌ¸§°ú ±×°÷¿¡ ÀÖ´Â ºÎ¼­ÀÇ ÀÌ¸§À» Ãâ·ÂÇÏ½Ã¿À.
+--1400, 1500ë²ˆ ìœ„ì¹˜ì˜ ë„ì‹œ ì´ë¦„ê³¼ ê·¸ê³³ì— ìžˆëŠ” ë¶€ì„œì˜ ì´ë¦„ì„ ì¶œë ¥í•˜ì‹œì˜¤.
 SELECT l.location_id, city, department_name
 FROM locations l, departments d
 WHERE l.location_id = d.location_id
     AND l.location_id IN(1400, 1500);
 
 3. NATURAL JOIN
-    NATURAL JOINÀº µÎ Å×ÀÌºí °£ÀÇ µ¿ÀÏÇÑ ÀÌ¸§À» °®´Â ¸ðµç ÄÃ·³µé¿¡ ´ëÇØ EQUI(=) JOINÀ» ¼öÇàÇÑ´Ù.
-    ±×¸®°í SQL Server¿¡¼­´Â Áö¿øÇÏÁö ¾Ê´Â ±â´ÉÀÌ´Ù.
+    NATURAL JOINì€ ë‘ í…Œì´ë¸” ê°„ì˜ ë™ì¼í•œ ì´ë¦„ì„ ê°–ëŠ” ëª¨ë“  ì»¬ëŸ¼ë“¤ì— ëŒ€í•´ EQUI(=) JOINì„ ìˆ˜í–‰í•œë‹¤.
+    ê·¸ë¦¬ê³  SQL Serverì—ì„œëŠ” ì§€ì›í•˜ì§€ ì•ŠëŠ” ê¸°ëŠ¥ì´ë‹¤.
     
     SELECT first_name, salary, department_id, department_name
-    FROM employees natural join departments --¾²Áø ¾ÊÀ½. ±×³É ¾Ë¾Æ¸¸ µÑ °Í
+    FROM employees natural join departments --ì“°ì§„ ì•ŠìŒ. ê·¸ëƒ¥ ì•Œì•„ë§Œ ë‘˜ ê²ƒ
     
-4. non_equi join --ÀÏÄ¡ÇÏ´Â °Ô ¾Æ´Ï¶ó, ¾î¶² ¹üÀ§
- (=)¿¬»êÀÚ¸¦ Á¦¿ÜÇÑ >=, <=, >, < µîÀÇ ¿¬»êÀÚ¸¦ ÀÌ¿ëÇØ¼­ Á¶°ÇÀ» ÁöÁ¤ÇÏ´Â Á¶ÀÎ¹æ¹ýÀÌ´Ù.
+4. non_equi join --ì¼ì¹˜í•˜ëŠ” ê²Œ ì•„ë‹ˆë¼, ì–´ë–¤ ë²”ìœ„
+ (=)ì—°ì‚°ìžë¥¼ ì œì™¸í•œ >=, <=, >, < ë“±ì˜ ì—°ì‚°ìžë¥¼ ì´ìš©í•´ì„œ ì¡°ê±´ì„ ì§€ì •í•˜ëŠ” ì¡°ì¸ë°©ë²•ì´ë‹¤.
  
   SELECT e.first_name, e.salary, j.min_salary, j.max_salary, j.job_title
   FROM employees e, jobs j
@@ -110,134 +110,134 @@ WHERE l.location_id = d.location_id
   AND e.salary >= j.min_salary
   AND e.salary <= j.max_salary;
   
-(2)ansi¿ë non_equi join
+(2)ansiìš© non_equi join
  SELECT e.first_name, e.salary, j.min_salary, j.max_salary, j.job_title
   FROM employees e join jobs j
   ON e.job_id = j.job_id
     AND e.salary >= j.min_salary
     AND e.salary <= j.max_salary; 
     
-5.outer join --ÀüÃ¼»óÇ°¿¡ ´ëÇÑ ÆÇ¸Å·® µ¥ÀÌÅÍ ÃßÃâÇÏ´Â °æ¿ì
-    ÇÑÂÊ Å×ÀÌºí¿¡´Â µ¥ÀÌÅÍ°¡ ÀÖ°í ´Ù¸¥ ¹Ý´ëÂÊ¿¡´Â µ¥ÀÌÅÍ°¡ ¾ø´Â °æ¿ì¿¡
-    µ¥ÀÌÅÍ°¡ ÀÖ´Â Å×ÀÌºíÀÇ ³»¿ëÀ» ¸ðµÎ °¡Á®¿À´Â Á¶ÀÎÀÌ´Ù.
+5.outer join --ì „ì²´ìƒí’ˆì— ëŒ€í•œ íŒë§¤ëŸ‰ ë°ì´í„° ì¶”ì¶œí•˜ëŠ” ê²½ìš°
+    í•œìª½ í…Œì´ë¸”ì—ëŠ” ë°ì´í„°ê°€ ìžˆê³  ë‹¤ë¥¸ ë°˜ëŒ€ìª½ì—ëŠ” ë°ì´í„°ê°€ ì—†ëŠ” ê²½ìš°ì—
+    ë°ì´í„°ê°€ ìžˆëŠ” í…Œì´ë¸”ì˜ ë‚´ìš©ì„ ëª¨ë‘ ê°€ì ¸ì˜¤ëŠ” ì¡°ì¸ì´ë‹¤.
     
-    (1) oracle ¿ë outer join --ÀÏÄ¡µÇ´Â °Ô ¾øÁö¸¸ °¡Á®¿À°í ½ÍÀº °æ¿ì
+    (1) oracle ìš© outer join --ì¼ì¹˜ë˜ëŠ” ê²Œ ì—†ì§€ë§Œ ê°€ì ¸ì˜¤ê³  ì‹¶ì€ ê²½ìš°
     SELECT e.first_name, e.salary, d.department_id, e.department_id
     FROM employees e, departments d
     WHERE e.department_id = d.department_id
-    ORDER BY e.employee_id; --106°³¸¦ °¡Á®¿È. ±Ùµ¥.. NULL°ªÀÌ ÀÖ´Â °Íµµ °¡Á®¿À°í ½Í´Ù. ÀÌ·² ¶§..
+    ORDER BY e.employee_id; --106ê°œë¥¼ ê°€ì ¸ì˜´. ê·¼ë°.. NULLê°’ì´ ìžˆëŠ” ê²ƒë„ ê°€ì ¸ì˜¤ê³  ì‹¶ë‹¤. ì´ëŸ´ ë•Œ..
     
     SELECT e.first_name, e.salary, d.department_id, e.department_id
     FROM employees e, departments d
-    WHERE e.department_id = d.department_id(+) --NULL·Î µÅ ÀÖ´Â °É °¡Á®¿Ã ¶§.. °°ÀÌ µþ·Á¿À´Â °Íµµ NULL·Î °¡Á®¿È. Kimberely ÂüÁ¶.
-    ORDER BY e.employee_id; --ÀÌ°Ô leftÁ¶ÀÎÀÌ´Ù. ¤µ¤² Á¿°°ÀÌ ¸¸µé¾î ³ù³×..
+    WHERE e.department_id = d.department_id(+) --NULLë¡œ ë¼ ìžˆëŠ” ê±¸ ê°€ì ¸ì˜¬ ë•Œ.. ê°™ì´ ë”¸ë ¤ì˜¤ëŠ” ê²ƒë„ NULLë¡œ ê°€ì ¸ì˜´. Kimberely ì°¸ì¡°.
+    ORDER BY e.employee_id; --ì´ê²Œ leftì¡°ì¸ì´ë‹¤. ã……ã…‚ ì¢†ê°™ì´ ë§Œë“¤ì–´ ë†¨ë„¤..
     
-    --¹Ý´ë·Î ÇÏ¸é..
+    --ë°˜ëŒ€ë¡œ í•˜ë©´..
     SELECT e.first_name, e.salary, d.department_id, e.department_id
     FROM employees e, departments d
-    WHERE e.department_id(+) = d.department_id -- (+)µÈ °÷Àº µ¥ÀÌÅÍ¸¦ ÀüºÎ °¡Á®¿Â´Ù.
+    WHERE e.department_id(+) = d.department_id -- (+)ëœ ê³³ì€ ë°ì´í„°ë¥¼ ì „ë¶€ ê°€ì ¸ì˜¨ë‹¤.
     ORDER BY e.employee_id;
     
- (2) ansi¿ë outer join   --Ã³À½ ¿¹Á¦¶û °°À½
+ (2) ansiìš© outer join   --ì²˜ìŒ ì˜ˆì œëž‘ ê°™ìŒ
     SELECT e.first_name, e.salary, d.department_id, e.department_id
     FROM employees e left outer join departments d
-    ON e.department_id = d.department_id -- (+)µÈ °÷Àº µ¥ÀÌÅÍ¸¦ ÀüºÎ °¡Á®¿Â´Ù.??
+    ON e.department_id = d.department_id -- (+)ëœ ê³³ì€ ë°ì´í„°ë¥¼ ì „ë¶€ ê°€ì ¸ì˜¨ë‹¤.??
     ORDER BY e.employee_id;
     
-    --¹Ý´ë·Î ÇÏ¸é..
+    --ë°˜ëŒ€ë¡œ í•˜ë©´..
     SELECT e.first_name, e.salary, d.department_id, e.department_id
     FROM employees e right outer join departments d
-    ON e.department_id = d.department_id -- ansi¶û oracleÀÌ¶û ¹Ý´ë´Ù.
+    ON e.department_id = d.department_id -- ansiëž‘ oracleì´ëž‘ ë°˜ëŒ€ë‹¤.
     ORDER BY e.employee_id;
     
     
-6. self join --»ó»ç¿¡ ´ëÇÑ Á¤º¸ Ã£±â´Â µ¿ÀÏÇÑ Å×ÀÌºí ³»¿¡¼­ ÀÌ·ç¾îÁø´Ù. µÎ °³ÀÇ Å×ÀÌºí·Î ³ª´²¼­ »ý°¢ÇÒ °Í!
-ÇÏ³ªÀÇ Å×ÀÌºíÀ» µÎ °³ÀÇ Å×ÀÌ·Î ¼³Á¤ÇØ¼­ »ç¿ëÇÏ´Â Á¶ÀÎ¹æ¹ý
-    (1) oracle¿ë self join
-    SELECT e.employee_id as "»ç¿ø¹øÈ£",
-            e.first_name as "»ç¿øÀÌ¸§",
-            e.manager_id as "°ü¸®ÀÚ¹øÈ£",
-            m.first_name as "´ëÀå"
-    FROM employees e, employees m -- Å©....
+6. self join --ìƒì‚¬ì— ëŒ€í•œ ì •ë³´ ì°¾ê¸°ëŠ” ë™ì¼í•œ í…Œì´ë¸” ë‚´ì—ì„œ ì´ë£¨ì–´ì§„ë‹¤. ë‘ ê°œì˜ í…Œì´ë¸”ë¡œ ë‚˜ëˆ ì„œ ìƒê°í•  ê²ƒ!
+í•˜ë‚˜ì˜ í…Œì´ë¸”ì„ ë‘ ê°œì˜ í…Œì´ë¡œ ì„¤ì •í•´ì„œ ì‚¬ìš©í•˜ëŠ” ì¡°ì¸ë°©ë²•
+    (1) oracleìš© self join
+    SELECT e.employee_id as "ì‚¬ì›ë²ˆí˜¸",
+            e.first_name as "ì‚¬ì›ì´ë¦„",
+            e.manager_id as "ê´€ë¦¬ìžë²ˆí˜¸",
+            m.first_name as "ëŒ€ìž¥"
+    FROM employees e, employees m -- í¬....
     WHERE e.manager_id = m.employee_id
     
-    (2) ansi¿ë self join
-    SELECT e.employee_id as "»ç¿ø¹øÈ£",
-            e.first_name as "»ç¿øÀÌ¸§",
-            e.manager_id as "°ü¸®ÀÚ¹øÈ£",
-            m.first_name as "´ëÀå"
-    FROM employees e join employees m -- Å©....
+    (2) ansiìš© self join
+    SELECT e.employee_id as "ì‚¬ì›ë²ˆí˜¸",
+            e.first_name as "ì‚¬ì›ì´ë¦„",
+            e.manager_id as "ê´€ë¦¬ìžë²ˆí˜¸",
+            m.first_name as "ëŒ€ìž¥"
+    FROM employees e join employees m -- í¬....
     ON e.manager_id = m.employee_id
     
     
 ==========================================================================================
 -----------------------------------------------------------------------------------------
-¼­ºêÄõ¸®(subquery)
- ÇÏ³ªÀÇ SQL¹®¾È¿¡ Æ÷ÇÔµÇ¾î ÀÖ´Â ¶Ç ´Ù¸¥ SQL¹®À» ¸»ÇÑ´Ù.
- ¼­ºêÄõ¸®´Â ¾Ë·ÁÁöÁö ¾ÊÀº ±âÁØÀ» ÀÌ¿ëÇÑ °Ë»öÀ» À§ÇØ »ç¿ëÇÑ´Ù.
- ¼­ºêÄõ¸®´Â ¸ÞÀÎÄõ¸®°¡ ¼­ºêÄõ¸®¸¦ Æ÷ÇÔÇÏ´Â Á¾¼ÓÀûÀÎ °ü°èÀÌ´Ù.
- ¼­ºêÄõ¸®´Â ¸ÞÀÎÄõ¸®ÀÇ ÄÃ·³À» ¸ðµÎ »ç¿ëÇÒ ¼ö ÀÖÁö¸¸ ¸ÞÀÎÄõ¸®´Â ¼­ºêÄõ¸®ÀÇ ÄÃ·³À» »ç¿ëÇÒ ¼ö ¾ø´Ù. 
- ÁúÀÇ °á°ú¿¡ ¼­ºêÄõ¸® ÄÃ·³À» Ç¥½ÃÇØ¾ß ÇÑ´Ù¸é Á¶ÀÎ¹æ½ÄÀ¸·Î º¯È¯ÇÏ°Å³ª ÇÔ¼ö, ½ºÄ®¶ó ¼­ºêÄõ¸®(scarar subquery)µîÀ» »ç¿ëÇØ¾ß ÇÑ´Ù. 
- Á¶ÀÎÀº ÁýÇÕ°£ÀÇ °ö(Product)ÀÇ °ü°èÀÌ´Ù. 
+ì„œë¸Œì¿¼ë¦¬(subquery)
+ í•˜ë‚˜ì˜ SQLë¬¸ì•ˆì— í¬í•¨ë˜ì–´ ìžˆëŠ” ë˜ ë‹¤ë¥¸ SQLë¬¸ì„ ë§í•œë‹¤.
+ ì„œë¸Œì¿¼ë¦¬ëŠ” ì•Œë ¤ì§€ì§€ ì•Šì€ ê¸°ì¤€ì„ ì´ìš©í•œ ê²€ìƒ‰ì„ ìœ„í•´ ì‚¬ìš©í•œë‹¤.
+ ì„œë¸Œì¿¼ë¦¬ëŠ” ë©”ì¸ì¿¼ë¦¬ê°€ ì„œë¸Œì¿¼ë¦¬ë¥¼ í¬í•¨í•˜ëŠ” ì¢…ì†ì ì¸ ê´€ê³„ì´ë‹¤.
+ ì„œë¸Œì¿¼ë¦¬ëŠ” ë©”ì¸ì¿¼ë¦¬ì˜ ì»¬ëŸ¼ì„ ëª¨ë‘ ì‚¬ìš©í•  ìˆ˜ ìžˆì§€ë§Œ ë©”ì¸ì¿¼ë¦¬ëŠ” ì„œë¸Œì¿¼ë¦¬ì˜ ì»¬ëŸ¼ì„ ì‚¬ìš©í•  ìˆ˜ ì—†ë‹¤. 
+ ì§ˆì˜ ê²°ê³¼ì— ì„œë¸Œì¿¼ë¦¬ ì»¬ëŸ¼ì„ í‘œì‹œí•´ì•¼ í•œë‹¤ë©´ ì¡°ì¸ë°©ì‹ìœ¼ë¡œ ë³€í™˜í•˜ê±°ë‚˜ í•¨ìˆ˜, ìŠ¤ì¹¼ë¼ ì„œë¸Œì¿¼ë¦¬(scarar subquery)ë“±ì„ ì‚¬ìš©í•´ì•¼ í•œë‹¤. 
+ ì¡°ì¸ì€ ì§‘í•©ê°„ì˜ ê³±(Product)ì˜ ê´€ê³„ì´ë‹¤. 
  
-¿ÜºÎ Äõ¸® (¸ÞÀÎÄõ¸®)
- :ÀÏ¹Ý Äõ¸®¸¦ ÀÇ¹ÌÇÕ´Ï´Ù.
-2)½ºÄ®¶ó ¼­ºêÄõ¸®
- :SELECT Àý¿¡ Äõ¸®°¡ »ç¿ëµÇ´Â °æ¿ì·Î, ÇÔ¼öÃ³·³ ·¹ÄÚµå´ç Á¤È®È÷ ÇÏ³ªÀÇ °ª¸¸À» ¹ÝÈ¯ÇÏ´Â ¼­ºêÄõ¸®ÀÔ´Ï´Ù.
-3)ÀÎ¶óÀÎ ºä
- :FROM Àý¿¡ »ç¿ëµÇ´Â Äõ¸®·Î, ¿øÇÏ´Â µ¥ÀÌÅÍ¸¦ Á¶È¸ÇÏ¿© °¡»óÀÇ ÁýÇÕÀ» ¸¸µé¾î Á¶ÀÎÀ» ¼öÇàÇÏ°Å³ª °¡»óÀÇ ÁýÇÕÀ» ´Ù½Ã Á¶È¸ÇÒ ¶§ »ç¿ëÇÕ´Ï´Ù.
+ì™¸ë¶€ ì¿¼ë¦¬ (ë©”ì¸ì¿¼ë¦¬)
+ :ì¼ë°˜ ì¿¼ë¦¬ë¥¼ ì˜ë¯¸í•©ë‹ˆë‹¤.
+2)ìŠ¤ì¹¼ë¼ ì„œë¸Œì¿¼ë¦¬
+ :SELECT ì ˆì— ì¿¼ë¦¬ê°€ ì‚¬ìš©ë˜ëŠ” ê²½ìš°ë¡œ, í•¨ìˆ˜ì²˜ëŸ¼ ë ˆì½”ë“œë‹¹ ì •í™•ížˆ í•˜ë‚˜ì˜ ê°’ë§Œì„ ë°˜í™˜í•˜ëŠ” ì„œë¸Œì¿¼ë¦¬ìž…ë‹ˆë‹¤.
+3)ì¸ë¼ì¸ ë·°
+ :FROM ì ˆì— ì‚¬ìš©ë˜ëŠ” ì¿¼ë¦¬ë¡œ, ì›í•˜ëŠ” ë°ì´í„°ë¥¼ ì¡°íšŒí•˜ì—¬ ê°€ìƒì˜ ì§‘í•©ì„ ë§Œë“¤ì–´ ì¡°ì¸ì„ ìˆ˜í–‰í•˜ê±°ë‚˜ ê°€ìƒì˜ ì§‘í•©ì„ ë‹¤ì‹œ ì¡°íšŒí•  ë•Œ ì‚¬ìš©í•©ë‹ˆë‹¤.
 
---1)ÀÏ¹ÝÀûÀÎ ¼­ºêÄõ¸®´Â whereÀý¿¡ »ç¿ë.
+--1)ì¼ë°˜ì ì¸ ì„œë¸Œì¿¼ë¦¬ëŠ” whereì ˆì— ì‚¬ìš©.
 
-¼­ºêÄõ¸®¸¦ »ç¿ëÇÒ ¶§ ´ÙÀ½ »çÇ×¿¡ ÁÖÀÇ
-  ¼­ºêÄõ¸®¸¦ °ýÈ£·Î °¨½Î¼­ »ç¿ëÇÑ´Ù. 
-  ¼­ºêÄõ¸®´Â ´ÜÀÏ Çà(Single Row) ¶Ç´Â º¹¼ö Çà(Multiple Row) ºñ±³ ¿¬»êÀÚ¿Í ÇÔ²² »ç¿ë °¡´ÉÇÏ´Ù. 
-  ´ÜÀÏ Çà ºñ±³ ¿¬»êÀÚ´Â ¼­ºêÄõ¸®ÀÇ °á°ú°¡ ¹Ýµå½Ã 1°Ç ÀÌÇÏÀÌ¾î¾ß ÇÏ°í º¹¼ö Çà ºñ±³ ¿¬»êÀÚ´Â ¼­ºêÄõ¸®ÀÇ °á°ú °Ç¼ö¿Í »ó°ü ¾ø´Ù. 
-  ¼­ºêÄõ¸®¿¡¼­´Â ORDER BY¸¦ »ç¿ëÇÏÁö ¸øÇÑ´Ù. 
-  ORDER BYÀýÀº SELECTÀý¿¡¼­ ¿ÀÁ÷ ÇÑ °³¸¸ ¿Ã ¼ö ÀÖ±â ¶§¹®¿¡ ORDER BYÀýÀº ¸ÞÀÎÄõ¸®ÀÇ ¸¶Áö¸· ¹®Àå¿¡ À§Ä¡ÇØ¾ß ÇÑ´Ù.
+ì„œë¸Œì¿¼ë¦¬ë¥¼ ì‚¬ìš©í•  ë•Œ ë‹¤ìŒ ì‚¬í•­ì— ì£¼ì˜
+  ì„œë¸Œì¿¼ë¦¬ë¥¼ ê´„í˜¸ë¡œ ê°ì‹¸ì„œ ì‚¬ìš©í•œë‹¤. 
+  ì„œë¸Œì¿¼ë¦¬ëŠ” ë‹¨ì¼ í–‰(Single Row) ë˜ëŠ” ë³µìˆ˜ í–‰(Multiple Row) ë¹„êµ ì—°ì‚°ìžì™€ í•¨ê»˜ ì‚¬ìš© ê°€ëŠ¥í•˜ë‹¤. 
+  ë‹¨ì¼ í–‰ ë¹„êµ ì—°ì‚°ìžëŠ” ì„œë¸Œì¿¼ë¦¬ì˜ ê²°ê³¼ê°€ ë°˜ë“œì‹œ 1ê±´ ì´í•˜ì´ì–´ì•¼ í•˜ê³  ë³µìˆ˜ í–‰ ë¹„êµ ì—°ì‚°ìžëŠ” ì„œë¸Œì¿¼ë¦¬ì˜ ê²°ê³¼ ê±´ìˆ˜ì™€ ìƒê´€ ì—†ë‹¤. 
+  ì„œë¸Œì¿¼ë¦¬ì—ì„œëŠ” ORDER BYë¥¼ ì‚¬ìš©í•˜ì§€ ëª»í•œë‹¤. 
+  ORDER BYì ˆì€ SELECTì ˆì—ì„œ ì˜¤ì§ í•œ ê°œë§Œ ì˜¬ ìˆ˜ ìžˆê¸° ë•Œë¬¸ì— ORDER BYì ˆì€ ë©”ì¸ì¿¼ë¦¬ì˜ ë§ˆì§€ë§‰ ë¬¸ìž¥ì— ìœ„ì¹˜í•´ì•¼ í•œë‹¤.
   
 
-¼­ºê Äõ¸® »ç¿ë°¡´ÉÇÑ À§Ä¡
+ì„œë¸Œ ì¿¼ë¦¬ ì‚¬ìš©ê°€ëŠ¥í•œ ìœ„ì¹˜
 SELECT, FROM, WHERE, HAVING,ORDER BY 
-INSERT¹®ÀÇ VALUES,
-UPDATE¹®ÀÇ SET, CREATE¹®
+INSERTë¬¸ì˜ VALUES,
+UPDATEë¬¸ì˜ SET, CREATEë¬¸
 
-¼­ºêÄõ¸®ÀÇ Á¾·ù´Â µ¿ÀÛÇÏ´Â ¹æ½ÄÀÌ³ª ¹ÝÈ¯µÇ´Â µ¥ÀÌÅÍÀÇ ÇüÅÂ¿¡ µû¶ó ºÐ·ùÇÒ ¼ö ÀÖ´Ù.
-1 µ¿ÀÛÇÏ´Â ¹æ½Ä¿¡ µû¸¥ ¼­ºêÄõ¸® ºÐ·ù
-  Un-Correlated(ºñ¿¬°ü) : ¼­ºêÄõ¸®°¡ ¸ÞÀÎÄõ¸® ÄÃ·³À» °¡Áö°í ÀÖÁö ¾Ê´Â ÇüÅÂÀÇ ¼­ºêÄõ¸®ÀÌ´Ù. --Áö±Ý±îÁö Çß´ø °Í
-          ¸ÞÀÎÄõ¸®¿¡ °ª(¼­ºêÄõ¸®°¡ ½ÇÇàµÈ °á°ú)¸¦ Á¦°øÇÏ±â À§ÇÑ ¸ñÀûÀ¸·Î  ÁÖ·Î »ç¿ëÇÑ´Ù.
-  Correlated(¿¬°ü) : ¼­ºêÄõ¸®°¡ ¸ÞÀÎÄõ¸® Ä®·³À» °¡Áö°í ÀÖ´Â ÇüÅÂÀÇ ¼­ºêÄõ¸®ÀÌ´Ù. --¾ÆÁ÷ ¾È º½
-          ÀÏ¹ÝÀûÀ¸·Î ¸ÞÀÎÄõ¸®°¡ ¸ÕÀú ¼öÇàµÇ¾î ÀÐÇôÁø µ¥ÀÌÅÍ¸¦ ¼­ºêÄõ¸®¿¡¼­ Á¶°ÇÀÌ ¸Â´ÂÁö È®ÀÎ
-	  ÇÏ°íÀÚ ÇÒ ¶§ ÁÖ·Î »ç¿ëµÈ´Ù.  (EXISTS¼­ºêÄõ¸®´Â Ç×»ó ¿¬°ü ¼­ºêÄõ¸®·Î »ç¿ëµÈ´Ù. Á¶°ÇÀ» ¸¸Á·ÇÏ´Â 1°Ç¸¸ Ã£À¸¸é
-	  Ãß°¡ °Ë»öÀ» ÇÏÁö ¾Ê´Â´Ù.)
-2 ¹ÝÈ¯µÇ´Â µ¥ÀÌÅÍÀÇ ÇüÅÂ¿¡ µû¸¥ ¼­ºêÄõ¸® Á¾·ù
-  Single Row(´ÜÀÏÇà ¼­ºêÄõ¸®) : ¼­ºêÄõ¸®ÀÇ ½ÇÇà°á°ú°¡ Ç×»ó 1°Ç ÀÌÇÏÀÎ ¼­ºêÄõ¸®¸¦ ÀÇ¹ÌÇÑ´Ù. 
-          ´ÜÀÏÇà ¼­ºêÄõ¸®´Â ´ÜÀÏ Çà ºñ±³ ¿¬»êÀÚ¿Í ÇÔ²² »ç¿ëµÈ´Ù.
-	  ´ÜÀÏ Çà ºñ±³ ¿¬»êÀÚ´Â =, <, <=, >, >=, <>ÀÌ ÀÖ´Ù.
-  Multi Row(´ÙÁßÇà ¼­ºêÄõ¸®) : ¼­ºêÄõ¸®ÀÇ ½ÇÇà °á°ú°¡ ¿©·¯ °ÇÀÎ ¼­ºêÄõ¸®¸¦ ÀÇ¹ÌÇÑ´Ù. 
-          ´ÙÁß Çà ¼­ºêÄõ¸®´Â ´ÙÁß Çà ºñ±³ ¿¬»êÀÚ¿Í ÇÔ²² »ç¿ëµÈ´Ù. 
-	  ´ÙÁß Çà ºñ±³ ¿¬»êÀÚ¿¡´Â in, all, any, some, exists°¡ ÀÖ´Ù.
-	      in : ¸ÞÀÎÄõ¸®ÀÇ ºñ±³Á¶°Ç('='¿¬»êÀÚ·Î ºñ±³ÇÒ °æ¿ì)ÀÌ ¼­ºêÄõ¸®ÀÇ °á°ú Áß¿¡¼­
-               ÇÏ³ª¶óµµ ÀÏÄ¡ÇÏ¸é ÂüÀÌ´Ù.
-           any,some : ¸ÞÀÎ Äõ¸®ÀÇ ºñ±³ Á¶°ÇÀÌ ¼­ºê Äõ¸®ÀÇ °Ë»ö °á°ú¿Í ÇÏ³ª ÀÌ»óÀÌ ÀÏÄ¡ÇÏ¸é
-                ÂüÀÌ´Ù.
-           all : ¸ÞÀÎ Äõ¸®ÀÇ ºñ±³ Á¶°ÇÀÌ ¼­ºê Äõ¸®ÀÇ °Ë»ö °á°ú¿Í ¸ðµç °ªÀÌ ÀÏÄ¡ÇÏ¸é ÂüÀÌ´Ù.
-           exists : ¸ÞÀÎ Äõ¸®ÀÇ ºñ±³ Á¶°ÇÀÌ ¼­ºê Äõ¸®ÀÇ °á°ú Áß¿¡¼­ ¸¸Á·ÇÏ´Â °ªÀÌ ÇÏ³ª¶óµµ
-               Á¸ÀçÇÏ¸é ÂüÀÌ´Ù.
-  Multi Column(´ÙÁßÄ®·³ ¼­ºêÄõ¸®) : ¼­ºêÄõ¸®ÀÇ ½ÇÇà °á°ú·Î ¿©·¯ ÄÃ·³À» ¹ÝÈ¯ÇÑ´Ù.
-          ¸ÞÀÎÄõ¸®ÀÇ Á¶°ÇÀý¿¡ ¿©·¯ ÄÃ·³À» µ¿½Ã¿¡ ºñ±³ÇÒ ¼ö ÀÖ´Ù. 
-	  ¼­ºêÄõ¸®¿Í ¸ÞÀÎÄõ¸®¿¡¼­ ºñ±³ÇÏ°íÀÚ ÇÏ´Â ÄÃ·³ °¹¼ö¿Í ÄÃ·³ÀÇ À§Ä¡°¡ µ¿ÀÏÇØ¾ß ÇÑ´Ù.
+ì„œë¸Œì¿¼ë¦¬ì˜ ì¢…ë¥˜ëŠ” ë™ìž‘í•˜ëŠ” ë°©ì‹ì´ë‚˜ ë°˜í™˜ë˜ëŠ” ë°ì´í„°ì˜ í˜•íƒœì— ë”°ë¼ ë¶„ë¥˜í•  ìˆ˜ ìžˆë‹¤.
+1 ë™ìž‘í•˜ëŠ” ë°©ì‹ì— ë”°ë¥¸ ì„œë¸Œì¿¼ë¦¬ ë¶„ë¥˜
+  Un-Correlated(ë¹„ì—°ê´€) : ì„œë¸Œì¿¼ë¦¬ê°€ ë©”ì¸ì¿¼ë¦¬ ì»¬ëŸ¼ì„ ê°€ì§€ê³  ìžˆì§€ ì•ŠëŠ” í˜•íƒœì˜ ì„œë¸Œì¿¼ë¦¬ì´ë‹¤. --ì§€ê¸ˆê¹Œì§€ í–ˆë˜ ê²ƒ
+          ë©”ì¸ì¿¼ë¦¬ì— ê°’(ì„œë¸Œì¿¼ë¦¬ê°€ ì‹¤í–‰ëœ ê²°ê³¼)ë¥¼ ì œê³µí•˜ê¸° ìœ„í•œ ëª©ì ìœ¼ë¡œ  ì£¼ë¡œ ì‚¬ìš©í•œë‹¤.
+  Correlated(ì—°ê´€) : ì„œë¸Œì¿¼ë¦¬ê°€ ë©”ì¸ì¿¼ë¦¬ ì¹¼ëŸ¼ì„ ê°€ì§€ê³  ìžˆëŠ” í˜•íƒœì˜ ì„œë¸Œì¿¼ë¦¬ì´ë‹¤. --ì•„ì§ ì•ˆ ë´„
+          ì¼ë°˜ì ìœ¼ë¡œ ë©”ì¸ì¿¼ë¦¬ê°€ ë¨¼ì € ìˆ˜í–‰ë˜ì–´ ì½í˜€ì§„ ë°ì´í„°ë¥¼ ì„œë¸Œì¿¼ë¦¬ì—ì„œ ì¡°ê±´ì´ ë§žëŠ”ì§€ í™•ì¸
+	  í•˜ê³ ìž í•  ë•Œ ì£¼ë¡œ ì‚¬ìš©ëœë‹¤.  (EXISTSì„œë¸Œì¿¼ë¦¬ëŠ” í•­ìƒ ì—°ê´€ ì„œë¸Œì¿¼ë¦¬ë¡œ ì‚¬ìš©ëœë‹¤. ì¡°ê±´ì„ ë§Œì¡±í•˜ëŠ” 1ê±´ë§Œ ì°¾ìœ¼ë©´
+	  ì¶”ê°€ ê²€ìƒ‰ì„ í•˜ì§€ ì•ŠëŠ”ë‹¤.)
+2 ë°˜í™˜ë˜ëŠ” ë°ì´í„°ì˜ í˜•íƒœì— ë”°ë¥¸ ì„œë¸Œì¿¼ë¦¬ ì¢…ë¥˜
+  Single Row(ë‹¨ì¼í–‰ ì„œë¸Œì¿¼ë¦¬) : ì„œë¸Œì¿¼ë¦¬ì˜ ì‹¤í–‰ê²°ê³¼ê°€ í•­ìƒ 1ê±´ ì´í•˜ì¸ ì„œë¸Œì¿¼ë¦¬ë¥¼ ì˜ë¯¸í•œë‹¤. 
+          ë‹¨ì¼í–‰ ì„œë¸Œì¿¼ë¦¬ëŠ” ë‹¨ì¼ í–‰ ë¹„êµ ì—°ì‚°ìžì™€ í•¨ê»˜ ì‚¬ìš©ëœë‹¤.
+	  ë‹¨ì¼ í–‰ ë¹„êµ ì—°ì‚°ìžëŠ” =, <, <=, >, >=, <>ì´ ìžˆë‹¤.
+  Multi Row(ë‹¤ì¤‘í–‰ ì„œë¸Œì¿¼ë¦¬) : ì„œë¸Œì¿¼ë¦¬ì˜ ì‹¤í–‰ ê²°ê³¼ê°€ ì—¬ëŸ¬ ê±´ì¸ ì„œë¸Œì¿¼ë¦¬ë¥¼ ì˜ë¯¸í•œë‹¤. 
+          ë‹¤ì¤‘ í–‰ ì„œë¸Œì¿¼ë¦¬ëŠ” ë‹¤ì¤‘ í–‰ ë¹„êµ ì—°ì‚°ìžì™€ í•¨ê»˜ ì‚¬ìš©ëœë‹¤. 
+	  ë‹¤ì¤‘ í–‰ ë¹„êµ ì—°ì‚°ìžì—ëŠ” in, all, any, some, existsê°€ ìžˆë‹¤.
+	      in : ë©”ì¸ì¿¼ë¦¬ì˜ ë¹„êµì¡°ê±´('='ì—°ì‚°ìžë¡œ ë¹„êµí•  ê²½ìš°)ì´ ì„œë¸Œì¿¼ë¦¬ì˜ ê²°ê³¼ ì¤‘ì—ì„œ
+               í•˜ë‚˜ë¼ë„ ì¼ì¹˜í•˜ë©´ ì°¸ì´ë‹¤.
+           any,some : ë©”ì¸ ì¿¼ë¦¬ì˜ ë¹„êµ ì¡°ê±´ì´ ì„œë¸Œ ì¿¼ë¦¬ì˜ ê²€ìƒ‰ ê²°ê³¼ì™€ í•˜ë‚˜ ì´ìƒì´ ì¼ì¹˜í•˜ë©´
+                ì°¸ì´ë‹¤.
+           all : ë©”ì¸ ì¿¼ë¦¬ì˜ ë¹„êµ ì¡°ê±´ì´ ì„œë¸Œ ì¿¼ë¦¬ì˜ ê²€ìƒ‰ ê²°ê³¼ì™€ ëª¨ë“  ê°’ì´ ì¼ì¹˜í•˜ë©´ ì°¸ì´ë‹¤.
+           exists : ë©”ì¸ ì¿¼ë¦¬ì˜ ë¹„êµ ì¡°ê±´ì´ ì„œë¸Œ ì¿¼ë¦¬ì˜ ê²°ê³¼ ì¤‘ì—ì„œ ë§Œì¡±í•˜ëŠ” ê°’ì´ í•˜ë‚˜ë¼ë„
+               ì¡´ìž¬í•˜ë©´ ì°¸ì´ë‹¤.
+  Multi Column(ë‹¤ì¤‘ì¹¼ëŸ¼ ì„œë¸Œì¿¼ë¦¬) : ì„œë¸Œì¿¼ë¦¬ì˜ ì‹¤í–‰ ê²°ê³¼ë¡œ ì—¬ëŸ¬ ì»¬ëŸ¼ì„ ë°˜í™˜í•œë‹¤.
+          ë©”ì¸ì¿¼ë¦¬ì˜ ì¡°ê±´ì ˆì— ì—¬ëŸ¬ ì»¬ëŸ¼ì„ ë™ì‹œì— ë¹„êµí•  ìˆ˜ ìžˆë‹¤. 
+	  ì„œë¸Œì¿¼ë¦¬ì™€ ë©”ì¸ì¿¼ë¦¬ì—ì„œ ë¹„êµí•˜ê³ ìž í•˜ëŠ” ì»¬ëŸ¼ ê°¯ìˆ˜ì™€ ì»¬ëŸ¼ì˜ ìœ„ì¹˜ê°€ ë™ì¼í•´ì•¼ í•œë‹¤.
 ============================================================================================================== 
 
 
 SELECT first_name, last_name
 FROM employees
 WHERE first_name = 
-    (SELECT first_name --°á°ú´Â ÇÏ³ª¿©¾ß ÇÑ´Ù. ¹Ýµå½Ã °ýÈ£¸¦ ½áÁà¾ß ÇÑ´Ù.
+    (SELECT first_name --ê²°ê³¼ëŠ” í•˜ë‚˜ì—¬ì•¼ í•œë‹¤. ë°˜ë“œì‹œ ê´„í˜¸ë¥¼ ì¨ì¤˜ì•¼ í•œë‹¤.
     FROM employees)
 
 ----------------------------------------------
---Lex ±Ù¹«ÇÏ´Â ºÎ¼­¸íÀ» Ãâ·ÂÇÏ½Ã¿À.
+--Lex ê·¼ë¬´í•˜ëŠ” ë¶€ì„œëª…ì„ ì¶œë ¥í•˜ì‹œì˜¤.
 SELECT department_id
 FROM employees
 WHERE first_name='Lex'
@@ -247,13 +247,13 @@ FROM departments
 WHERE department_id =90;
 
 ----------------------------------
---Á¶ÀÎÀ» È°¿ë --ÀÏ´Ü ³»°¡ ÇÒ ÁÙ ¾Æ´Â °ÍÀ» °¡Áö°í ÇÏÀÚ.
+--ì¡°ì¸ì„ í™œìš© --ì¼ë‹¨ ë‚´ê°€ í•  ì¤„ ì•„ëŠ” ê²ƒì„ ê°€ì§€ê³  í•˜ìž.
 SELECT department_name
 FROM departments d, employees e
 WHERE e.department_id = d.department_id
     AND e.first_name = 'Lex'
 
---¼­ºêÄõ¸®¸¦ È°¿ë
+--ì„œë¸Œì¿¼ë¦¬ë¥¼ í™œìš©
 SELECT department_name
 FROM departments
 WHERE department_id =
@@ -261,7 +261,7 @@ WHERE department_id =
     FROM employees
     WHERE first_name='Lex');
     
---Lex¿Í °°Àº ºÎ¼­¿¡ ±Ù¹«ÇÏ´Â »ç¿ø ÀÌ¸§°ú ºÎ¼­¹øÈ£¸¦ Ãâ·ÂÇÏ½Ã¿À.
+--Lexì™€ ê°™ì€ ë¶€ì„œì— ê·¼ë¬´í•˜ëŠ” ì‚¬ì› ì´ë¦„ê³¼ ë¶€ì„œë²ˆí˜¸ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤.
 SELECT first_name, department_id
 FROM employees
 WHERE department_id = 
@@ -270,7 +270,7 @@ WHERE department_id =
     WHERE first_name = 'Lex');
     
     
---'Lex' ¿Í µ¿ÀÏÇÑ ¾÷¹«(job_id)¸¦ °¡Áø »ç¿øÀÇ ÀÌ¸§(first_name), ¾÷¹«(job_title), ÀÔ»çÀÏ(hire_date)À» Ãâ·ÂÇÏ½Ã¿À.
+--'Lex' ì™€ ë™ì¼í•œ ì—…ë¬´(job_id)ë¥¼ ê°€ì§„ ì‚¬ì›ì˜ ì´ë¦„(first_name), ì—…ë¬´(job_title), ìž…ì‚¬ì¼(hire_date)ì„ ì¶œë ¥í•˜ì‹œì˜¤.
 SELECT job_id
 FROM employees
 WHERE first_name = 'Lex'
@@ -279,84 +279,84 @@ WHERE first_name = 'Lex'
 SELECT first_name, job_title, hire_date
 FROM employees e, jobs j
 WHERE e.job_id = j.job_id
-    AND e.job_id =  -- j¸¦ ½áµµ µÊ. Áß¿äÇÑ °Ç ¹¹µç ¾È ¾²¸é ¾È µÊ.
+    AND e.job_id =  -- jë¥¼ ì¨ë„ ë¨. ì¤‘ìš”í•œ ê±´ ë­ë“  ì•ˆ ì“°ë©´ ì•ˆ ë¨.
         (SELECT job_id
         FROM employees
         WHERE first_name = 'Lex');
 
--- 'IT'¿¡ ±Ù¹«ÇÏ´Â »ç¿øÀÇ ÀÌ¸§, ºÎ¼­¹øÈ£¸¦ Ãâ·ÂÇÏ½Ã¿À.
+-- 'IT'ì— ê·¼ë¬´í•˜ëŠ” ì‚¬ì›ì˜ ì´ë¦„, ë¶€ì„œë²ˆí˜¸ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤.
 
 SELECT first_name, department_id
 FROM employees
 WHERE department_id = 
         (SELECT department_id
         FROM departments
-        WHERE department_name = 'IT'); --ÀÌ°Ô Á» ´õ Á÷°üÀûÀÎ µí
+        WHERE department_name = 'IT'); --ì´ê²Œ ì¢€ ë” ì§ê´€ì ì¸ ë“¯
 
---'Bruce'º¸´Ù ±Þ¿©¸¦ ¸¹ÀÌ ¹Þ´Â »ç¿øÀÌ¸§, ºÎ¼­¸í, ±Þ¿©¸¦ Ãâ·ÂÇÏ½Ã¿À.
+--'Bruce'ë³´ë‹¤ ê¸‰ì—¬ë¥¼ ë§Žì´ ë°›ëŠ” ì‚¬ì›ì´ë¦„, ë¶€ì„œëª…, ê¸‰ì—¬ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤.
 SELECT e.first_name, d.department_name, e.salary
 FROM employees e, departments d
 WHERE e.department_id = d.department_id
 AND salary >
-    (SELECT salary --ºñ±³¿¬»êÀÚ¿Í ¼­ºêÄõ¸®¸¦ ÇÔ²² »ç¿ëÇÏ·Á¸é ¼­ºêÄõ¸®ÀÇ '°á°úÇà' ÀÌ ÇÏ³ª¿©¾ß ÇÑ´Ù. ±×·² ¶§´Â in, or, some, any¸¦ »ç¿ëÇÑ´Ù.
+    (SELECT salary --ë¹„êµì—°ì‚°ìžì™€ ì„œë¸Œì¿¼ë¦¬ë¥¼ í•¨ê»˜ ì‚¬ìš©í•˜ë ¤ë©´ ì„œë¸Œì¿¼ë¦¬ì˜ 'ê²°ê³¼í–‰' ì´ í•˜ë‚˜ì—¬ì•¼ í•œë‹¤. ê·¸ëŸ´ ë•ŒëŠ” in, or, some, anyë¥¼ ì‚¬ìš©í•œë‹¤.
     FROM employees
-    WHERE first_name = 'Bruce') --ÀÏ¹ÝÀûÀ¸·Î ÀÌ°Ô ÇÏ³ª°¡ ¾Æ´Ï´Ù. ¶Ç ´Ù¸¥ Bruce°¡ ÀÔ»çÇÒ ¼ö ÀÖ´Ù. µû¶ó¼­ primary key°¡ ¼³Á¤µÈ ÄÃ·³À» ¾²´Â °Ô ÁÁ´Ù.
+    WHERE first_name = 'Bruce') --ì¼ë°˜ì ìœ¼ë¡œ ì´ê²Œ í•˜ë‚˜ê°€ ì•„ë‹ˆë‹¤. ë˜ ë‹¤ë¥¸ Bruceê°€ ìž…ì‚¬í•  ìˆ˜ ìžˆë‹¤. ë”°ë¼ì„œ primary keyê°€ ì„¤ì •ëœ ì»¬ëŸ¼ì„ ì“°ëŠ” ê²Œ ì¢‹ë‹¤.
 ORDER BY salary;
 -----------------------------------------
 
 --in
---Steven°ú °°Àº ºÎ¼­¿¡¼­ ±Ù¹«ÇÏ´Â »ç¿øÀÇ ÀÌ¸§, ±Þ¿©, ÀÔ»çÀÏÀ» Ãâ·Â
+--Stevenê³¼ ê°™ì€ ë¶€ì„œì—ì„œ ê·¼ë¬´í•˜ëŠ” ì‚¬ì›ì˜ ì´ë¦„, ê¸‰ì—¬, ìž…ì‚¬ì¼ì„ ì¶œë ¥
 SELECT first_name, salary, hire_date
 FROM employees
-WHERE department_id in( -- ÀÌ·¸°Ô inÀ» ¾²´Â °Å´Ù. ¾ðÁ¦? ¼­ºêÄõ¸®ÀÇ °á°úÇàÀÌ ¿©·Á °³ ÀÏ ¶§.
+WHERE department_id in( -- ì´ë ‡ê²Œ inì„ ì“°ëŠ” ê±°ë‹¤. ì–¸ì œ? ì„œë¸Œì¿¼ë¦¬ì˜ ê²°ê³¼í–‰ì´ ì—¬ë ¤ ê°œ ì¼ ë•Œ.
     SELECT department_id
     FROM employees
     WHERE first_name = 'Steven');
 
---ºÎ¼­º°·Î °¡Àå ±Þ¿©¸¦ ¸¹ÀÌ ¹Þ´Â »ç¿øÀÇ ÀÌ¸§, ±Þ¿©, ºÎ¼­¹øÈ£¸¦ Ãâ·ÂÇÏ½Ã¿À.
+--ë¶€ì„œë³„ë¡œ ê°€ìž¥ ê¸‰ì—¬ë¥¼ ë§Žì´ ë°›ëŠ” ì‚¬ì›ì˜ ì´ë¦„, ê¸‰ì—¬, ë¶€ì„œë²ˆí˜¸ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤.
 SELECT first_name, salary, department_id
 FROM employees
 WHERE (department_id, salary) in (
---ÀÌ·¸°Ô ¹­¾îÁà¾ß ÇÑ´Ù.
-                                    SELECT department_id, max(salary) -- max(salary) ±×·ìÀ» ÁöÀ» ¼ö ÀÖ´Â Á¶°Ç
+--ì´ë ‡ê²Œ ë¬¶ì–´ì¤˜ì•¼ í•œë‹¤.
+                                    SELECT department_id, max(salary) -- max(salary) ê·¸ë£¹ì„ ì§€ì„ ìˆ˜ ìžˆëŠ” ì¡°ê±´
                                     FROM employees
                                     GROUP BY department_id
-                                    /*ORDER BY department_id*/); --¼­ºêÄõ¸®¿¡¼­´Â order by¸¦ ¾²¸é ¾È µÈ´Ù.
-                                    --¸ÞÀÎÄõ¸®¿Í ¼­ºêÄõ¸®ÀÇ °á°ú¿­ÀÇ °¹¼ö°¡ °°¾Æ¾ß ÇÔ
+                                    /*ORDER BY department_id*/); --ì„œë¸Œì¿¼ë¦¬ì—ì„œëŠ” order byë¥¼ ì“°ë©´ ì•ˆ ëœë‹¤.
+                                    --ë©”ì¸ì¿¼ë¦¬ì™€ ì„œë¸Œì¿¼ë¦¬ì˜ ê²°ê³¼ì—´ì˜ ê°¯ìˆ˜ê°€ ê°™ì•„ì•¼ í•¨
 =========================================================================================================================
 --all
---30¼Ò¼ÓµÈ »ç¿øµéÁß¿¡¼­ ±Þ¿©¸¦ °¡Àå ¸¹ÀÌ ¹Þ´Â »ç¿øº¸´Ù ´õ ¸¹Àº ±Þ¿©¸¦ ¹Þ´Â »ç¿øÀÇ
---ÀÌ¸§, ±Þ¿©, ÀÔ»çÀÏÀ» Ãâ·ÂÇÏ½Ã¿À.(all)
---(¼­ºêÄõ¸®¿¡¼­ max()ÇÔ¼ö¸¦ »ç¿ëÇÏÁö ¾Ê´Â´Ù.)
+--30ì†Œì†ëœ ì‚¬ì›ë“¤ì¤‘ì—ì„œ ê¸‰ì—¬ë¥¼ ê°€ìž¥ ë§Žì´ ë°›ëŠ” ì‚¬ì›ë³´ë‹¤ ë” ë§Žì€ ê¸‰ì—¬ë¥¼ ë°›ëŠ” ì‚¬ì›ì˜
+--ì´ë¦„, ê¸‰ì—¬, ìž…ì‚¬ì¼ì„ ì¶œë ¥í•˜ì‹œì˜¤.(all)
+--(ì„œë¸Œì¿¼ë¦¬ì—ì„œ max()í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ”ë‹¤.)
 
 SELECT first_name, salary, hire_date
 FROM employees
-WHERE salary > all( -- ÀÌ Á¶°ÇÀ» ¸ðµÎ ¸¸Á·ÇÏ´Â
+WHERE salary > all( -- ì´ ì¡°ê±´ì„ ëª¨ë‘ ë§Œì¡±í•˜ëŠ”
                     SELECT salary
                     FROM employees
                     WHERE department_id = 30);
-                    -- ¼­ºêÄõ¸®ÀÇ °á°úÇàÀÌ ¿©·¯ °³ÀÏ ¶§ ÀÌ°É ¸ðµÎ ¸¸Á·ÇÏ´Â °á°ú°ªÀ» Ãâ·ÂÇÏ¶ó. ÀÌ³ð¾Æ.
+                    -- ì„œë¸Œì¿¼ë¦¬ì˜ ê²°ê³¼í–‰ì´ ì—¬ëŸ¬ ê°œì¼ ë•Œ ì´ê±¸ ëª¨ë‘ ë§Œì¡±í•˜ëŠ” ê²°ê³¼ê°’ì„ ì¶œë ¥í•˜ë¼. ì´ë†ˆì•„.
 
 --any                    
---ºÎ¼­¹øÈ£°¡ 30¹øÀÎ »ç¿øµéÀÌ ¹Þ´Â ÃÖÀú±Þ¿©º¸´Ù ³ôÀº ±Þ¿©¸¦ ¹Þ´Â »ç¿øÀÇ ÀÌ¸§,
---±Þ¿©, ÀÔ»çÀÏÀ» Ãâ·ÂÇÏ½Ã¿À. (min()ÇÔ¼ö¸¦ »ç¿ëÇÏÁö ¾Ê´Â´Ù.) (any)
+--ë¶€ì„œë²ˆí˜¸ê°€ 30ë²ˆì¸ ì‚¬ì›ë“¤ì´ ë°›ëŠ” ìµœì €ê¸‰ì—¬ë³´ë‹¤ ë†’ì€ ê¸‰ì—¬ë¥¼ ë°›ëŠ” ì‚¬ì›ì˜ ì´ë¦„,
+--ê¸‰ì—¬, ìž…ì‚¬ì¼ì„ ì¶œë ¥í•˜ì‹œì˜¤. (min()í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ”ë‹¤.) (any)
 SELECT first_name, salary, hire_date
 FROM employees
 WHERE salary > any(
                     SELECT salary
                     FROM employees
-                    WHERE department_id = 30); --±â°¡ ¸·È÷³×...
+                    WHERE department_id = 30); --ê¸°ê°€ ë§‰ížˆë„¤...
 
 
 ----exist
---20¹ø ºÎ¼­¿¡ ¼ÓÇÑ »ç¿øÀÌ ÀÖÀ¸¸é »ç¿øµéÀÇ »ç¿ø¸í, ÀÔ»çÀÏ, ±Þ¿©, ºÎ¼­¹øÈ£¸¦ Ãâ·ÂÇÏ½Ã¿À
---¹«Á¶°Ç ÀÖÀ¸¸é true
+--20ë²ˆ ë¶€ì„œì— ì†í•œ ì‚¬ì›ì´ ìžˆìœ¼ë©´ ì‚¬ì›ë“¤ì˜ ì‚¬ì›ëª…, ìž…ì‚¬ì¼, ê¸‰ì—¬, ë¶€ì„œë²ˆí˜¸ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤
+--ë¬´ì¡°ê±´ ìžˆìœ¼ë©´ true
 SELECT first_name, hire_date, salary, department_id
 FROM employees
-WHERE exists (SELECT department_id -- ÀÖ´Ï ¾ø´Ï? --´ë·®ÀÇ µ¥ÀÌÅÍ¿¡¼­ ¼¿·ºÆ®ÇØ¼­ °¡Á®¿Ã ¶§ »ç¿ë
+WHERE exists (SELECT department_id -- ìžˆë‹ˆ ì—†ë‹ˆ? --ëŒ€ëŸ‰ì˜ ë°ì´í„°ì—ì„œ ì…€ë ‰íŠ¸í•´ì„œ ê°€ì ¸ì˜¬ ë•Œ ì‚¬ìš©
             FROM employees
-            WHERE department_id = 20); -- 20000ÀÌ¸é FÀÌ¹Ç·Î Ãâ·Â °á°ú°¡ ¾øÀ½.
---»ó»ç°¡ ÀÖ´Â °æ¿ì ¶Ç´Â ¾ø´Â °æ¿ì. ÀÌ·± ½ÄÀ¸·Î »ç¿ë.
+            WHERE department_id = 20); -- 20000ì´ë©´ Fì´ë¯€ë¡œ ì¶œë ¥ ê²°ê³¼ê°€ ì—†ìŒ.
+--ìƒì‚¬ê°€ ìžˆëŠ” ê²½ìš° ë˜ëŠ” ì—†ëŠ” ê²½ìš°. ì´ëŸ° ì‹ìœ¼ë¡œ ì‚¬ìš©.
 
 
 
@@ -364,18 +364,18 @@ WHERE exists (SELECT department_id -- ÀÖ´Ï ¾ø´Ï? --´ë·®ÀÇ µ¥ÀÌÅÍ¿¡¼­ ¼¿·ºÆ®ÇØ¼­ 
 
 (2019_05_15)
 ---------------------------------------------------------------
-Top-N ¼­ºêÄõ¸®
-    »óÀ§ÀÇ °ªÀ» ÃßÃâÇÒ ¶§ »ç¿ëÇÑ´Ù.
-    <, <=¿¬»êÀÚ¸¦ »ç¿ëÇÒ ¼ö ÀÖ´Ù. ´Ü ºñ±³µÇ´Â °ªÀÌ 1ÀÏ ¶§´Â =µµ °¡´ÉÇÏ´Ù.
-    order byÀýÀ» »ç¿ëÇÒ ¼ö ÀÖ´Ù.
-    FROM Àý¿¡ »ç¿ëÇÔ.
+Top-N ì„œë¸Œì¿¼ë¦¬
+    ìƒìœ„ì˜ ê°’ì„ ì¶”ì¶œí•  ë•Œ ì‚¬ìš©í•œë‹¤.
+    <, <=ì—°ì‚°ìžë¥¼ ì‚¬ìš©í•  ìˆ˜ ìžˆë‹¤. ë‹¨ ë¹„êµë˜ëŠ” ê°’ì´ 1ì¼ ë•ŒëŠ” =ë„ ê°€ëŠ¥í•˜ë‹¤.
+    order byì ˆì„ ì‚¬ìš©í•  ìˆ˜ ìžˆë‹¤.
+    FROM ì ˆì— ì‚¬ìš©í•¨.
 ---------------------------------------------------------------
--- ±Þ¿©°¡ °¡Àå ³ôÀº »óÀ§ 3¸íÀ» °Ë»öÇÏ½Ã¿À.
+-- ê¸‰ì—¬ê°€ ê°€ìž¥ ë†’ì€ ìƒìœ„ 3ëª…ì„ ê²€ìƒ‰í•˜ì‹œì˜¤.
 SELECT emp.*
-FROM   (SELECT first_name, salary --ÀÌ ¼­ºêÄõ¸®°¡ ¸ÞÀÎ Äõ¸®ÀÇ Å×ÀÌºí·Î »ç¿ëµÈ´Ù --ÀÎ¶óÀÎ ºä -- ¸ÞÀÎ Äõ¸®´Â first_name°ú salary¸¸ »ç¿ëÇÒ ¼ö ÀÖÀ½
+FROM   (SELECT first_name, salary --ì´ ì„œë¸Œì¿¼ë¦¬ê°€ ë©”ì¸ ì¿¼ë¦¬ì˜ í…Œì´ë¸”ë¡œ ì‚¬ìš©ëœë‹¤ --ì¸ë¼ì¸ ë·° -- ë©”ì¸ ì¿¼ë¦¬ëŠ” first_nameê³¼ salaryë§Œ ì‚¬ìš©í•  ìˆ˜ ìžˆìŒ
         FROM employees
         ORDER BY salary desc) emp
-WHERE rownum/*¿À¶óÅ¬¿ë*/ <=3;
+WHERE rownum/*ì˜¤ë¼í´ìš©*/ <=3;
 
 -------------
 SELECT emp.*
@@ -390,77 +390,77 @@ FROM   (SELECT first_name, salary
         ORDER BY salary desc) emp
 WHERE rownum<=3;
 
---¼±»ý´Ô ¹æ¹ý
+--ì„ ìƒë‹˜ ë°©ë²•
 SELECT e.*
 FROM ((SELECT emp.*, rownum as rm
         FROM   (SELECT first_name, salary 
                 FROM employees
                 ORDER BY salary desc) emp)
     ) e
-WHERE rm >=4 AND rm<=8 --¿À¶óÅ¬¿¡¼­ Æ¯Á¤ ¹üÀ§¸¦ »ç¿ëÇÏ·Á¸é top-n ¼­ºêÄõ¸®¸¦ ½á¾ß.
---¼¼ºÎ¸¦ ¸ÕÀú ¸¸µé°í È®Àå½ÃÄÑ¾ß ÇÒ µí
+WHERE rm >=4 AND rm<=8 --ì˜¤ë¼í´ì—ì„œ íŠ¹ì • ë²”ìœ„ë¥¼ ì‚¬ìš©í•˜ë ¤ë©´ top-n ì„œë¸Œì¿¼ë¦¬ë¥¼ ì¨ì•¼.
+--ì„¸ë¶€ë¥¼ ë¨¼ì € ë§Œë“¤ê³  í™•ìž¥ì‹œì¼œì•¼ í•  ë“¯
 
 
 ---------------------------------------------------------------------------------------
---¿ù º° ÀÔ»çÀÚ ¼ö¸¦ Á¶È¸ÇÏµÇ ÀÔ»çÀÚ ¼ö°¡ °¡Àå ¸¹Àº »óÀ§ 3°³ÀÇ ´Þ¸¸ Ãâ·ÂµÇµµ·Ï ÇÏ½Ã¿À.
--- <Ãâ·Â: ¿ù       ÀÔ»çÀÚ¼ö >
+--ì›” ë³„ ìž…ì‚¬ìž ìˆ˜ë¥¼ ì¡°íšŒí•˜ë˜ ìž…ì‚¬ìž ìˆ˜ê°€ ê°€ìž¥ ë§Žì€ ìƒìœ„ 3ê°œì˜ ë‹¬ë§Œ ì¶œë ¥ë˜ë„ë¡ í•˜ì‹œì˜¤.
+-- <ì¶œë ¥: ì›”       ìž…ì‚¬ìžìˆ˜ >
 
 SELECT e.*
 FROM 
-    (SELECT to_char(hire_date, 'mm') as "¿ù", count(*) as "ÀÔ»çÀÚ¼ö"
+    (SELECT to_char(hire_date, 'mm') as "ì›”", count(*) as "ìž…ì‚¬ìžìˆ˜"
     FROM employees
     GROUP BY to_char(hire_date, 'mm')
-    ORDER BY "ÀÔ»çÀÚ¼ö" desc) e
+    ORDER BY "ìž…ì‚¬ìžìˆ˜" desc) e
 WHERE rownum <=3
-ORDER BY "¿ù"
+ORDER BY "ì›”"
 
 
 
---»ó°ü°ú ºñ»ó°ü
---¸ÞÀÎÀÇ ÄÃ·³À» ¼­ºêÄõ¸®ÀÇ WHEREÀý¿¡¼­ »ç¿ëÇÏ´À³Ä ¿©ºÎ
--- »ó°ü°ü°è ¼­ºêÄõ¸®
-: ¼­ºêÄõ¸®¿¡¼­ ¸ÞÀÎÄõ¸®ÀÇ ÄÃ·³À» ÂüÁ¶ÇÑ´Ù.(¸ÞÀÎÄõ¸®¸¦ ¸ÕÀú ¼öÇàÇÑ´Ù.)
-  ¼­ºêÄõ¸®´Â ¸ÞÀÎÄõ¸® °¢°¢ÀÇ Çà¿¡ ´ëÇØ¼­ ¼ø¼­ÀûÀ¸·Î ÇÑ ¹ø¾¿ ½ÇÇàÇÑ´Ù.
-  <¾Æ·¡ Äõ¸® Ã³¸®¼ø¼­>
-  1st : ¹Ù±ùÂÊ Äõ¸®ÀÇ Ã¹Â° row¿¡ ´ëÇÏ¿©
-  2nd : ¾ÈÂÊ Äõ¸®¿¡¼­ ÀÚ½ÅÀÇ ¼ÓÇØÀÖ´Â ºÎ¼­ÀÇ MAX salary°ú ºñ±³ÇÏ¿© trueÀÌ¸é ¹Ù±ùÀÇ ÄÃ·³°ªÀ» ¹ÝÈ¯ÇÏ°í, falseÀÌ¸é °ªÀ» ¹ö¸°´Ù.
-  3rd : ¹Ù±ùÂÊ Äõ¸®ÀÇ µÎ ¹øÂ° row¿¡ ´ëÇÏ¿© ¸¶Âù°¡Áö·Î ½ÇÇàÇÏ¿©, ÀÌ·¸°Ô ¹Ù±ùÂÊ Äõ¸®ÀÇ ¸¶Áö¸· row±îÁö ½ÇÇàÇÑ´Ù.
+--ìƒê´€ê³¼ ë¹„ìƒê´€
+--ë©”ì¸ì˜ ì»¬ëŸ¼ì„ ì„œë¸Œì¿¼ë¦¬ì˜ WHEREì ˆì—ì„œ ì‚¬ìš©í•˜ëŠëƒ ì—¬ë¶€
+-- ìƒê´€ê´€ê³„ ì„œë¸Œì¿¼ë¦¬
+: ì„œë¸Œì¿¼ë¦¬ì—ì„œ ë©”ì¸ì¿¼ë¦¬ì˜ ì»¬ëŸ¼ì„ ì°¸ì¡°í•œë‹¤.(ë©”ì¸ì¿¼ë¦¬ë¥¼ ë¨¼ì € ìˆ˜í–‰í•œë‹¤.)
+  ì„œë¸Œì¿¼ë¦¬ëŠ” ë©”ì¸ì¿¼ë¦¬ ê°ê°ì˜ í–‰ì— ëŒ€í•´ì„œ ìˆœì„œì ìœ¼ë¡œ í•œ ë²ˆì”© ì‹¤í–‰í•œë‹¤.
+  <ì•„ëž˜ ì¿¼ë¦¬ ì²˜ë¦¬ìˆœì„œ>
+  1st : ë°”ê¹¥ìª½ ì¿¼ë¦¬ì˜ ì²«ì§¸ rowì— ëŒ€í•˜ì—¬
+  2nd : ì•ˆìª½ ì¿¼ë¦¬ì—ì„œ ìžì‹ ì˜ ì†í•´ìžˆëŠ” ë¶€ì„œì˜ MAX salaryê³¼ ë¹„êµí•˜ì—¬ trueì´ë©´ ë°”ê¹¥ì˜ ì»¬ëŸ¼ê°’ì„ ë°˜í™˜í•˜ê³ , falseì´ë©´ ê°’ì„ ë²„ë¦°ë‹¤.
+  3rd : ë°”ê¹¥ìª½ ì¿¼ë¦¬ì˜ ë‘ ë²ˆì§¸ rowì— ëŒ€í•˜ì—¬ ë§ˆì°¬ê°€ì§€ë¡œ ì‹¤í–‰í•˜ì—¬, ì´ë ‡ê²Œ ë°”ê¹¥ìª½ ì¿¼ë¦¬ì˜ ë§ˆì§€ë§‰ rowê¹Œì§€ ì‹¤í–‰í•œë‹¤.
   
-  ---ºÎ¼­º° ÃÖ°í ±Þ¿©¸¦ ¹Þ´Â »ç¿øÀ» Ãâ·ÂÇÏ½Ã¿À.
+  ---ë¶€ì„œë³„ ìµœê³  ê¸‰ì—¬ë¥¼ ë°›ëŠ” ì‚¬ì›ì„ ì¶œë ¥í•˜ì‹œì˜¤.
   /*6*/ SELECT first_name, salary, department_id
-  /*1*/ FROM employees e --¼­ºêÄõ¸®¿¡¼­ »ç¿ëÇÒ ¼ö ÀÖµµ·Ï Æ¯Á¤Áö¾î ÁÖ´Â °Í
+  /*1*/ FROM employees e --ì„œë¸Œì¿¼ë¦¬ì—ì„œ ì‚¬ìš©í•  ìˆ˜ ìžˆë„ë¡ íŠ¹ì •ì§€ì–´ ì£¼ëŠ” ê²ƒ
   /*5*/ WHERE salary = (
   /*4*/         SELECT max(salary)
   /*2*/         FROM employees
-  /*3*/         WHERE department_id = e.department_id) -- employeesÅ×ÀÌºíÀÌ µÎ °³ÀÎ °Å·Î º¼ °Í --self join ÇÏ°í ºñ½ÁÇÑ µí
+  /*3*/         WHERE department_id = e.department_id) -- employeesí…Œì´ë¸”ì´ ë‘ ê°œì¸ ê±°ë¡œ ë³¼ ê²ƒ --self join í•˜ê³  ë¹„ìŠ·í•œ ë“¯
   /*7*/ ORDER BY department_id;
   
   SELECT employee_id, first_name, salary, department_id 
                 FROM employees
-                WHERE e.employee_id = manager_id); -- ÀÌ°É ÃæÁ·½ÃÅ²´Ù´Â °Ç ºÎÇÏ°¡ ÀÖ´Ù´Â °Í
-  -- °ü¸®ÀÚ°¡ ÀÖ´Â »ç¿øÀÇ Á¤º¸ Ãâ·Â
+                WHERE e.employee_id = manager_id); -- ì´ê±¸ ì¶©ì¡±ì‹œí‚¨ë‹¤ëŠ” ê±´ ë¶€í•˜ê°€ ìžˆë‹¤ëŠ” ê²ƒ
+  -- ê´€ë¦¬ìžê°€ ìžˆëŠ” ì‚¬ì›ì˜ ì •ë³´ ì¶œë ¥
   SELECT employee_id, first_name, manager_id
   FROM employees e
   WHERE exists (SELECT 'x'
                 FROM employees
-                WHERE e.manager_id = employee_id); --Å×ÀÌºíÀ» µÎ °³¸¦ ¶ç¿ö¼­ ±¸Ã¼ÀûÀ¸·Î »ç°íÇÒ °Í! --ÀÌ°É ÃæÁ·ÇÑ´Ù´Â °Ç..  ´©±º°¡ÀÇ »ó»ç¶ó´Â °Í
+                WHERE e.manager_id = employee_id); --í…Œì´ë¸”ì„ ë‘ ê°œë¥¼ ë„ì›Œì„œ êµ¬ì²´ì ìœ¼ë¡œ ì‚¬ê³ í•  ê²ƒ! --ì´ê±¸ ì¶©ì¡±í•œë‹¤ëŠ” ê±´..  ëˆ„êµ°ê°€ì˜ ìƒì‚¬ë¼ëŠ” ê²ƒ
 
 
---ºÎ¼­¸í¿¡ IT°¡ Æ÷ÇÔÀÌ µÈ »ç¶÷ÀÌ ¼ÓÇÑ »ç¿ø¸é(first_name),
---ºÎ¼­¹øÈ£(department_id),
---ºÎ¼­¸í(department_name)À» Ãâ·ÂÇÏ½Ã¿À(in)
+--ë¶€ì„œëª…ì— ITê°€ í¬í•¨ì´ ëœ ì‚¬ëžŒì´ ì†í•œ ì‚¬ì›ë©´(first_name),
+--ë¶€ì„œë²ˆí˜¸(department_id),
+--ë¶€ì„œëª…(department_name)ì„ ì¶œë ¥í•˜ì‹œì˜¤(in)
 
 SELECT e.first_name, e.department_id, d.department_name
 FROM employees e, departments d
-WHERE E.Department_Id = D.Department_Id -- ÀÏ´Ü equalÀÎ µ¥ÀÌÅÍ¸¦ °¡Á®¿Í¼­, Ç¥¸¦ °¡»óÀ¸·Î ¸¸µê
+WHERE E.Department_Id = D.Department_Id -- ì¼ë‹¨ equalì¸ ë°ì´í„°ë¥¼ ê°€ì ¸ì™€ì„œ, í‘œë¥¼ ê°€ìƒìœ¼ë¡œ ë§Œë“¦
     AND e.department_id in (SELECT department_id
                             FROM departments
                             WHERE department_name like '%IT%')
     
     
---Toronto µµ½Ã¿¡ ±Ù¹«ÇÏ´Â »ç¿øµéÀÌ ¹Þ´Â ÃÖ¼Ò±Þ¿©º¸´Ù ¸¹ÀÌ ¹Þ´Â »ç¿øÀÇ
---first_name, city, salaryÀ» Ãâ·ÂÇÏ½Ã¿À(any)
---Totonto´Â Á¦¿Ü
+--Toronto ë„ì‹œì— ê·¼ë¬´í•˜ëŠ” ì‚¬ì›ë“¤ì´ ë°›ëŠ” ìµœì†Œê¸‰ì—¬ë³´ë‹¤ ë§Žì´ ë°›ëŠ” ì‚¬ì›ì˜
+--first_name, city, salaryì„ ì¶œë ¥í•˜ì‹œì˜¤(any)
+--TotontoëŠ” ì œì™¸
 
 SELECT first_name, city, salary
 FROM employees e, departments d, locations l
@@ -468,18 +468,18 @@ WHERE e.department_id = d.department_id
     AND d.location_id = l.location_id
     AND e.salary > any     
                     (SELECT e.salary
-                    FROM employees e, locations l, departments d --ÀÌ·¸°Ô º¹ÀâÇÏ°Ô ½á¾ß ÇÏ³ª...
+                    FROM employees e, locations l, departments d --ì´ë ‡ê²Œ ë³µìž¡í•˜ê²Œ ì¨ì•¼ í•˜ë‚˜...
                     WHERE e.department_id = d.department_id
                         AND d.location_id = l.location_id
                         AND l.city = 'Toronto')
     AND l.city <> 'Toronto'
     
---±Þ¿©°¡ »óÀ§ 5~10»çÀÌÀÇ »ç¿ø¸í, ÀÔ»çÀÏ, ±Þ¿©¸¦ Ãâ·ÂÇÏ½Ã¿À.(Top-N)
+--ê¸‰ì—¬ê°€ ìƒìœ„ 5~10ì‚¬ì´ì˜ ì‚¬ì›ëª…, ìž…ì‚¬ì¼, ê¸‰ì—¬ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤.(Top-N)
 
 SELECT b.*
 FROM (SELECT sdesc.*, rownum as rn
         FROM
-            (SELECT first_name, hire_date, salary      --1. ³»¸²Â÷¼ø ¸¸µé±â > 2. rownum ¼¼ÆÃÇÏ±â > 3. FROM¿¡ ¼³Á¤ÇÏ±â
+            (SELECT first_name, hire_date, salary      --1. ë‚´ë¦¼ì°¨ìˆœ ë§Œë“¤ê¸° > 2. rownum ì„¸íŒ…í•˜ê¸° > 3. FROMì— ì„¤ì •í•˜ê¸°
             FROM employees
             ORDER BY salary desc) sdesc) b
 WHERE  b.rn >= 5 AND b.rn <=10
@@ -487,7 +487,7 @@ WHERE  b.rn >= 5 AND b.rn <=10
 
 (SELECT sdesc.*, rownum as rm
 FROM
-        (SELECT first_name, salary      --1. ³»¸²Â÷¼ø ¸¸µé±â > 2. rownum ¼¼ÆÃÇÏ±â > 3. FROM¿¡ ¼³Á¤ÇÏ±â
+        (SELECT first_name, salary      --1. ë‚´ë¦¼ì°¨ìˆœ ë§Œë“¤ê¸° > 2. rownum ì„¸íŒ…í•˜ê¸° > 3. FROMì— ì„¤ì •í•˜ê¸°
         FROM employees
         ORDER BY salary desc) sdesc) rn
 
@@ -504,7 +504,7 @@ WHERE rm >=4 AND rm<=8
 
 
 -----------------------
-Å×½ºÆ®
+í…ŒìŠ¤íŠ¸
 -----------------------
 CREATE TABLE emp01(
     empno NUMBER PRIMARY KEY,
