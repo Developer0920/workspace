@@ -18,6 +18,7 @@ public class Java060_method {
 		// data 배열의 크기를 리턴하는 프로그램을 구현하시오.				
 		return data.length;
 	}//end length()
+	
 	public static char charAt(char[] data, int index) {
 		//data 배열에서 index에 해당하는 문자를 리턴하는 프로그램을 구현하시오.		
 		return data[index];
