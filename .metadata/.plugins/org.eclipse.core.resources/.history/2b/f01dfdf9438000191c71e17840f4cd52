@@ -1,0 +1,40 @@
+package java0527_jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+import template.JdbcTemplate;
+
+//
+public class MemberDAO {
+	private Connection conn;
+	private Statement stmt;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+	
+	
+	
+	//싱글톤
+	private MemberDAO() {}
+	
+	private static MemberDAO dao = new MemberDAO();	
+		
+	private static MemberDAO getInstance() {
+		return dao;
+	}
+		
+	
+	public List<MemDTO> listMethod() {
+		try {
+			conn = JdbcTemplate.getConnection();
+		} catch (ClassNotFoundException | SQLException e) {			
+			e.printStackTrace();
+		}
+	}
+	
+	
+
+} //end class

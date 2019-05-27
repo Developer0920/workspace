@@ -1,0 +1,79 @@
+package java0527_jdbc;
+
+//jdbc template이용하는 방법
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import template.JdbcTemplate;
+
+//
+public class MemberDAO {
+	private Connection conn;
+	private Statement stmt;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+	
+	
+	
+	//싱글톤
+	private MemberDAO() {}
+	
+	private static MemberDAO dao = new MemberDAO();	
+		
+	public static MemberDAO getInstance() {
+	      return dao;
+	   }
+		
+	//listMethod
+	public List<MemDTO> listMethod() {
+		List<MemDTO> aList = new ArrayList<MemDTO>();
+		try {
+			conn = JdbcTemplate.getConnection();
+			 stmt = conn.createStatement();
+	         String sql = "select * from mem order by num";
+	         rs = stmt.executeQuery(sql);
+	         while(rs.next()) {
+	            MemDTO dto = new MemDTO();
+	            dto.setNum(rs.getInt("num"));
+	            dto.setName(rs.getString("name"));
+	            dto.setAge(rs.getInt("age"));
+	            dto.setLoc(rs.getString("loc"));
+	            aList.add(dto);
+	         }
+		} catch (ClassNotFoundException | SQLException e) {		
+			e.printStackTrace();
+		} finally {
+			JdbcTemplate.close(rs);
+			JdbcTemplate.close(stmt);
+			JdbcTemplate.close(conn);
+		}
+		return aList;
+	} //end listMethod()
+	
+	
+	public void insertMethod(MemDTO dto) {
+		try {
+			conn = JdbcTemplate.getConnection();
+			String sql = "INSERT INTO mem VALUES(mem_num_seq.nextval,?,?,?)"; //순서대로 인덱스값이 1,2,3으로 붙음
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getName());
+			pstmt.setInt(2, dto.getAge());
+			pstmt.setString(3, dto.getLoc());			
+			// int executeUpdate() : insert, update, delete
+			pstmt.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {			
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+	}//end insertMethod()/////////////////
+	
+
+} //end class

@@ -1,0 +1,24 @@
+package java0527_jdbc;
+
+import java.util.Scanner;
+
+/*
+ * 검색 부서명을 입력 : der
+ */
+
+/*
+ * 데이터를 받아온다. : 스캐너 이용
+ * 
+ */
+public class Java202_jdbc {
+
+	public static void main(String[] args) {
+		DepartmentDAO dao = DepartmentDAO.getInstance();
+		
+		Scanner sc = new Scanner(System.in);
+		
+		
+
+	} //end main()
+
+} //end class

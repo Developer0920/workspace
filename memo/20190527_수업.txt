@@ -1,0 +1,11 @@
+(2019.05.27.월)
+
+- 저번에 했던 걸 나눠서 해야 한다.
+- mvc패턴은 singleton패턴 같은 것
+
+
+- 간혹 접속이 끊어질 수 있음
+ * 해결방법 : 작업관리자에서 OracleServiceXE, OracleXETNSListener 확인. 이걸 재실행할 것!
+
+java0502부터 막히기 시작함.
+

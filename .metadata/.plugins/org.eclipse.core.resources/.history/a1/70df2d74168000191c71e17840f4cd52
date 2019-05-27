@@ -1,0 +1,6 @@
+package java0527_jdbc;
+
+//DAO(Data Access Object) : 데이터 접근 객체
+//insert등의 쿼리문 처리는 여기서 한다.public class DepartmentDAO {
+
+}

@@ -1,0 +1,40 @@
+package java0527_jdbc;
+
+public class MemDTO {
+	//멤버변수
+	private String name;
+	private int age;
+	private String loc;
+	
+	//생성자
+	public MemDTO() {
+		
+	}
+	
+	//게터, 새터
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getLoc() {
+		return loc;
+	}
+
+	public void setLoc(String loc) {
+		this.loc = loc;
+	}
+	
+	
+} //end class
