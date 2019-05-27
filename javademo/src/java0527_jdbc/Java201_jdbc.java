@@ -5,7 +5,7 @@ import java.util.List;
 /*
  * MVC패턴 : 컴퓨터 소트프웨어 개발의 구조적 패턴
  * Model : 데이터에 관련된 작언(DepartmentDTO, DepartmentDAO)
- * View : 클라이언트에 보여줄 화면(Java201)_Jdbc)
+ * View : 클라이언트에 보여줄 화면(Java201_Jdbc)
  * Controller : 요청, 응답처리(Java_Jdbc)
  */
 public class Java201_jdbc {

@@ -9,14 +9,16 @@ public class Java159_stream {
 
 	public static void main(String[] args) {
 	
-		//바이트스트림
 		InputStream is = System.in;
+		//바이트기반 스트림
 		
-		//바이트스트림과 문자스트림 연결
 		InputStreamReader ir = new InputStreamReader(is);
+		//바이트기반 스트림과 문자기반 스트림을 연결해 주는 역할
 		
-		//문자스트림
-		BufferedReader br = new BufferedReader(ir);           //위에 세 줄이 계속 반복. 이걸 한 번에 하는게 scanner. 그리고 형변환을 한방에 할 수 있는 메소드도 제공됨.
+		
+		BufferedReader br = new BufferedReader(ir);
+		//문자기반 보조스트림
+		//위에 세 줄이 계속 반복. 이걸 한 번에 하는게 scanner. 그리고 형변환을 한방에 할 수 있는 메소드도 제공됨.
 		
 		int x, y;
 		try {

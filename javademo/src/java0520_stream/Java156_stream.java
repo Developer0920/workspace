@@ -38,16 +38,17 @@ public class Java156_stream {
 	public static void main(String[] args) {
 		System.out.println("데이터입력:");
 		
-		//콘솔창 목적지에 InputStream으로 연결
-		InputStream is = System.in; //콘솔창을 읽어오기 위한 목적으로 스트림 연결
+		InputStream is = System.in;
+		//콘솔창 목적지에 InputStream으로 연결 //콘솔창을 읽어오기 위한 목적으로 스트림 연결
 		
-		//int line = is.read(); // 오류발생 : read()에는 throws 되어 있음. 그리고 checked exception이므로 반드시 컴파일 단계에서 예외처리 해줘야.
-								//unchecked exception에서는 할 필요 없음.
+		//int line = is.read(); // 오류발생
+		//why? read()에는 throws 되어 있음. 그리고 checked exception이므로 반드시 컴파일 단계에서 예외처리 해줘야.
+		//unchecked exception에서는 할 필요 없음.
 		
 		
-		try {
-			//한 바이트를 읽어와 유니코드로 리턴한다. // A이면 65로 //AB나 한글입력하면 쓰레기값 나옴
+		try {			
 			int line = is.read();
+			//한 바이트를 읽어와 유니코드로 리턴한다. A이면 65로. AB나 한글입력하면 쓰레기값 나옴
 			System.out.println(line); //65출력
 			System.out.println((char)line); //그대로 A출력
 		} catch (IOException e) {			

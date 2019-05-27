@@ -1,17 +1,21 @@
+//package문
 package java0520_stream;
+
+//import문
 import java.io.IOException;
 import java.io.InputStream;
 
-
-
-
+//class
 public class Java157_stream {
+	
 	/*
 	 * 
 	 * carriage return : 줄의 처음으로 이동(13)
 	 * line feed : 다음 줄로 이동(10)
 	 */
 
+	
+	/////
 	public static void main(String[] args) {
 		System.out.println("데이터입력:");
 		InputStream is = System.in; 
