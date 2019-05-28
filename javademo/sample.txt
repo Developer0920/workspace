@@ -12,4 +12,6 @@ ajava
 java
 jsp
 ajsp
-a
+ajava
+jsp
+97

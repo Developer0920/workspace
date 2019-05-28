@@ -1,9 +1,13 @@
+//package문
 package java0521_collection;
 
+//실행클래스
 public class Java171_List {
-
+	//메인메소드
 	public static void main(String[] args) {
 		UserList uList = new UserList();
+		//UserList 객체를 생성하고, uList에 주소값을 저장하라.
+		
 		uList.add(10);
 		uList.add(20);
 		uList.add(30);

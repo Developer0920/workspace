@@ -1,41 +1,55 @@
+//그동안은 순차적으로 접근. 이젠 임의로 접근해보자.
+
+//package문
 package java0520_stream;
 
+//impot문
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-//그동안은 순차적으로 접근. 이젠 임의로.
+//실행클래스
 public class Java165_stream {
-
+	//메인메소드
 	public static void main(String[] args) {
 		File file = new File("src/java0520_stream/score.txt");
+		//파일을 다루기 위해 file객체를 생성
+		
 		RandomAccessFile raf = null;
+		//RandomAccessFile객체를 담을 변수를 만들어라.
 		
 		try {
-			// "r" : 읽기(read)만 가능
-			// "rw" : 읽기(read) 쓰기(write)가 가능하다.
-			
+						
 			raf = new RandomAccessFile(file, "r");
+			//RondomAccessFile객체를 생성하여 raf변수에 담아라.
+			// "r" : 읽기(read)만 가능
+			// "rw" : 읽기(read), 쓰기(write) 둘 다  가능
 			
-				System.out.println(raf.getFilePointer()); //0 //현재 위치를 포인터라고 함. DB에서는 커서
-				System.out.println((char)raf.read()); //k
-				System.out.println(raf.getFilePointer()); //1
-				System.out.println(raf.readLine()); //im:56/78/12
-				System.out.println(raf.getFilePointer()); // 14 --- 줄바꿈이 \r\n 이기 때문
+				System.out.println(raf.getFilePointer()); //결과값:0
+				//getFilePointer()메소드는 현재 포인터(커서) 위치를 반환
+				System.out.println((char)raf.read()); //결과값:k				
+				System.out.println(raf.getFilePointer()); //결과값:1
+				System.out.println(raf.readLine()); //결과값:im:56/78/12
+				System.out.println(raf.getFilePointer()); //결과값:14. 왜냐하면 줄바꿈이 \r\n 이기 때문
 				String line = raf.readLine(); //다음 한 줄을 읽어 옴
-				System.out.printf("%s &d\n", line, line.length());
-				System.out.println(raf.getFilePointer());
+				System.out.printf("%s %d\n", line, line.length()); //결과값:hong:46/100/97 14
+				System.out.println(raf.getFilePointer()); //결과값:30
 				
-				//뒤로 빠꾸하는 걸 알아보자.
-				//포인터의 위치를 변경한다.(파일 처음부터 포인터를 찾는다)
-				raf.seek(4); // seek는 무조건 처음으로 가서 찾음.
-				System.out.println(raf.readLine()); //56/78/12 --- 4지점부터 한 라인 읽어봐라.
-				//현재 위치를 기준으로 읽어보는 방법
-				//지정된 수 만큼 byte을 건너뛴다.(현재 포인터가 있는 위치를 기준으로 건너뛴다)
-				raf.skipBytes(2); //현재위치를 기준으로 두 칸 이동 //왼쪽으로는 이동할 수없음. 따라서 -값을 주면 그냥 아무것도 안 함.
-				System.out.println(raf.readLine()); //ng:46/100/97
+				//포인터의 위치를 뒤로 보내는 방법
+				raf.seek(4);
+				//포인터의 위치를 4로 설정한다.(파일 처음부터 계산함. 0부터 시작.)				
 				
+				System.out.println(raf.readLine()); //결과값:56/78/12
+				//4지점부터 한 라인 읽어옴
+				
+				//현재 위치에서 건너뛰는 방법
+				
+				raf.skipBytes(2);
+				//현재 포인터가 있는 위치를 기준으로 지정된 수 만큼 byte을 건너뛴다.
+				//현재위치를 기준으로 2byte 이동해라.
+				//왼쪽으로는 이동할 수없음. 따라서 -값을 주면 그냥 아무것도 안 함.
+				System.out.println(raf.readLine()); //결과값:ng:46/100/97				
 				
 		} catch (FileNotFoundException e) {			
 			e.printStackTrace();

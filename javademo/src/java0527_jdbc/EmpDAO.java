@@ -61,6 +61,50 @@ public class EmpDAO {
 				close(conn);
 			}					
 			return aList;
-	} //end rageMethod()
+	} //end rangeMethod()
+	
+	//메소드
+	public List<EmpDTO> searchMethod(String word) {
+		List<EmpDTO> aList = new ArrayList<EmpDTO>();
+		
+		try {
+			conn = JdbcTemplate.getConnection();
+			String sql = "SELECT * FROM employees ";
+			sql += "WHERE upper(first_name) like ? ";
+			sql += "ORDER BY employee_id";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,  "%" + word.toUpperCase() + "%");
+			rs = pstmt.executeQuery(); //이제 rs를 EmpDTO에 담아서 List에 넣는다. List<EmpDTO> 이기 때문에.
+			
+			while (rs.next()) {
+				EmpDTO dto = new EmpDTO();
+				dto.setEmployee_id(rs.getInt("employee_id"));
+				dto.setFirst_name(rs.getString("First_name"));
+				dto.setSalary(rs.getInt("Salary"));
+				 dto.setHire_date(rs.getDate("hire_date"));
+                 aList.add(dto);               }
+
+		} catch (ClassNotFoundException | SQLException e) {			
+			e.printStackTrace();
+		} finally {
+			JdbcTemplate.close(rs);
+			JdbcTemplate.close(pstmt);
+			JdbcTemplate.close(conn);
+			
+		}
+		
+		return aList;
+		
+		
+	} //end searchMethod()
+	
+	
+	//Java217관련
+	public List<EmpDTO> comboxSearchMethod(HashMap<String, Object> map) {
+		
+		return null;
+	} //end comboxSearchMethod() /////////////////
 	
 } //end class
+
+

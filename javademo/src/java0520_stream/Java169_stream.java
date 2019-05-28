@@ -1,5 +1,11 @@
+//일단 skip!!
+
+//데이터직렬화
+
+//package문
 package java0520_stream;
 
+//import문
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
